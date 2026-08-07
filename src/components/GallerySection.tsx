@@ -34,7 +34,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectDishForB
         </div>
 
         {/* Filter Bar */}
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+        <div className="mt-10 sm:mt-12 flex overflow-x-auto sm:flex-wrap items-center justify-start sm:justify-center gap-2 sm:gap-3 pb-3 sm:pb-0 scrollbar-none">
           {[
             { id: 'all', label: 'All Creations' },
             { id: 'signature', label: 'Signature Dishes' },
@@ -46,7 +46,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectDishForB
             <button
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
-              className={`text-xs px-5 py-2.5 rounded-full cursor-pointer uppercase tracking-wider font-semibold transition-all duration-300 ${
+              className={`text-xs px-4 sm:px-5 py-2 sm:py-2.5 rounded-full cursor-pointer uppercase tracking-wider font-semibold transition-all duration-300 shrink-0 ${
                 selectedCategory === cat.id
                   ? 'bg-[#1C1917] text-white shadow-md'
                   : 'bg-white text-[#57534E] hover:text-[#1C1917] border border-[#EAE4D7]'
