@@ -54,19 +54,19 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking,
           />
         </div>
 
-        {/* Services Cards with Hover Lift Animation */}
+        {/* Services Cards with Rich Gold Hover Animation */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
           {CULINARY_SERVICES.map((srv, idx) => (
             <div
               key={idx}
-              className="bg-white border border-[#EEEEEE] hover:border-[#111111] hover:-translate-y-2.5 hover:shadow-2xl p-8 sm:p-10 transition-all duration-300 shadow-minimal flex flex-col justify-between space-y-8 group cursor-pointer"
+              className="bg-white border border-[#EEEEEE] hover:border-[#B88E28] hover:-translate-y-2.5 hover:shadow-2xl p-8 sm:p-10 transition-all duration-300 shadow-minimal flex flex-col justify-between space-y-8 group cursor-pointer"
             >
               <div className="space-y-5">
-                <div className="w-12 h-12 bg-[#FAFAFA] border border-[#EEEEEE] flex items-center justify-center">
+                <div className="w-12 h-12 bg-[#FAFAFA] border border-[#EEEEEE] group-hover:border-[#B88E28] group-hover:bg-[#B88E28]/10 flex items-center justify-center transition-colors">
                   {getIcon(srv.icon)}
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-serif text-[#111111] font-normal group-hover:text-[#99731C] transition-colors">
+                <h3 className="text-2xl sm:text-3xl font-serif text-[#111111] font-normal group-hover:text-[#B88E28] transition-colors duration-300">
                   {srv.title}
                 </h3>
 
@@ -77,7 +77,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking,
                 <ul className="space-y-2.5 pt-4 border-t border-[#EEEEEE] text-xs text-[#555555] font-light">
                   {srv.features.map((feat, fIdx) => (
                     <li key={fIdx} className="flex items-start space-x-3">
-                      <CheckCircle2 className="w-4 h-4 text-[#99731C] shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#B88E28] shrink-0 mt-0.5" />
                       <span>{feat}</span>
                     </li>
                   ))}
@@ -87,7 +87,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking,
               <div className="pt-4 border-t border-[#EEEEEE]">
                 <button
                   onClick={onOpenBooking}
-                  className="w-full bg-[#111111] hover:bg-[#333333] text-white font-mono text-xs uppercase tracking-widest py-3.5 transition-colors flex items-center justify-center space-x-2 cursor-pointer"
+                  className="w-full bg-[#111111] group-hover:bg-[#B88E28] text-white font-mono text-xs uppercase tracking-widest py-3.5 transition-colors flex items-center justify-center space-x-2 cursor-pointer"
                 >
                   <span>Inquire for {srv.title.split(' ')[0]} Service</span>
                   <ArrowRight className="w-4 h-4" />
