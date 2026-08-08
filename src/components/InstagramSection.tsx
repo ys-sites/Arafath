@@ -24,9 +24,11 @@ export const InstagramSection: React.FC = () => {
         {/* Profile Stats Bar */}
         <div className="mt-12 bg-[#FAFAFA] border border-[#EEEEEE] p-6 sm:p-8 max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 shadow-minimal">
           <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 bg-white border border-[#EEEEEE] flex items-center justify-center font-serif font-semibold text-base text-[#111111]">
-              YA
-            </div>
+            <img
+              src="/image 1.png"
+              alt="Chef Yaseer Arafath Instagram"
+              className="w-14 h-14 rounded-full object-cover border border-[#EEEEEE] shadow-sm shrink-0"
+            />
             <div className="text-left space-y-0.5 font-mono">
               <h3 className="text-[#111111] font-serif text-lg font-normal flex items-center space-x-2">
                 <span>Chef Yaseer Arafath</span>
@@ -49,7 +51,7 @@ export const InstagramSection: React.FC = () => {
           </a>
         </div>
 
-        {/* Grid of Feed Posts */}
+        {/* Grid of Video Reels (Uncluttered, No Captions) */}
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {INSTAGRAM_POSTS.map((post) => (
             <a
@@ -57,31 +59,27 @@ export const InstagramSection: React.FC = () => {
               href={post.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-white border border-[#EEEEEE] hover:border-[#111111] transition-all duration-300 shadow-minimal flex flex-col justify-between"
+              className="group bg-white border border-[#EEEEEE] hover:border-[#111111] transition-all duration-300 shadow-minimal overflow-hidden relative block"
             >
               {/* Media Container */}
-              <div className="relative h-64 overflow-hidden bg-[#FAFAFA]">
-                <img
-                  src={post.imageUrl}
-                  alt="Instagram post by Chef Yaseer"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover filter grayscale-[10%] group-hover:grayscale-0 transition-all duration-700"
+              <div className="relative h-80 sm:h-96 overflow-hidden bg-[#FAFAFA]">
+                <video
+                  src={post.videoUrl || post.imageUrl}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/80 via-transparent to-transparent opacity-85" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/60 via-transparent to-transparent opacity-85" />
 
                 {/* Post type overlay badge */}
-                <div className="absolute top-3 right-3 bg-white/90 p-2 text-[#111111] border border-[#EEEEEE]">
-                  {post.type === 'video' ? (
-                    <Play className="w-3.5 h-3.5 text-[#111111]" />
-                  ) : post.type === 'carousel' ? (
-                    <Film className="w-3.5 h-3.5 text-[#111111]" />
-                  ) : (
-                    <Instagram className="w-3.5 h-3.5 text-[#111111]" />
-                  )}
+                <div className="absolute top-3 right-3 bg-white/90 p-2 text-[#111111] border border-[#EEEEEE] z-10">
+                  <Play className="w-3.5 h-3.5 text-[#111111]" />
                 </div>
 
                 {/* Hover overlay with engagement stats */}
-                <div className="absolute inset-0 bg-black/75 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-6 text-white font-mono text-xs">
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-6 text-white font-mono text-xs z-20">
                   <div className="flex items-center space-x-1.5">
                     <Heart className="w-4 h-4 text-[#99731C] fill-[#99731C]" />
                     <span>{post.likes}</span>
@@ -92,45 +90,9 @@ export const InstagramSection: React.FC = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Caption Content */}
-              <div className="p-5 space-y-3 text-left flex-1 flex flex-col justify-between">
-                <p className="text-[#555555] text-xs line-clamp-3 leading-relaxed font-light">
-                  {post.caption}
-                </p>
-
-                <div className="flex flex-wrap gap-1.5 pt-2">
-                  {post.tags.map((tag, tIdx) => (
-                    <span key={tIdx} className="text-[10px] text-[#99731C] font-mono">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
             </a>
           ))}
         </div>
-
-        {/* Highlight Reels Banner */}
-        <div className="mt-12 text-center space-y-3 font-mono">
-          <p className="text-xs text-[#888888] uppercase tracking-widest">
-            Featured Instagram Highlights:
-          </p>
-          <div className="flex flex-wrap justify-center gap-2 text-xs">
-            {['🏆 Awards & Superchef', '🍽️ Signature Plating', '✨ VIP Banquets', '🎥 Live Demonstrations', '🎓 University Keynotes'].map((hl, idx) => (
-              <a
-                key={idx}
-                href={CHEF_PROFILE.instagramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white hover:bg-[#FAFAFA] text-[#555555] hover:text-[#111111] border border-[#EEEEEE] hover:border-[#111111] px-4 py-2 transition-all flex items-center space-x-1 font-light"
-              >
-                <span>{hl}</span>
-              </a>
-            ))}
-          </div>
-        </div>
-
       </div>
     </section>
   );

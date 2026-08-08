@@ -116,9 +116,11 @@ export const AwardsSection: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {PRESS_ITEMS.map((press) => (
-              <div
+              <a
                 key={press.id}
-                onClick={() => setSelectedPress(press)}
+                href={press.url || "https://www.instagram.com/yaseer.s.arafath/"}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white border border-[#E8E4DC] hover:border-[#1A1817] p-7 transition-all duration-300 shadow-minimal cursor-pointer flex flex-col justify-between group"
               >
                 <div className="space-y-4">
@@ -142,7 +144,7 @@ export const AwardsSection: React.FC = () => {
                   <span>{press.linkText}</span>
                   <ExternalLink className="w-3.5 h-3.5 text-[#B88E28]" />
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>

@@ -1,5 +1,7 @@
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
+import { ShinyText } from './ShinyText';
+import { BlurText } from './BlurText';
 
 interface HeroSectionProps {
   onOpenBooking: () => void;
@@ -20,9 +22,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking, onOpenP
           className="w-full h-full object-cover object-[70%_center] sm:object-right-center"
         />
         
-        {/* Scrim gradient ONLY on the far left so photo remains crisp & clear on the right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FAF9F6] via-[#FAF9F6]/90 via-35% to-transparent z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#FAF9F6]/80 via-transparent to-transparent z-10" />
+        {/* Scrim gradient ONLY on the far left behind text so photo remains 100% crisp & clear */}
+        <div className="absolute top-0 bottom-0 left-0 w-full lg:w-7/12 bg-gradient-to-r from-[#FAF9F6] via-[#FAF9F6]/95 to-transparent z-10 pointer-events-none" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-20 pt-28 sm:pt-36 pb-16 sm:pb-24">
@@ -42,22 +43,35 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking, onOpenP
               <div className="w-16 h-[1px] bg-[#1A1817]" />
             </div>
 
-            {/* Chef Name & Title */}
+            {/* Chef Name & Title with ShinyText & BlurText */}
             <div className="space-y-3">
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif text-[#1A1817] font-normal leading-[1.05] tracking-tight">
                 CHEF YASEER <br />
-                <span className="italic font-serif font-light text-[#B88E28]">ARAFATH</span>
+                <ShinyText
+                  text="ARAFATH"
+                  color="#B88E28"
+                  shineColor="#FFF5B8"
+                  speed={2.5}
+                  spread={120}
+                  className="italic font-serif font-light text-[#B88E28]"
+                />
               </h1>
               
-              <p className="text-base sm:text-lg font-serif text-[#5B564E] font-light italic leading-relaxed">
-                Head Chef at Slices Catering · Master of Modern Gastronomy & Levant Fusion
-              </p>
+              <BlurText
+                text="Head Chef at Slices Catering · Master of Modern Gastronomy & Levant Fusion"
+                delay={35}
+                animateBy="words"
+                className="text-base sm:text-lg font-serif text-[#5B564E] font-light italic leading-relaxed"
+              />
             </div>
 
             {/* Position Narrative */}
-            <p className="text-sm sm:text-base text-[#68645E] max-w-xl font-light leading-relaxed">
-              Directing luxury banquets, private VIP villa dinners, and bespoke molecular culinary experiences across the United Arab Emirates with over a decade of classical precision.
-            </p>
+            <BlurText
+              text="Directing luxury banquets, private VIP villa dinners, and bespoke molecular culinary experiences across the United Arab Emirates with over a decade of classical precision."
+              delay={30}
+              animateBy="words"
+              className="text-sm sm:text-base text-[#68645E] max-w-xl font-light leading-relaxed"
+            />
 
             {/* Clean Symmetrical Metric Highlights */}
             <div className="grid grid-cols-3 gap-4 pt-2 border-t border-b border-[#E8E4DC] py-4 text-xs font-mono">

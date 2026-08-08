@@ -178,73 +178,80 @@ export const CAREER_MILESTONES: Milestone[] = [
 export const PRESS_ITEMS: PressItem[] = [
   {
     id: "press-1",
-    source: "Khaleej Times",
+    source: "Khaleej Times & Xpatzhub",
     title: "UAE's Superchef 2024 is a resounding success — Mr. Yaser Arafath takes first prize",
     date: "June 2024",
     excerpt: "The live culinary showdown at Firki, Royal Ascot Hotel saw top chefs from across Dubai and Abu Dhabi compete. Mr. Yaser Arafath, Head Chef at Slices Catering, won first prize with his extraordinary mastery of Levant flavors and modern plating.",
-    linkText: "Read Coverage Summary",
+    linkText: "Read Khaleej Times Feature",
+    url: "https://www.khaleejtimes.com/",
     verifiedWinner: true
   },
   {
     id: "press-2",
-    source: "Emirates Culinary Guild Official Gazette",
+    source: "Emirates Culinary Guild Gazette",
     title: "Silver Medal Awarded for Arabian/Levant Main Course at Wathba Festival",
     date: "December 2023",
     excerpt: "Recognizing Chef Yaseer Arafath's outstanding contribution to modern Arabian cuisine with a Silver Medal certificate signed by the ECG Guild President.",
     linkText: "View ECG Medal Record",
+    url: "https://www.emiratesculinaryguild.net/",
     verifiedWinner: true
   },
   {
     id: "press-3",
-    source: "Hospitality News Middle East",
-    title: "Elevating Catering Standards in the UAE: Slices Catering's Culinary Drive",
-    date: "2024",
-    excerpt: "An inside look at how Head Chef Yaseer Arafath fuses molecular techniques with high-capacity banquet management to set new benchmarks in Dubai hospitality.",
-    linkText: "Read Article Feature",
-    verifiedWinner: false
+    source: "Hozpitality Excellence Awards",
+    title: "Middle East Chef Excellence Award Winner — Slices Catering",
+    date: "2021 - 2024",
+    excerpt: "Recognized at the 4th Middle East Chef Excellence Awards for culinary directorship, molecular techniques, and high-capacity banquet management in Dubai.",
+    linkText: "View Hozpitality Record",
+    url: "https://www.hozpitality.com/",
+    verifiedWinner: true
   }
 ];
 
 export const INSTAGRAM_POSTS: InstagramPost[] = [
   {
     id: "ig-1",
-    caption: "Holding the 1st Place Trophy at UAE Superchef 2024! Grateful for the intense live competition and support from Slices Catering team. #Superchef2024 #ChefYaseer #DubaiChefs #SlicesCatering",
+    caption: "",
     likes: 1482,
     comments: 124,
-    type: "image",
-    imageUrl: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80",
+    type: "video",
+    videoUrl: "/vid 1.mp4",
+    imageUrl: "/vid 1.mp4",
     instagramUrl: "https://www.instagram.com/yaseer.s.arafath/",
-    tags: ["#Superchef2024", "#FirkiDubai", "#FirstPrize"]
+    tags: []
   },
   {
     id: "ig-2",
-    caption: "Official Silver Medal Certificate from the Emirates Culinary Guild at Wathba Dates Festival. Passion for Levant cuisine continues! 🥈🇦🇪 #EmiratesCulinaryGuild #LevantCuisine #DubaiCatering",
+    caption: "",
     likes: 930,
     comments: 68,
-    type: "image",
-    imageUrl: "https://images.unsplash.com/photo-1578474846511-04ba529f0b88?auto=format&fit=crop&w=800&q=80",
+    type: "video",
+    videoUrl: "/vid 2.mp4",
+    imageUrl: "/vid 2.mp4",
     instagramUrl: "https://www.instagram.com/yaseer.s.arafath/",
-    tags: ["#EmiratesCulinaryGuild", "#SilverMedal", "#AbuDhabi"]
+    tags: []
   },
   {
     id: "ig-3",
-    caption: "Freshly prepared artisanal fruit boats with edible flowers for today's luxury VIP catering banquet in Downtown Dubai. Every detail counts! 🌺🥭 #SlicesCatering #VIPEvent #GourmetCatering",
+    caption: "",
     likes: 1120,
     comments: 89,
-    type: "carousel",
-    imageUrl: "/src/assets/images/catering_dessert_display_1786112954643.jpg",
+    type: "video",
+    videoUrl: "/vid 3.mp4",
+    imageUrl: "/vid 3.mp4",
     instagramUrl: "https://www.instagram.com/yaseer.s.arafath/",
-    tags: ["#FruitPlatter", "#LuxuryCatering", "#DowntownDubai"]
+    tags: []
   },
   {
     id: "ig-4",
-    caption: "Live molecular gastronomy demonstration at Sir Issac Newton College Hotel Mgmt dept. Sharing knowledge with the next generation of culinary leaders. 👨‍🍳🔥 #CulinaryEducation #LiveCooking #KeynoteChef",
+    caption: "",
     likes: 854,
     comments: 52,
     type: "video",
-    imageUrl: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
+    videoUrl: "/vid 4.mp4",
+    imageUrl: "/vid 4.mp4",
     instagramUrl: "https://www.instagram.com/yaseer.s.arafath/",
-    tags: ["#LiveCooking", "#GuestChef", "#HotelManagement"]
+    tags: []
   }
 ];
 

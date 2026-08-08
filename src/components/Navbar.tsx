@@ -85,13 +85,6 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center space-x-8 text-xs font-mono uppercase tracking-widest text-[#68645E]">
-            <button
-              onClick={() => handleNavClick('about')}
-              className="hover:text-[#1A1817] transition-colors cursor-pointer"
-            >
-              About
-            </button>
-            
             {/* Dedicated Portfolio Sub-Page Trigger */}
             <button
               onClick={onOpenPortfolioSubPage}
@@ -107,12 +100,9 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <button
               onClick={() => handleNavClick('awards')}
-              className="hover:text-[#1A1817] transition-colors cursor-pointer flex items-center space-x-2"
+              className="hover:text-[#1A1817] transition-colors cursor-pointer"
             >
               <span>Awards</span>
-              <span className="text-[9px] text-[#B88E28] px-1.5 py-0.5 border border-[#B88E28]/30 font-mono font-semibold">
-                2024
-              </span>
             </button>
             <button
               onClick={() => handleNavClick('services')}
@@ -189,12 +179,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               <FileText className="w-4 h-4 text-[#B88E28]" />
             </button>
             <button
-              onClick={() => handleNavClick('about')}
-              className="text-left py-2 border-b border-[#E8E4DC] hover:text-[#B88E28]"
-            >
-              About & Journey
-            </button>
-            <button
               onClick={() => handleNavClick('gallery')}
               className="text-left py-2 border-b border-[#E8E4DC] hover:text-[#B88E28]"
             >
@@ -202,10 +186,9 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
             <button
               onClick={() => handleNavClick('awards')}
-              className="text-left py-2 border-b border-[#E8E4DC] hover:text-[#B88E28] flex items-center justify-between"
+              className="text-left py-2 border-b border-[#E8E4DC] hover:text-[#B88E28]"
             >
               <span>Awards & Press</span>
-              <span className="text-[#B88E28] text-[10px] px-2 py-0.5 border border-[#B88E28]/30">Superchef 2024</span>
             </button>
             <button
               onClick={() => handleNavClick('services')}

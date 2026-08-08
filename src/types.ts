@@ -41,6 +41,7 @@ export interface InstagramPost {
   comments: number;
   type: 'image' | 'video' | 'carousel';
   imageUrl: string;
+  videoUrl?: string;
   instagramUrl: string;
   tags: string[];
 }
