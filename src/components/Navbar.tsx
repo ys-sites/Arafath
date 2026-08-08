@@ -69,9 +69,9 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="cursor-pointer flex items-center space-x-3 group text-left"
           >
             <img
-              src="/LOGO.png"
+              src="/logo svg.svg"
               alt="Chef Yaseer Arafath Logo"
-              className="h-9 sm:h-10 w-auto object-contain"
+              className="h-9 sm:h-11 w-auto object-contain"
             />
             <div>
               <span className="text-base font-serif tracking-widest text-[#1A1817] uppercase font-bold block leading-none">

@@ -11,7 +11,7 @@ export const StatsBanner: React.FC = () => {
               key={idx}
               className="flex flex-col items-center justify-center p-6 sm:p-8 text-center space-y-2 min-h-[140px] group hover:bg-[#FAF9F6] transition-colors"
             >
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#1A1817] font-normal tracking-tight flex items-center justify-center min-h-[3rem]">
+              <div className="text-xl sm:text-2xl lg:text-3xl font-serif text-[#1A1817] font-normal tracking-tight flex items-center justify-center min-h-[3rem] whitespace-nowrap px-1">
                 {stat.value}
               </div>
               <div className="w-8 h-[1px] bg-[#B88E28]/40 my-1 group-hover:w-12 transition-all duration-300" />
