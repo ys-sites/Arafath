@@ -240,7 +240,7 @@ Sous-vide precision braising, Binchotan charcoal grilling, cryogenic nitrogen ga
               <div className="bg-white border border-[#E8E4DC] p-3 shadow-minimal h-full flex flex-col justify-between">
                 <div className="relative h-[420px] lg:h-[500px] overflow-hidden">
                   <img
-                    src="/arafath.png"
+                    src="/yaseer.jpeg"
                     alt="Chef Yaseer Arafath Portrait"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover object-top"
