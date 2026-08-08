@@ -78,15 +78,10 @@ export default function App() {
           <HeroSection
             onOpenBooking={handleScrollToBooking}
             onOpenAIMenu={() => setIsAIMenuOpen(true)}
+            onOpenPortfolioSubPage={handleOpenPortfolioSubPage}
           />
 
           <StatsBanner />
-
-          <AboutSection
-            onOpenBooking={handleScrollToBooking}
-          />
-
-          <AwardsSection />
 
           <GallerySection
             onSelectDishForBooking={handleSelectDishForBooking}

@@ -4,16 +4,10 @@ import { ChevronRight } from 'lucide-react';
 interface HeroSectionProps {
   onOpenBooking: () => void;
   onOpenAIMenu: () => void;
+  onOpenPortfolioSubPage: () => void;
 }
 
-export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
+export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking, onOpenPortfolioSubPage }) => {
   return (
     <section className="relative min-h-[90vh] sm:min-h-screen w-full flex items-center overflow-hidden bg-[#FAF9F6] text-[#1A1817] border-b border-[#E8E4DC]">
       
@@ -92,10 +86,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
               </button>
 
               <button
-                onClick={() => scrollToSection('gallery')}
+                onClick={onOpenPortfolioSubPage}
                 className="w-full sm:w-auto cursor-pointer border border-[#1A1817] text-[#1A1817] hover:bg-[#1A1817] hover:text-white font-mono text-xs uppercase tracking-[0.2em] px-7 py-4 transition-all flex items-center justify-center space-x-2 bg-white/60"
               >
-                <span>View Portfolio</span>
+                <span>View Full Portfolio</span>
               </button>
             </div>
 
