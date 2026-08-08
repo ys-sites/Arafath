@@ -8,21 +8,29 @@ import { GallerySection } from './components/GallerySection';
 import { ServicesSection } from './components/ServicesSection';
 import { InstagramSection } from './components/InstagramSection';
 import { BookingSection } from './components/BookingSection';
+import { PortfolioSubPage } from './components/PortfolioSubPage';
 import { AIMenuCuratorModal } from './components/AIMenuCuratorModal';
 import { SEOSchemaModal } from './components/SEOSchemaModal';
 import { Footer } from './components/Footer';
 import { MessageSquare, Sparkles } from 'lucide-react';
 
 export default function App() {
+  const [currentView, setCurrentView] = useState<'home' | 'portfolio'>('home');
   const [isAIMenuOpen, setIsAIMenuOpen] = useState(false);
   const [isSEOModalOpen, setIsSEOModalOpen] = useState(false);
   const [prefilledMenuTitle, setPrefilledMenuTitle] = useState('');
   const [prefilledMenuSummary, setPrefilledMenuSummary] = useState('');
 
   const handleScrollToBooking = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (currentView !== 'home') {
+      setCurrentView('home');
+      setTimeout(() => {
+        const element = document.getElementById('contact');
+        if (element) element.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      const element = document.getElementById('contact');
+      if (element) element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -38,57 +46,81 @@ export default function App() {
     handleScrollToBooking();
   };
 
+  const handleGoHome = () => {
+    setCurrentView('home');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleOpenPortfolioSubPage = () => {
+    setCurrentView('portfolio');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const whatsappMessage = encodeURIComponent(
     "Hello Chef Yaseer! I would like to inquire about private catering / culinary collaboration."
   );
 
   return (
-    <div className="min-h-screen bg-[#FFFFFF] text-[#111111] font-sans selection:bg-[#111111] selection:text-white relative">
+    <div className="min-h-screen bg-[#FAF9F6] text-[#1A1817] font-sans selection:bg-[#1A1817] selection:text-white relative">
       {/* Top Fixed Header */}
       <Navbar
+        currentView={currentView}
+        onGoHome={handleGoHome}
+        onOpenPortfolioSubPage={handleOpenPortfolioSubPage}
         onOpenBooking={handleScrollToBooking}
         onOpenAIMenu={() => setIsAIMenuOpen(true)}
         onOpenSEOModal={() => setIsSEOModalOpen(true)}
       />
 
-      {/* Main Page Layout */}
-      <main>
-        <HeroSection
-          onOpenBooking={handleScrollToBooking}
-          onOpenAIMenu={() => setIsAIMenuOpen(true)}
-        />
+      {/* Dynamic View Switcher */}
+      {currentView === 'home' ? (
+        <main>
+          <HeroSection
+            onOpenBooking={handleScrollToBooking}
+            onOpenAIMenu={() => setIsAIMenuOpen(true)}
+          />
 
-        <StatsBanner />
+          <StatsBanner />
 
-        <AboutSection
-          onOpenBooking={handleScrollToBooking}
-        />
+          <AboutSection
+            onOpenBooking={handleScrollToBooking}
+          />
 
-        <AwardsSection />
+          <AwardsSection />
 
-        <GallerySection
-          onSelectDishForBooking={handleSelectDishForBooking}
-        />
+          <GallerySection
+            onSelectDishForBooking={handleSelectDishForBooking}
+          />
 
-        <ServicesSection
-          onOpenBooking={handleScrollToBooking}
-          onOpenAIMenu={() => setIsAIMenuOpen(true)}
-        />
+          <ServicesSection
+            onOpenBooking={handleScrollToBooking}
+            onOpenAIMenu={() => setIsAIMenuOpen(true)}
+          />
 
-        <InstagramSection />
+          <InstagramSection />
 
-        <BookingSection
-          prefilledMenuTitle={prefilledMenuTitle}
-          prefilledMenuSummary={prefilledMenuSummary}
-        />
-      </main>
+          <BookingSection
+            prefilledMenuTitle={prefilledMenuTitle}
+            prefilledMenuSummary={prefilledMenuSummary}
+          />
+        </main>
+      ) : (
+        <main>
+          <PortfolioSubPage
+            onBackToHome={handleGoHome}
+            onOpenBooking={handleScrollToBooking}
+            onOpenAIMenu={() => setIsAIMenuOpen(true)}
+            onSelectDishForBooking={handleSelectDishForBooking}
+          />
+        </main>
+      )}
 
       {/* Floating Action Buttons */}
       <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3 items-end">
         {/* Quick Menu AI Floating Trigger */}
         <button
           onClick={() => setIsAIMenuOpen(true)}
-          className="group flex items-center gap-2 bg-white/95 backdrop-blur-md border border-[#B88E28]/40 hover:border-[#B88E28] text-[#1C1917] px-4 py-2.5 rounded-full shadow-2xl transition-all duration-300 hover:scale-105"
+          className="group flex items-center gap-2 bg-white/95 backdrop-blur-md border border-[#B88E28]/40 hover:border-[#B88E28] text-[#1A1817] px-4 py-2.5 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer"
           title="Bespoke Menu Consultation"
         >
           <Sparkles className="w-4 h-4 text-[#B88E28] animate-pulse" />
@@ -124,5 +156,6 @@ export default function App() {
     </div>
   );
 }
+
 
 
