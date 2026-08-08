@@ -22,30 +22,30 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking, onOpenP
           className="w-full h-full object-cover object-[70%_center] sm:object-right-center"
         />
         
-        {/* Scrim gradient ONLY on the far left behind text so photo remains 100% crisp & clear */}
-        <div className="absolute top-0 bottom-0 left-0 w-full lg:w-7/12 bg-gradient-to-r from-[#FAF9F6] via-[#FAF9F6]/95 to-transparent z-10 pointer-events-none" />
+        {/* Scrim gradient: subtle on mobile so hero photo remains maximum visible */}
+        <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-[#FAF9F6]/90 via-[#FAF9F6]/50 sm:via-[#FAF9F6]/95 to-transparent z-10 pointer-events-none" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-20 pt-28 sm:pt-36 pb-16 sm:pb-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-20 pt-24 sm:pt-36 pb-12 sm:pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
-          {/* Left Hero Content Box with Clean Elegant Bodoni / Cinzel Typography */}
-          <div className="lg:col-span-7 xl:col-span-6 space-y-7 text-left">
+          {/* Left Hero Content Box - Ultra Minimalist on Mobile */}
+          <div className="lg:col-span-7 xl:col-span-6 space-y-4 sm:space-y-7 text-left">
             
             {/* Minimalist Location & Category Tag */}
-            <div className="space-y-3">
-              <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-[11px] font-mono uppercase tracking-[0.3em] text-[#68645E]">
+            <div className="space-y-2 sm:space-y-3">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.3em] text-[#68645E]">
                 <span className="text-[#1A1817] font-semibold">DUBAI, UAE</span>
                 <span>•</span>
                 <span className="text-[#B88E28] font-semibold">HAUTE GASTRONOMY</span>
               </div>
               
-              <div className="w-16 h-[1px] bg-[#1A1817]" />
+              <div className="w-12 sm:w-16 h-[1px] bg-[#1A1817]" />
             </div>
 
-            {/* Chef Name & Title with ShinyText & BlurText */}
-            <div className="space-y-3">
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif text-[#1A1817] font-normal leading-[1.05] tracking-tight">
+            {/* Chef Name & Title */}
+            <div className="space-y-2 sm:space-y-3">
+              <h1 className="text-3xl sm:text-6xl lg:text-7xl font-serif text-[#1A1817] font-normal leading-[1.05] tracking-tight">
                 CHEF YASEER <br />
                 <ShinyText
                   text="ARAFATH"
@@ -57,24 +57,23 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking, onOpenP
                 />
               </h1>
               
+              <p className="text-xs sm:text-lg font-serif text-[#5B564E] font-light italic leading-relaxed">
+                Head Chef at Slices Catering
+              </p>
+            </div>
+
+            {/* Position Narrative: Hidden on mobile to let background photo shine through */}
+            <div className="hidden sm:block">
               <BlurText
-                text="Head Chef at Slices Catering · Master of Modern Gastronomy & Levant Fusion"
-                delay={35}
+                text="Directing luxury banquets, private VIP villa dinners, and bespoke molecular culinary experiences across the United Arab Emirates with over a decade of classical precision."
+                delay={30}
                 animateBy="words"
-                className="text-base sm:text-lg font-serif text-[#5B564E] font-light italic leading-relaxed"
+                className="text-sm sm:text-base text-[#68645E] max-w-xl font-light leading-relaxed"
               />
             </div>
 
-            {/* Position Narrative */}
-            <BlurText
-              text="Directing luxury banquets, private VIP villa dinners, and bespoke molecular culinary experiences across the United Arab Emirates with over a decade of classical precision."
-              delay={30}
-              animateBy="words"
-              className="text-sm sm:text-base text-[#68645E] max-w-xl font-light leading-relaxed"
-            />
-
-            {/* Clean Symmetrical Metric Highlights */}
-            <div className="grid grid-cols-3 gap-4 pt-2 border-t border-b border-[#E8E4DC] py-4 text-xs font-mono">
+            {/* Metric Highlights: Hidden on mobile ratio */}
+            <div className="hidden sm:grid grid-cols-3 gap-4 pt-2 border-t border-b border-[#E8E4DC] py-4 text-xs font-mono">
               <div>
                 <span className="text-[#1A1817] font-bold block text-sm sm:text-base">12+ Years</span>
                 <span className="text-[#888888] text-[10px] block mt-0.5 uppercase tracking-wider">Culinary Mastery</span>
@@ -90,18 +89,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking, onOpenP
             </div>
 
             {/* Action CTAs */}
-            <div className="pt-2 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3">
+            <div className="pt-1 sm:pt-2 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-3">
               <button
                 onClick={onOpenBooking}
-                className="w-full sm:w-auto cursor-pointer bg-[#1A1817] hover:bg-[#383431] text-white font-mono text-xs uppercase tracking-[0.2em] px-8 py-4 transition-colors flex items-center justify-center space-x-3 shadow-minimal"
+                className="w-full sm:w-auto cursor-pointer bg-[#1A1817] hover:bg-[#383431] text-white font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] px-6 sm:px-8 py-3 sm:py-4 transition-colors flex items-center justify-center space-x-2 sm:space-x-3 shadow-minimal"
               >
                 <span>Inquire for VIP Dining</span>
-                <ChevronRight className="w-4 h-4 text-white" />
+                <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
               </button>
 
               <button
                 onClick={onOpenPortfolioSubPage}
-                className="w-full sm:w-auto cursor-pointer border border-[#1A1817] text-[#1A1817] hover:bg-[#1A1817] hover:text-white font-mono text-xs uppercase tracking-[0.2em] px-7 py-4 transition-all flex items-center justify-center space-x-2 bg-white/60"
+                className="w-full sm:w-auto cursor-pointer border border-[#1A1817] text-[#1A1817] hover:bg-[#1A1817] hover:text-white font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] px-6 sm:px-7 py-3 sm:py-4 transition-all flex items-center justify-center space-x-2 bg-white/80 backdrop-blur-xs"
               >
                 <span>View Full Portfolio</span>
               </button>
