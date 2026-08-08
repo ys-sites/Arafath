@@ -129,6 +129,19 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
             </div>
 
             <div className="space-y-4 text-xs font-mono">
+              <a
+                href={CHEF_PROFILE.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-3 p-4 bg-[#25D366]/10 border border-[#25D366]/40 hover:bg-[#25D366]/20 transition-colors group cursor-pointer"
+              >
+                <Phone className="w-4 h-4 text-[#25D366] shrink-0" />
+                <div>
+                  <span className="text-[#888888] block text-[10px]">WhatsApp Direct Chat</span>
+                  <span className="text-[#111111] font-semibold group-hover:text-[#25D366] transition-colors">{CHEF_PROFILE.phoneDisplay}</span>
+                </div>
+              </a>
+
               <div className="flex items-center space-x-3 p-4 bg-[#FAFAFA] border border-[#EEEEEE]">
                 <Mail className="w-4 h-4 text-[#99731C] shrink-0" />
                 <div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChefHat, Instagram, Mail, MapPin } from 'lucide-react';
+import { ChefHat, Instagram, Mail, MapPin, Phone } from 'lucide-react';
 import { CHEF_PROFILE } from '../data/portfolioData';
 
 export const Footer: React.FC = () => {
@@ -32,11 +32,20 @@ export const Footer: React.FC = () => {
 
             <div className="pt-2 flex items-center space-x-3">
               <a
+                href={CHEF_PROFILE.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 bg-[#25D366]/10 border border-[#25D366]/40 hover:bg-[#25D366]/30 flex items-center justify-center text-[#25D366] transition-colors"
+                title="WhatsApp Direct Chat (+971 50 302 3056)"
+              >
+                <Phone className="w-4 h-4 text-[#25D366]" />
+              </a>
+              <a
                 href={CHEF_PROFILE.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 bg-[#FAFAFA] border border-[#EEEEEE] hover:border-[#111111] flex items-center justify-center text-[#111111] transition-colors"
-                title="Instagram"
+                title="Instagram @yaseer.s.arafath"
               >
                 <Instagram className="w-4 h-4" />
               </a>
