@@ -4,8 +4,8 @@ export const CHEF_PROFILE = {
   name: "Chef Yaseer Arafath",
   title: "Head Chef | Culinary Innovator & Gastronomer",
   currentRole: "Head Chef at Slices Catering (Dubai, UAE)",
-  portraitImage: "/src/assets/images/chef_yaseer_portrait_1786113613487.jpg",
-  kitchenImage: "/src/assets/images/chef_kitchen_action_1786113637522.jpg",
+  portraitImage: "/arafath.png",
+  kitchenImage: "/arafath.png",
   instagramHandle: "@yaseer.s.arafath",
   instagramUrl: "https://www.instagram.com/yaseer.s.arafath/",
   location: "Dubai, United Arab Emirates",
@@ -22,8 +22,8 @@ Currently leading culinary direction as Head Chef at Slices Catering Dubai, Chef
 
 export const CHEF_STATS = [
   { label: "Years of Culinary Mastery", value: "12+" },
-  { label: "UAE Superchef Title", value: "1st Place 2024" },
-  { label: "Emirates Culinary Guild Medals", value: "Silver (Wathba)" },
+  { label: "UAE Superchef 2024 Title", value: "1st Place" },
+  { label: "Emirates Culinary Guild", value: "Silver Medal" },
   { label: "High-End Events Curated", value: "1,200+" },
 ];
 

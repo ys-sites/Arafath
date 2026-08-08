@@ -3,15 +3,19 @@ import { CHEF_STATS } from '../data/portfolioData';
 
 export const StatsBanner: React.FC = () => {
   return (
-    <section className="bg-[#FAFAFA] border-y border-[#EEEEEE] py-10 relative">
+    <section className="bg-[#FAF9F6] border-y border-[#E8E4DC] py-8 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center divide-y lg:divide-y-0 lg:divide-x divide-[#EEEEEE]">
+        <div className="grid grid-cols-2 lg:grid-cols-4 border border-[#E8E4DC] divide-x divide-y lg:divide-y-0 divide-[#E8E4DC] bg-white shadow-minimal">
           {CHEF_STATS.map((stat, idx) => (
-            <div key={idx} className={`pt-4 lg:pt-0 ${idx > 0 ? 'lg:pl-8' : ''}`}>
-              <div className="text-3xl sm:text-5xl font-serif text-[#111111] font-normal tracking-tight">
+            <div
+              key={idx}
+              className="flex flex-col items-center justify-center p-6 sm:p-8 text-center space-y-2 min-h-[140px] group hover:bg-[#FAF9F6] transition-colors"
+            >
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-serif text-[#1A1817] font-normal tracking-tight flex items-center justify-center min-h-[3rem]">
                 {stat.value}
               </div>
-              <p className="mt-2 text-[10px] text-[#666666] uppercase tracking-widest font-mono">
+              <div className="w-8 h-[1px] bg-[#B88E28]/40 my-1 group-hover:w-12 transition-all duration-300" />
+              <p className="text-[10px] sm:text-[11px] text-[#68645E] uppercase tracking-[0.2em] font-mono text-center">
                 {stat.label}
               </p>
             </div>
@@ -21,6 +25,7 @@ export const StatsBanner: React.FC = () => {
     </section>
   );
 };
+
 
 
 

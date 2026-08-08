@@ -36,19 +36,19 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
           {/* Action Photo Column */}
           <div className="lg:col-span-5 relative">
             <div className="h-full min-h-[420px] rounded-none bg-[#FAFAFA] border border-[#EEEEEE] p-3 shadow-minimal relative flex flex-col justify-between">
-              <div className="relative h-[360px] lg:h-[440px] overflow-hidden group">
+              <div className="relative h-[380px] lg:h-[480px] overflow-hidden group">
                 <img
-                  src={CHEF_PROFILE.kitchenImage}
-                  alt="Chef Yaseer Arafath in Kitchen Action"
+                  src="/arafath.png"
+                  alt="Chef Yaseer Arafath Head Chef Dubai"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover filter grayscale-[10%] group-hover:grayscale-0 transition-all duration-700"
+                  className="w-full h-full object-cover object-top transition-all duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1A1817]/80 via-transparent to-transparent" />
                 <div className="absolute bottom-5 left-5 right-5 text-left space-y-1">
-                  <span className="text-[10px] font-mono uppercase text-amber-200 tracking-widest font-semibold block">
-                    Haute Cuisine Precision
+                  <span className="text-[10px] font-mono uppercase text-[#B88E28] tracking-widest font-semibold block">
+                    Chef Yaseer Arafath
                   </span>
-                  <p className="text-sm font-serif text-white font-normal">Sautéing, Charcoal Grilling & Molecular Plating</p>
+                  <p className="text-sm font-serif text-white font-normal">Head Chef @ Slices Catering Dubai</p>
                 </div>
               </div>
 
