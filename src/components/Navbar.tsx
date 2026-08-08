@@ -66,18 +66,18 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Brand Logo */}
           <div
             onClick={() => handleNavClick()}
-            className="cursor-pointer flex items-center space-x-3 group text-left"
+            className="cursor-pointer flex items-center space-x-2.5 sm:space-x-3.5 group text-left"
           >
             <img
               src="/logo svg.svg"
               alt="Chef Yaseer Arafath Logo"
-              className="h-9 sm:h-11 w-auto object-contain"
+              className="h-11 sm:h-12 w-auto object-contain shrink-0 filter brightness-95 contrast-125 drop-shadow-xs"
             />
             <div>
-              <span className="text-base font-serif tracking-widest text-[#1A1817] uppercase font-bold block leading-none">
+              <span className="text-sm sm:text-base font-serif tracking-widest text-[#1A1817] uppercase font-bold block leading-none">
                 Yaseer Arafath
               </span>
-              <span className="text-[9px] tracking-widest font-mono uppercase text-[#888888] block mt-1">
+              <span className="text-[9px] sm:text-[10px] tracking-widest font-mono uppercase text-[#68645E] block mt-1 font-semibold">
                 Head Chef • Slices Dubai
               </span>
             </div>
