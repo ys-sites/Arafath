@@ -55,23 +55,23 @@ export const AIMenuCuratorModal: React.FC<AIMenuCuratorModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
-      <div className="bg-white border border-[#EAE4D7] max-w-3xl w-full p-6 sm:p-8 rounded-3xl shadow-2xl relative my-8 text-[#1C1917] animate-in zoom-in-95">
+    <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+      <div className="bg-white border border-[#EEEEEE] max-w-3xl w-full p-6 sm:p-8 shadow-2xl relative my-8 text-[#111111]">
         
         {/* Header */}
-        <div className="flex items-center justify-between pb-4 border-b border-[#EAE4D7]">
-          <div className="flex items-center space-x-3">
-            <div className="w-9 h-9 rounded-full bg-[#FAF8F5] border border-[#B88E28]/30 flex items-center justify-center shadow-sm">
-              <Sparkles className="w-4 h-4 text-[#B88E28]" />
+        <div className="flex items-center justify-between pb-4 border-b border-[#EEEEEE]">
+          <div className="flex items-center space-x-3 font-mono">
+            <div className="w-8 h-8 bg-[#FAFAFA] border border-[#EEEEEE] flex items-center justify-center">
+              <Sparkles className="w-4 h-4 text-[#99731C]" />
             </div>
             <div>
-              <h3 className="text-xl font-serif text-[#1C1917] font-normal">AI Bespoke Menu Curator</h3>
-              <p className="text-[11px] text-[#B88E28] font-mono font-semibold">Chef Yaseer Arafath • Gemini Intelligence</p>
+              <h3 className="text-xl font-serif text-[#111111] font-normal">AI Bespoke Menu Curator</h3>
+              <p className="text-[10px] text-[#99731C] uppercase tracking-wider font-semibold">Chef Yaseer Arafath • Gemini Intelligence</p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="text-[#57534E] hover:text-[#1C1917] text-xs bg-[#FAF8F5] px-3 py-1.5 rounded-full cursor-pointer border border-[#EAE4D7]"
+            className="text-[#666666] hover:text-[#111111] font-mono text-xs bg-[#FAFAFA] px-3 py-1.5 cursor-pointer border border-[#EEEEEE]"
           >
             ✕ Close
           </button>
@@ -80,17 +80,17 @@ export const AIMenuCuratorModal: React.FC<AIMenuCuratorModalProps> = ({
         {/* Input Form vs Generated Menu Result */}
         {!generatedMenu ? (
           <form onSubmit={handleGenerateMenu} className="mt-6 space-y-4 text-left">
-            <p className="text-xs text-[#57534E] leading-relaxed font-light">
+            <p className="text-xs text-[#555555] leading-relaxed font-light">
               Define your event parameters below. Chef Yaseer's AI Curator will generate an exclusive 4-course gourmet menu with dish descriptions, plating notes, and beverage pairings.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono">
               <div>
-                <label className="block text-[#6B655F] mb-1 font-mono uppercase tracking-wider text-[11px]">Event Type</label>
+                <label className="block text-[#888888] mb-1 uppercase tracking-wider text-[10px]">Event Type</label>
                 <select
                   value={eventType}
                   onChange={(e) => setEventType(e.target.value)}
-                  className="w-full bg-[#FAF8F5] border border-[#EAE4D7] rounded-xl px-4 py-3 text-[#1C1917] focus:outline-none focus:border-[#B88E28]"
+                  className="w-full bg-[#FAFAFA] border border-[#EEEEEE] px-4 py-3 text-[#111111] focus:outline-none focus:border-[#111111] font-sans"
                 >
                   <option value="Exclusive VIP Dining">Exclusive VIP Private Dining</option>
                   <option value="Gala Wedding Banquet">Gala Wedding Banquet</option>
@@ -101,11 +101,11 @@ export const AIMenuCuratorModal: React.FC<AIMenuCuratorModalProps> = ({
               </div>
 
               <div>
-                <label className="block text-[#6B655F] mb-1 font-mono uppercase tracking-wider text-[11px]">Cuisine Style</label>
+                <label className="block text-[#888888] mb-1 uppercase tracking-wider text-[10px]">Cuisine Style</label>
                 <select
                   value={cuisinePreference}
                   onChange={(e) => setCuisinePreference(e.target.value)}
-                  className="w-full bg-[#FAF8F5] border border-[#EAE4D7] rounded-xl px-4 py-3 text-[#1C1917] focus:outline-none focus:border-[#B88E28]"
+                  className="w-full bg-[#FAFAFA] border border-[#EEEEEE] px-4 py-3 text-[#111111] focus:outline-none focus:border-[#111111] font-sans"
                 >
                   <option value="Levant & Modern Fusion">Levant & Modern Middle Eastern</option>
                   <option value="Molecular Gastronomy">Molecular Gastronomy & Spheres</option>
@@ -115,22 +115,22 @@ export const AIMenuCuratorModal: React.FC<AIMenuCuratorModalProps> = ({
               </div>
 
               <div>
-                <label className="block text-[#6B655F] mb-1 font-mono uppercase tracking-wider text-[11px]">Expected Guests</label>
+                <label className="block text-[#888888] mb-1 uppercase tracking-wider text-[10px]">Expected Guests</label>
                 <input
                   type="text"
                   value={guestCount}
                   onChange={(e) => setGuestCount(e.target.value)}
-                  className="w-full bg-[#FAF8F5] border border-[#EAE4D7] rounded-xl px-4 py-3 text-[#1C1917] focus:outline-none focus:border-[#B88E28]"
+                  className="w-full bg-[#FAFAFA] border border-[#EEEEEE] px-4 py-3 text-[#111111] focus:outline-none focus:border-[#111111] font-sans"
                   placeholder="e.g. 15, 50, 200"
                 />
               </div>
 
               <div>
-                <label className="block text-[#6B655F] mb-1 font-mono uppercase tracking-wider text-[11px]">Budget / Service Tier</label>
+                <label className="block text-[#888888] mb-1 uppercase tracking-wider text-[10px]">Budget / Service Tier</label>
                 <select
                   value={budgetTier}
                   onChange={(e) => setBudgetTier(e.target.value)}
-                  className="w-full bg-[#FAF8F5] border border-[#EAE4D7] rounded-xl px-4 py-3 text-[#1C1917] focus:outline-none focus:border-[#B88E28]"
+                  className="w-full bg-[#FAFAFA] border border-[#EEEEEE] px-4 py-3 text-[#111111] focus:outline-none focus:border-[#111111] font-sans"
                 >
                   <option value="Royal Fine Dining">Royal Fine Dining (Gold Leaf & Truffle)</option>
                   <option value="Executive Premium">Executive Premium (4-Course)</option>
@@ -139,24 +139,24 @@ export const AIMenuCuratorModal: React.FC<AIMenuCuratorModalProps> = ({
               </div>
             </div>
 
-            <div className="text-xs">
-              <label className="block text-[#6B655F] mb-1 font-mono uppercase tracking-wider text-[11px]">Dietary Preferences</label>
+            <div className="text-xs font-mono">
+              <label className="block text-[#888888] mb-1 uppercase tracking-wider text-[10px]">Dietary Preferences</label>
               <input
                 type="text"
                 value={dietary}
                 onChange={(e) => setDietary(e.target.value)}
-                className="w-full bg-[#FAF8F5] border border-[#EAE4D7] rounded-xl px-4 py-3 text-[#1C1917] focus:outline-none focus:border-[#B88E28]"
+                className="w-full bg-[#FAFAFA] border border-[#EEEEEE] px-4 py-3 text-[#111111] focus:outline-none focus:border-[#111111] font-sans"
                 placeholder="e.g. Halal, Gluten-Free, Keto, Vegan option for 4 guests"
               />
             </div>
 
-            <div className="text-xs">
-              <label className="block text-[#6B655F] mb-1 font-mono uppercase tracking-wider text-[11px]">Theme & Plating Preferences</label>
+            <div className="text-xs font-mono">
+              <label className="block text-[#888888] mb-1 uppercase tracking-wider text-[10px]">Theme & Plating Preferences</label>
               <textarea
                 value={specificNotes}
                 onChange={(e) => setSpecificNotes(e.target.value)}
                 rows={2}
-                className="w-full bg-[#FAF8F5] border border-[#EAE4D7] rounded-xl px-4 py-3 text-[#1C1917] focus:outline-none focus:border-[#B88E28] resize-none font-light"
+                className="w-full bg-[#FAFAFA] border border-[#EEEEEE] px-4 py-3 text-[#111111] focus:outline-none focus:border-[#111111] resize-none font-sans font-light"
                 placeholder="Specific flavor notes, decor style, or special requests..."
               />
             </div>
@@ -165,7 +165,7 @@ export const AIMenuCuratorModal: React.FC<AIMenuCuratorModalProps> = ({
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-[#1C1917] hover:bg-[#B88E28] text-white font-semibold text-xs uppercase tracking-widest py-4 rounded-xl shadow-md transition-all flex items-center justify-center space-x-2 cursor-pointer disabled:opacity-50"
+                className="w-full bg-[#111111] hover:bg-[#333333] text-white font-mono text-xs uppercase tracking-widest py-4 transition-colors flex items-center justify-center space-x-2 cursor-pointer disabled:opacity-50"
               >
                 {loading ? (
                   <>
@@ -185,46 +185,46 @@ export const AIMenuCuratorModal: React.FC<AIMenuCuratorModalProps> = ({
           /* Menu Result Display */
           <div className="mt-6 space-y-5 text-left max-h-[70vh] overflow-y-auto pr-2">
             
-            <div className="p-5 bg-[#FAF8F5] border border-[#EAE4D7] rounded-2xl shadow-sm">
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono uppercase text-[#B88E28] bg-white px-2.5 py-0.5 rounded border border-[#B88E28]/30 font-semibold">
+            <div className="p-5 bg-[#FAFAFA] border border-[#EEEEEE]">
+              <div className="flex items-center justify-between font-mono">
+                <span className="text-[10px] uppercase text-[#99731C] bg-white px-2.5 py-0.5 border border-[#EEEEEE] font-semibold">
                   Custom Proposal Result
                 </span>
-                <span className="text-xs text-[#6B655F]">Lead Time: {generatedMenu.estimatedPrepLeadTime}</span>
+                <span className="text-xs text-[#888888]">Lead Time: {generatedMenu.estimatedPrepLeadTime}</span>
               </div>
-              <h4 className="text-2xl font-serif font-normal text-[#1C1917] mt-2">
+              <h4 className="text-2xl font-serif font-normal text-[#111111] mt-2">
                 {generatedMenu.menuTitle}
               </h4>
-              <p className="text-xs text-[#44403C] mt-1 leading-relaxed font-light">
+              <p className="text-xs text-[#555555] mt-1 leading-relaxed font-light">
                 {generatedMenu.conceptOverview}
               </p>
             </div>
 
             {/* Courses list */}
             <div className="space-y-4">
-              <span className="text-xs font-mono uppercase text-[#B88E28] font-bold tracking-wider block">Proposed 4-Course Progression</span>
+              <span className="text-xs font-mono uppercase text-[#99731C] font-bold tracking-wider block">Proposed 4-Course Progression</span>
 
               {generatedMenu.courses.map((course, idx) => (
-                <div key={idx} className="bg-[#FAF8F5] border border-[#EAE4D7] p-5 rounded-2xl space-y-2 text-xs shadow-sm">
-                  <div className="flex items-center justify-between">
-                    <span className="text-[#B88E28] font-mono text-[11px] font-bold">
+                <div key={idx} className="bg-[#FAFAFA] border border-[#EEEEEE] p-5 space-y-2 text-xs">
+                  <div className="flex items-center justify-between font-mono">
+                    <span className="text-[#99731C] text-[11px] font-bold">
                       {course.courseName}
                     </span>
-                    <span className="text-[10px] text-[#6B655F]">Course 0{idx + 1}</span>
+                    <span className="text-[10px] text-[#888888]">Course 0{idx + 1}</span>
                   </div>
 
-                  <h5 className="text-[#1C1917] font-serif font-normal text-base">
+                  <h5 className="text-[#111111] font-serif font-normal text-base">
                     {course.dishTitle}
                   </h5>
 
-                  <p className="text-[#44403C] font-light">{course.description}</p>
+                  <p className="text-[#555555] font-light">{course.description}</p>
 
-                  <div className="pt-2 border-t border-[#EAE4D7] grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px]">
-                    <div className="text-[#6B655F]">
-                      <strong className="text-[#B88E28]">Plating:</strong> {course.platingNotes}
+                  <div className="pt-2 border-t border-[#EEEEEE] grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] font-mono">
+                    <div className="text-[#888888]">
+                      <strong className="text-[#99731C]">Plating:</strong> {course.platingNotes}
                     </div>
-                    <div className="text-[#6B655F]">
-                      <strong className="text-[#B88E28]">Pairing:</strong> {course.pairingSuggestion}
+                    <div className="text-[#888888]">
+                      <strong className="text-[#99731C]">Pairing:</strong> {course.pairingSuggestion}
                     </div>
                   </div>
                 </div>
@@ -232,9 +232,9 @@ export const AIMenuCuratorModal: React.FC<AIMenuCuratorModalProps> = ({
             </div>
 
             {/* Chef Special Touch */}
-            <div className="p-4 bg-[#FAF8F5] border border-[#B88E28]/30 rounded-2xl text-xs space-y-1">
-              <span className="font-semibold text-[#B88E28] uppercase tracking-wider block">Chef Yaseer's Signature Finishing Touch:</span>
-              <p className="text-[#44403C] font-light">{generatedMenu.chefSpecialTouch}</p>
+            <div className="p-4 bg-[#FAFAFA] border border-[#EEEEEE] text-xs space-y-1 font-mono">
+              <span className="font-semibold text-[#99731C] uppercase tracking-wider block">Chef Yaseer's Signature Finishing Touch:</span>
+              <p className="text-[#555555] font-sans font-light">{generatedMenu.chefSpecialTouch}</p>
             </div>
 
             {/* Action buttons */}
@@ -245,7 +245,7 @@ export const AIMenuCuratorModal: React.FC<AIMenuCuratorModalProps> = ({
                   onAttachMenuToBooking(generatedMenu.menuTitle, summary);
                   onClose();
                 }}
-                className="flex-1 bg-[#1C1917] hover:bg-[#B88E28] text-white font-semibold text-xs uppercase tracking-widest py-3.5 rounded-xl shadow-md transition-all text-center cursor-pointer flex items-center justify-center space-x-2"
+                className="flex-1 bg-[#111111] hover:bg-[#333333] text-white font-mono text-xs uppercase tracking-widest py-3.5 transition-colors text-center cursor-pointer flex items-center justify-center space-x-2"
               >
                 <CheckCircle2 className="w-4 h-4 text-white" />
                 <span>Attach Menu to Booking Request</span>
@@ -253,7 +253,7 @@ export const AIMenuCuratorModal: React.FC<AIMenuCuratorModalProps> = ({
 
               <button
                 onClick={() => setGeneratedMenu(null)}
-                className="bg-[#FAF8F5] text-[#57534E] hover:text-[#1C1917] text-xs px-4 py-3.5 rounded-xl border border-[#EAE4D7] cursor-pointer flex items-center justify-center space-x-1"
+                className="bg-[#FAFAFA] text-[#666666] hover:text-[#111111] font-mono text-xs px-4 py-3.5 border border-[#EEEEEE] cursor-pointer flex items-center justify-center space-x-1"
               >
                 <RefreshCw className="w-3.5 h-3.5" />
                 <span>Adjust Parameters</span>
@@ -267,4 +267,5 @@ export const AIMenuCuratorModal: React.FC<AIMenuCuratorModalProps> = ({
     </div>
   );
 };
+
 

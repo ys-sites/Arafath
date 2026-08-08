@@ -14,19 +14,19 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
   );
 
   return (
-    <section id="about" className="py-28 bg-[#FAF8F5] text-[#1C1917] relative">
+    <section id="about" className="py-24 bg-[#FFFFFF] text-[#111111] relative border-b border-[#EEEEEE]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#B88E28] bg-white px-4 py-1.5 rounded-full border border-[#B88E28]/30 font-semibold inline-block shadow-sm">
-            Biography & Master Credentials
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#99731C] font-semibold block">
+            Biography & Credentials
           </span>
-          <h2 className="text-4xl sm:text-6xl font-serif text-[#1C1917] tracking-tight font-normal">
-            A Decade of <span className="text-gold-gradient italic font-serif">Culinary Distinction</span>
+          <h2 className="text-4xl sm:text-6xl font-serif text-[#111111] tracking-tight font-normal">
+            A Decade of <span className="italic font-serif font-light text-[#444444]">Culinary Distinction</span>
           </h2>
-          <p className="text-[#57534E] text-sm sm:text-base leading-relaxed font-light">
-            From formal catering management studies at Bharathiar University to steering operations on the QE2 ocean liner and leading high-volume culinary excellence as Head Chef at Slices Catering Dubai.
+          <p className="text-[#666666] text-sm sm:text-base leading-relaxed font-light">
+            From formal catering management studies at Bharathiar University to steering operations on the QE2 ocean liner and leading culinary directorship as Head Chef at Slices Catering Dubai.
           </p>
         </div>
 
@@ -35,15 +35,15 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
           
           {/* Action Photo Column */}
           <div className="lg:col-span-5 relative">
-            <div className="h-full min-h-[420px] rounded-3xl overflow-hidden bg-white border border-[#EAE4D7] p-3 shadow-editorial relative flex flex-col justify-between">
-              <div className="relative h-[360px] lg:h-[440px] rounded-2xl overflow-hidden group">
+            <div className="h-full min-h-[420px] rounded-none bg-[#FAFAFA] border border-[#EEEEEE] p-3 shadow-minimal relative flex flex-col justify-between">
+              <div className="relative h-[360px] lg:h-[440px] overflow-hidden group">
                 <img
                   src={CHEF_PROFILE.kitchenImage}
                   alt="Chef Yaseer Arafath in Kitchen Action"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
+                  className="w-full h-full object-cover filter grayscale-[10%] group-hover:grayscale-0 transition-all duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1C1917]/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/80 via-transparent to-transparent" />
                 <div className="absolute bottom-5 left-5 right-5 text-left space-y-1">
                   <span className="text-[10px] font-mono uppercase text-amber-200 tracking-widest font-semibold block">
                     Haute Cuisine Precision
@@ -53,45 +53,45 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
               </div>
 
               {/* Quick Credential Strip */}
-              <div className="mt-3 p-3.5 bg-[#FAF8F5] rounded-xl border border-[#EAE4D7] flex items-center justify-between text-xs text-[#57534E]">
-                <span className="font-semibold text-[#B88E28]">Bharathiar University Alumnus</span>
-                <span className="font-mono text-[11px] text-[#6B655F]">Slices Catering Dubai</span>
+              <div className="mt-3 p-3 bg-white border border-[#EEEEEE] flex items-center justify-between text-xs text-[#555555]">
+                <span className="font-mono text-[11px] font-semibold text-[#111111]">Bharathiar University Alumnus</span>
+                <span className="font-mono text-[11px] text-[#888888]">Slices Catering Dubai</span>
               </div>
             </div>
           </div>
 
           {/* Editorial Bio Text Box */}
-          <div className="lg:col-span-7 bg-white border border-[#EAE4D7] p-8 sm:p-10 rounded-3xl shadow-editorial flex flex-col justify-between space-y-8 text-left">
+          <div className="lg:col-span-7 bg-white border border-[#EEEEEE] p-8 sm:p-10 shadow-minimal flex flex-col justify-between space-y-8 text-left">
             <div className="space-y-5">
-              <div className="flex items-center space-x-3 text-[#B88E28]">
-                <ChefHat className="w-6 h-6" />
-                <h3 className="text-2xl sm:text-3xl font-serif text-[#1C1917] font-normal">The Journey of Head Chef Yaseer Arafath</h3>
+              <div className="flex items-center space-x-3 text-[#111111]">
+                <ChefHat className="w-5 h-5 text-[#99731C]" />
+                <h3 className="text-2xl sm:text-3xl font-serif text-[#111111] font-normal">The Journey of Head Chef Yaseer Arafath</h3>
               </div>
-              <p className="text-[#44403C] text-sm sm:text-base leading-relaxed whitespace-pre-line font-light">
+              <p className="text-[#444444] text-sm sm:text-base leading-relaxed whitespace-pre-line font-light">
                 {CHEF_PROFILE.bio}
               </p>
             </div>
 
             {/* Culinary Methodologies */}
-            <div className="space-y-3 pt-6 border-t border-[#EAE4D7]">
-              <span className="text-xs font-mono text-[#B88E28] uppercase tracking-widest block font-semibold">
+            <div className="space-y-3 pt-6 border-t border-[#EEEEEE]">
+              <span className="text-[11px] font-mono text-[#888888] uppercase tracking-widest block font-semibold">
                 Signature Techniques & Expertise
               </span>
-              <div className="flex flex-wrap gap-2.5 text-xs">
-                <span className="bg-[#FAF8F5] text-[#1C1917] border border-[#EAE4D7] px-4 py-2 rounded-xl flex items-center space-x-2 font-medium hover:border-[#B88E28]/40 transition-colors">
-                  <Flame className="w-3.5 h-3.5 text-[#B88E28]" />
+              <div className="flex flex-wrap gap-2 text-xs font-mono">
+                <span className="bg-[#FAFAFA] text-[#111111] border border-[#EEEEEE] px-3.5 py-2 flex items-center space-x-2">
+                  <Flame className="w-3.5 h-3.5 text-[#99731C]" />
                   <span>Binchotan Charcoal Grilling</span>
                 </span>
-                <span className="bg-[#FAF8F5] text-[#1C1917] border border-[#EAE4D7] px-4 py-2 rounded-xl flex items-center space-x-2 font-medium hover:border-[#B88E28]/40 transition-colors">
-                  <Sparkles className="w-3.5 h-3.5 text-[#B88E28]" />
+                <span className="bg-[#FAFAFA] text-[#111111] border border-[#EEEEEE] px-3.5 py-2 flex items-center space-x-2">
+                  <Sparkles className="w-3.5 h-3.5 text-[#99731C]" />
                   <span>Molecular Gastronomy & Spheres</span>
                 </span>
-                <span className="bg-[#FAF8F5] text-[#1C1917] border border-[#EAE4D7] px-4 py-2 rounded-xl flex items-center space-x-2 font-medium hover:border-[#B88E28]/40 transition-colors">
-                  <Building2 className="w-3.5 h-3.5 text-[#B88E28]" />
+                <span className="bg-[#FAFAFA] text-[#111111] border border-[#EEEEEE] px-3.5 py-2 flex items-center space-x-2">
+                  <Building2 className="w-3.5 h-3.5 text-[#99731C]" />
                   <span>High-Capacity Banquet Operations</span>
                 </span>
-                <span className="bg-[#FAF8F5] text-[#1C1917] border border-[#EAE4D7] px-4 py-2 rounded-xl flex items-center space-x-2 font-medium hover:border-[#B88E28]/40 transition-colors">
-                  <GraduationCap className="w-3.5 h-3.5 text-[#B88E28]" />
+                <span className="bg-[#FAFAFA] text-[#111111] border border-[#EEEEEE] px-3.5 py-2 flex items-center space-x-2">
+                  <GraduationCap className="w-3.5 h-3.5 text-[#99731C]" />
                   <span>Menu Engineering & Audits</span>
                 </span>
               </div>
@@ -101,9 +101,9 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
             <div className="pt-2">
               <button
                 onClick={onOpenBooking}
-                className="cursor-pointer bg-[#FAF8F5] hover:bg-[#F4F0E8] text-[#B88E28] border border-[#B88E28]/40 hover:border-[#B88E28] text-xs uppercase tracking-widest px-6 py-3.5 rounded-xl font-semibold flex items-center space-x-2 transition-all shadow-sm"
+                className="cursor-pointer bg-[#111111] hover:bg-[#333333] text-white text-xs font-mono uppercase tracking-widest px-6 py-3.5 transition-colors flex items-center space-x-2"
               >
-                <Calendar className="w-4 h-4 text-[#B88E28]" />
+                <Calendar className="w-4 h-4 text-white" />
                 <span>Inquire for Executive Consultation</span>
               </button>
             </div>
@@ -115,39 +115,39 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
           
           {/* Degree Card */}
-          <div className="bg-white border border-[#EAE4D7] p-8 rounded-3xl shadow-editorial space-y-4 hover:border-[#B88E28]/40 transition-colors">
+          <div className="bg-white border border-[#EEEEEE] p-8 shadow-minimal space-y-4 hover:border-[#111111] transition-colors">
             <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#FAF8F5] border border-[#B88E28]/30 flex items-center justify-center shrink-0">
-                <GraduationCap className="w-6 h-6 text-[#B88E28]" />
+              <div className="w-10 h-10 bg-[#FAFAFA] border border-[#EEEEEE] flex items-center justify-center shrink-0">
+                <GraduationCap className="w-5 h-5 text-[#111111]" />
               </div>
               <div>
-                <span className="text-[11px] font-mono uppercase text-[#B88E28] tracking-wider font-semibold">Academic Qualification</span>
-                <h4 className="text-[#1C1917] font-serif text-lg font-normal mt-0.5">Bachelor's in Restaurant, Culinary & Catering Management</h4>
-                <p className="text-[#6B655F] text-xs mt-1">Bharathiar University (2007–2010)</p>
+                <span className="text-[10px] font-mono uppercase text-[#99731C] tracking-wider font-semibold">Academic Qualification</span>
+                <h4 className="text-[#111111] font-serif text-lg font-normal mt-0.5">Bachelor's in Restaurant, Culinary & Catering Management</h4>
+                <p className="text-[#888888] text-xs mt-1 font-mono">Bharathiar University (2007–2010)</p>
               </div>
             </div>
-            <p className="text-[#44403C] text-xs sm:text-sm leading-relaxed pl-16 font-light">
+            <p className="text-[#555555] text-xs sm:text-sm leading-relaxed pl-14 font-light">
               Full 3-year formal degree covering classical food science, large-scale kitchen operations, menu engineering, sanitation, and catering logistics.
             </p>
           </div>
 
           {/* Guild Recognition Card */}
-          <div className="bg-white border border-[#EAE4D7] p-8 rounded-3xl shadow-editorial space-y-4 hover:border-[#B88E28]/40 transition-colors">
-            <div className="flex items-center space-x-3 text-[#B88E28]">
-              <Award className="w-6 h-6" />
-              <h4 className="text-[#1C1917] font-serif text-lg font-normal">Emirates Culinary Guild Recognition</h4>
+          <div className="bg-white border border-[#EEEEEE] p-8 shadow-minimal space-y-4 hover:border-[#111111] transition-colors">
+            <div className="flex items-center space-x-3 text-[#111111]">
+              <Award className="w-5 h-5 text-[#99731C]" />
+              <h4 className="text-[#111111] font-serif text-lg font-normal">Emirates Culinary Guild Recognition</h4>
             </div>
-            <ul className="space-y-3 text-xs sm:text-sm text-[#44403C] font-light">
+            <ul className="space-y-3 text-xs sm:text-sm text-[#555555] font-light">
               <li className="flex items-start space-x-3">
-                <CheckCircle2 className="w-4 h-4 text-[#B88E28] shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-4 h-4 text-[#99731C] shrink-0 mt-0.5" />
                 <span>Silver Medalist at Wathba Dates Festival & Auction (Dec 2023) for Levant Main Course.</span>
               </li>
               <li className="flex items-start space-x-3">
-                <CheckCircle2 className="w-4 h-4 text-[#B88E28] shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-4 h-4 text-[#99731C] shrink-0 mt-0.5" />
                 <span>ExpoCulinaire Salon Culinaire medalist recognized by Worldchefs international judges.</span>
               </li>
               <li className="flex items-start space-x-3">
-                <CheckCircle2 className="w-4 h-4 text-[#B88E28] shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-4 h-4 text-[#99731C] shrink-0 mt-0.5" />
                 <span>Guest Chief Judge & Demonstrator at Sir Issac Newton Hotel Management Dept.</span>
               </li>
             </ul>
@@ -156,23 +156,23 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
         </div>
 
         {/* Career Timeline */}
-        <div className="mt-24 text-left">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-10 pb-5 border-b border-[#EAE4D7] gap-4">
+        <div className="mt-20 text-left">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 pb-4 border-b border-[#EEEEEE] gap-4">
             <div>
-              <h3 className="text-3xl font-serif text-[#1C1917] font-normal">Career Milestones Timeline</h3>
-              <p className="text-[#6B655F] text-xs font-light mt-1">Key credentials across competitions, executive roles, and academic foundations</p>
+              <h3 className="text-3xl font-serif text-[#111111] font-normal">Career Milestones Timeline</h3>
+              <p className="text-[#888888] text-xs font-mono mt-1">Key credentials across competitions, executive roles, and academic foundations</p>
             </div>
 
             {/* Filter Tabs */}
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 font-mono text-xs">
               {(['all', 'award', 'experience', 'education'] as const).map(tabKey => (
                 <button
                   key={tabKey}
                   onClick={() => setActiveTab(tabKey)}
-                  className={`text-xs px-4 py-2 rounded-full cursor-pointer uppercase tracking-wider font-semibold transition-all ${
+                  className={`px-4 py-2 uppercase tracking-wider font-semibold transition-all ${
                     activeTab === tabKey
-                      ? 'bg-[#1C1917] text-white shadow-md'
-                      : 'bg-white text-[#57534E] hover:text-[#1C1917] border border-[#EAE4D7]'
+                      ? 'bg-[#111111] text-white'
+                      : 'bg-white text-[#666666] hover:text-[#111111] border border-[#EEEEEE]'
                   }`}
                 >
                   {tabKey === 'all' ? 'All Milestones' : tabKey === 'award' ? 'Awards & Medals' : tabKey === 'experience' ? 'Executive Roles' : 'Education'}
@@ -185,30 +185,30 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
             {filteredMilestones.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-white border border-[#EAE4D7] hover:border-[#B88E28]/50 p-7 rounded-2xl transition-all duration-300 hover:-translate-y-1 shadow-editorial flex flex-col justify-between group"
+                className="bg-white border border-[#EEEEEE] hover:border-[#111111] p-7 transition-all duration-300 shadow-minimal flex flex-col justify-between group"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="text-[#B88E28] font-mono text-xs font-semibold bg-[#FAF8F5] px-3 py-1 rounded-md border border-[#B88E28]/30">
+                    <span className="text-[#111111] font-mono text-xs font-semibold bg-[#FAFAFA] px-3 py-1 border border-[#EEEEEE]">
                       {item.year}
                     </span>
                     {item.highlightBadge && (
-                      <span className="text-[10px] uppercase font-mono text-[#6B655F] bg-[#FAF8F5] px-2.5 py-0.5 rounded border border-[#EAE4D7]">
+                      <span className="text-[10px] uppercase font-mono text-[#888888] bg-[#FAFAFA] px-2.5 py-0.5 border border-[#EEEEEE]">
                         {item.highlightBadge}
                       </span>
                     )}
                   </div>
 
                   <div>
-                    <h4 className="text-[#1C1917] font-serif text-lg font-normal group-hover:text-[#B88E28] transition-colors">
+                    <h4 className="text-[#111111] font-serif text-lg font-normal group-hover:text-[#99731C] transition-colors">
                       {item.title}
                     </h4>
-                    <p className="text-[#6B655F] text-xs mt-1">
-                      {item.organization} • <span className="text-[#B88E28]">{item.location}</span>
+                    <p className="text-[#888888] text-xs mt-1 font-mono">
+                      {item.organization} • <span className="text-[#111111]">{item.location}</span>
                     </p>
                   </div>
 
-                  <p className="text-[#44403C] text-xs leading-relaxed font-light">
+                  <p className="text-[#555555] text-xs leading-relaxed font-light">
                     {item.description}
                   </p>
                 </div>
@@ -221,6 +221,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
     </section>
   );
 };
+
 
 
 

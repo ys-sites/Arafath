@@ -43,7 +43,7 @@ export default function App() {
   );
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] text-[#1C1917] font-sans selection:bg-[#B88E28] selection:text-white relative">
+    <div className="min-h-screen bg-[#FFFFFF] text-[#111111] font-sans selection:bg-[#111111] selection:text-white relative">
       {/* Top Fixed Header */}
       <Navbar
         onOpenBooking={handleScrollToBooking}

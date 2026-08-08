@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, Trophy, ChevronRight, Calendar, Sparkles, MapPin, ChefHat } from 'lucide-react';
+import { ChevronRight, Calendar, Sparkles, Trophy, MapPin } from 'lucide-react';
 import { CHEF_PROFILE } from '../data/portfolioData';
 
 interface HeroSectionProps {
@@ -16,148 +16,116 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking, onOpenA
   };
 
   return (
-    <section className="relative min-h-screen pt-28 sm:pt-36 pb-16 sm:pb-24 flex items-center overflow-hidden bg-[#FAF8F5] text-[#1C1917]">
-      {/* Warm Soft Glow Gradients */}
-      <div className="absolute top-1/4 -right-20 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-[#F4F0E8] rounded-full blur-[100px] sm:blur-[140px] pointer-events-none" />
-      <div className="absolute -bottom-20 -left-20 w-[280px] sm:w-[450px] h-[280px] sm:h-[450px] bg-[#EAE4D7]/60 rounded-full blur-[90px] sm:blur-[120px] pointer-events-none" />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <section className="relative min-h-screen pt-28 sm:pt-36 pb-16 sm:pb-24 flex items-center bg-[#FFFFFF] text-[#111111] border-b border-[#EEEEEE]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           
-          {/* Main Editorial Copy Column */}
-          <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-left">
+          {/* Left Column: Ultra-Minimalist Copy & Key Info */}
+          <div className="lg:col-span-6 space-y-8 text-left">
             
-            {/* Accolades & Title Pill */}
-            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-              <span className="inline-flex items-center space-x-2 bg-white border border-[#B88E28]/40 text-[#B88E28] text-[11px] sm:text-xs px-3.5 sm:px-4 py-1.5 rounded-full font-semibold uppercase tracking-wider shadow-sm">
-                <Trophy className="w-3.5 h-3.5 text-[#B88E28] shrink-0" />
-                <span>UAE Superchef 2024 Winner</span>
-              </span>
-
-              <span className="inline-flex items-center space-x-2 bg-white border border-[#EAE4D7] text-[#57534E] text-[11px] sm:text-xs px-3 sm:px-3.5 py-1.5 rounded-full font-medium tracking-wider shadow-sm">
-                <Award className="w-3.5 h-3.5 text-[#B88E28] shrink-0" />
-                <span>Emirates Culinary Guild Recognition</span>
-              </span>
-
-              <span className="inline-flex items-center space-x-1 text-[#6B655F] text-[11px] sm:text-xs px-2 py-1 font-mono">
-                <MapPin className="w-3.5 h-3.5 text-[#B88E28] shrink-0" />
-                <span>Dubai, UAE</span>
-              </span>
+            {/* Minimalist Pill & Location */}
+            <div className="space-y-3">
+              <div className="flex flex-wrap items-center gap-3 text-[11px] font-mono uppercase tracking-[0.2em] text-[#666666]">
+                <span className="text-[#111111] font-semibold">Head Chef</span>
+                <span>•</span>
+                <span>Slices Catering Dubai</span>
+                <span>•</span>
+                <span className="text-[#99731C] font-semibold">UAE Superchef 2024</span>
+              </div>
+              
+              <div className="w-12 h-[1px] bg-[#111111]" />
             </div>
 
-            {/* Chef Name & Editorial Heading */}
-            <div className="space-y-3 sm:space-y-4">
-              <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[#B88E28] font-semibold block">
-                Editorial Culinary Portfolio
-              </span>
-              <h1 className="text-4xl sm:text-7xl lg:text-8xl font-serif text-[#1C1917] font-normal leading-[1.0] sm:leading-[0.95] tracking-tight">
+            {/* Chef Name & Title */}
+            <div className="space-y-4">
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif text-[#111111] font-normal leading-[1.0] tracking-tight">
                 CHEF YASEER <br />
-                <span className="text-gold-gradient italic font-serif font-light">ARAFATH</span>
+                <span className="italic font-serif font-light text-[#444444]">ARAFATH</span>
               </h1>
-              <p className="text-lg sm:text-2xl font-serif text-[#57534E] tracking-wide font-light italic border-l-2 border-[#B88E28]/50 pl-3.5 sm:pl-4 py-1">
-                Head Chef at Slices Catering Dubai · Master of Modern Gastronomy & Levant Fusion
+              
+              <p className="text-base sm:text-lg font-serif text-[#555555] font-light italic leading-relaxed">
+                Head Chef at Slices Catering Dubai · Master of Modern Gastronomy & Levant Culinary Fusion
               </p>
             </div>
 
             {/* Position Narrative */}
-            <p className="text-sm sm:text-lg text-[#44403C] max-w-2xl font-light leading-relaxed">
-              Crafting understated high-end culinary experiences, royal banquets, and molecular gastronomy across the United Arab Emirates. Blending over a decade of classical technique with Arabian cultural provenance.
+            <p className="text-sm sm:text-base text-[#666666] max-w-xl font-light leading-relaxed">
+              Directing large-scale luxury banquets, private VIP villa dinners, and bespoke molecular culinary experiences across the United Arab Emirates. Over 10 years of classical technique fused with Arabian provenance.
             </p>
 
-            {/* Career Scaffolding Highlights */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 pt-1 max-w-2xl text-xs">
-              <div className="bg-white border border-[#EAE4D7] p-3.5 sm:p-4 rounded-xl shadow-editorial hover:border-[#B88E28]/50 transition-colors">
-                <span className="text-[#B88E28] font-serif text-xs sm:text-sm font-semibold block uppercase tracking-wider">Slices Catering</span>
-                <span className="text-[#6B655F] text-[10px] sm:text-[11px] block mt-0.5 sm:mt-1">Head Chef Directorship</span>
+            {/* Key Scaffolding Highlights */}
+            <div className="grid grid-cols-3 gap-4 pt-2 border-t border-b border-[#EEEEEE] py-4 text-xs font-mono">
+              <div>
+                <span className="text-[#111111] font-bold block">Slices Catering</span>
+                <span className="text-[#888888] text-[10px] block mt-0.5 uppercase tracking-wider">Head Chef</span>
               </div>
-              <div className="bg-white border border-[#EAE4D7] p-3.5 sm:p-4 rounded-xl shadow-editorial hover:border-[#B88E28]/50 transition-colors">
-                <span className="text-[#1C1917] font-serif text-xs sm:text-sm font-semibold block uppercase tracking-wider">QE2 Liner Dubai</span>
-                <span className="text-[#6B655F] text-[10px] sm:text-[11px] block mt-0.5 sm:mt-1">Classic Fine Dining</span>
+              <div>
+                <span className="text-[#111111] font-bold block">Superchef '24</span>
+                <span className="text-[#888888] text-[10px] block mt-0.5 uppercase tracking-wider">Winner</span>
               </div>
-              <div className="bg-white border border-[#EAE4D7] p-3.5 sm:p-4 rounded-xl shadow-editorial hover:border-[#B88E28]/50 transition-colors col-span-2 sm:col-span-1">
-                <span className="text-[#B88E28] font-serif text-xs sm:text-sm font-semibold block uppercase tracking-wider">10+ Years</span>
-                <span className="text-[#6B655F] text-[10px] sm:text-[11px] block mt-0.5 sm:mt-1">Culinary Leadership</span>
+              <div>
+                <span className="text-[#111111] font-bold block">10+ Years</span>
+                <span className="text-[#888888] text-[10px] block mt-0.5 uppercase tracking-wider">Experience</span>
               </div>
             </div>
 
-            {/* Main Action Buttons */}
-            <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
+            {/* Action Buttons */}
+            <div className="pt-2 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3">
               <button
                 onClick={onOpenBooking}
-                className="w-full sm:w-auto cursor-pointer bg-[#1C1917] hover:bg-[#B88E28] text-white font-semibold text-xs uppercase tracking-widest px-7 py-3.5 sm:py-4 rounded-full shadow-lg transition-all flex items-center justify-center space-x-3 transform hover:-translate-y-0.5"
+                className="w-full sm:w-auto cursor-pointer bg-[#111111] hover:bg-[#333333] text-white font-medium text-xs uppercase tracking-widest px-8 py-4 rounded-none transition-colors flex items-center justify-center space-x-3"
               >
-                <Calendar className="w-4 h-4 text-white" />
                 <span>Inquire for VIP Dining</span>
-                <ChevronRight className="w-4 h-4" />
+                <ChevronRight className="w-4 h-4 text-white" />
               </button>
 
               <button
                 onClick={() => scrollToSection('gallery')}
-                className="w-full sm:w-auto cursor-pointer bg-white hover:bg-[#F4F0E8] text-[#1C1917] text-xs uppercase tracking-widest px-6 py-3.5 sm:py-4 rounded-full border border-[#EAE4D7] hover:border-[#B88E28] flex items-center justify-center space-x-2 transition-all font-semibold shadow-sm"
+                className="w-full sm:w-auto cursor-pointer border border-[#111111] text-[#111111] hover:bg-[#111111] hover:text-white font-medium text-xs uppercase tracking-widest px-7 py-4 rounded-none transition-all flex items-center justify-center space-x-2"
               >
-                <ChefHat className="w-4 h-4 text-[#B88E28]" />
                 <span>View Portfolio</span>
               </button>
 
               <button
                 onClick={onOpenAIMenu}
-                className="w-full sm:w-auto cursor-pointer bg-white hover:bg-[#F4F0E8] text-[#B88E28] text-xs uppercase tracking-widest px-6 py-3.5 sm:py-4 rounded-full border border-[#B88E28]/30 flex items-center justify-center space-x-2 transition-all font-semibold shadow-sm"
+                className="w-full sm:w-auto cursor-pointer text-[#666666] hover:text-[#111111] font-mono text-xs uppercase tracking-wider px-4 py-4 flex items-center justify-center space-x-1.5 transition-colors"
               >
-                <Sparkles className="w-4 h-4 text-[#B88E28]" />
+                <Sparkles className="w-3.5 h-3.5 text-[#99731C]" />
                 <span>Menu Concierge</span>
               </button>
             </div>
 
           </div>
 
-          {/* Hero Portrait Column */}
-          <div className="lg:col-span-5 relative mt-6 lg:mt-0">
-            <div className="relative mx-auto max-w-md lg:max-w-none">
+          {/* Right Column: hero.png Minimalist Presentation */}
+          <div className="lg:col-span-6 relative mt-4 lg:mt-0">
+            <div className="relative mx-auto">
               
-              {/* Outer Glow Frame */}
-              <div className="absolute -inset-1 rounded-[2.25rem] sm:rounded-[2.5rem] bg-gradient-to-tr from-[#B88E28]/30 via-transparent to-[#B88E28]/10 blur-md opacity-60" />
-
-              {/* Portrait Frame */}
-              <div className="relative rounded-[2rem] sm:rounded-[2.25rem] bg-white border border-[#EAE4D7] p-2.5 sm:p-3 shadow-2xl overflow-hidden">
-                
-                {/* Character Image Container */}
-                <div className="relative h-[340px] sm:h-[480px] rounded-[1.5rem] sm:rounded-[1.75rem] overflow-hidden group bg-[#FAF8F5]">
+              {/* Minimalist Image Container */}
+              <div className="relative rounded-none border border-[#EEEEEE] p-2 bg-[#FAFAFA] shadow-minimal overflow-hidden">
+                <div className="relative h-[380px] sm:h-[500px] overflow-hidden">
                   <img
-                    src={CHEF_PROFILE.portraitImage}
-                    alt="Chef Yaseer Arafath Executive Head Chef Portrait"
+                    src="/hero.png"
+                    alt="Chef Yaseer Arafath Plating Salmon Dish"
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-1000 ease-out"
+                    className="w-full h-full object-cover object-center filter grayscale-[15%] contrast-[105%] hover:grayscale-0 transition-all duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1C1917]/85 via-transparent to-transparent" />
                   
-                  {/* Floating Superchef Badge */}
-                  <div className="absolute top-4 left-4 sm:top-5 sm:left-5 bg-white/95 backdrop-blur-xl text-[#B88E28] font-serif text-[11px] sm:text-xs px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full border border-[#B88E28]/30 flex items-center space-x-1.5 shadow-lg">
-                    <Trophy className="w-3.5 h-3.5 text-[#B88E28] shrink-0" />
-                    <span className="font-sans font-semibold uppercase tracking-wider text-[9px] sm:text-[10px]">UAE Superchef 2024</span>
-                  </div>
-
-                  {/* Character Name Overlay */}
-                  <div className="absolute bottom-5 left-5 right-5 sm:bottom-6 sm:left-6 sm:right-6 text-left space-y-1">
-                    <span className="text-[9px] sm:text-[10px] uppercase font-mono text-amber-200 tracking-widest font-semibold block">
-                      Head Chef • Slices Catering Dubai
-                    </span>
-                    <h3 className="text-white font-serif text-xl sm:text-2xl font-normal">
-                      Chef Yaseer Arafath
-                    </h3>
-                    <p className="text-stone-200 text-[11px] sm:text-xs font-light">
-                      Superchef First Prize Winner (Xpatzhub, Royal Ascot Hotel)
-                    </p>
+                  {/* Subtle Badge Overlay */}
+                  <div className="absolute top-4 left-4 bg-white/95 text-[#111111] border border-[#EEEEEE] px-3.5 py-1.5 text-[10px] font-mono uppercase tracking-widest font-semibold shadow-sm">
+                    Live Micro-Plating Precision
                   </div>
                 </div>
 
-                {/* Editorial Quote Box */}
-                <div className="mt-2.5 sm:mt-3 p-3.5 sm:p-4 bg-[#FAF8F5] rounded-xl sm:rounded-2xl border border-[#EAE4D7] text-left">
-                  <div className="flex items-start space-x-2.5 sm:space-x-3">
-                    <div className="text-2xl sm:text-3xl text-[#B88E28] leading-none font-serif shrink-0">“</div>
-                    <p className="text-[11px] sm:text-xs text-[#57534E] italic font-serif leading-relaxed">
-                      {CHEF_PROFILE.quote}
-                    </p>
+                {/* Minimalist Caption */}
+                <div className="p-4 bg-white text-left space-y-1 border-t border-[#EEEEEE]">
+                  <div className="flex items-center justify-between text-[11px] font-mono text-[#888888] uppercase tracking-wider">
+                    <span>Chef Yaseer Arafath</span>
+                    <span>Dubai, UAE</span>
                   </div>
+                  <p className="text-xs text-[#444444] font-serif italic">
+                    “Culinary excellence lies in the harmony between ancient Levant roots and modern plating precision.”
+                  </p>
                 </div>
 
               </div>
@@ -170,6 +138,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking, onOpenA
     </section>
   );
 };
+
+
 
 
 

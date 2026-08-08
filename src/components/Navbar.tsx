@@ -34,10 +34,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, onOpenAIMenu }) =
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#FAF8F5]/95 backdrop-blur-xl border-b border-[#EAE4D7] py-3.5 shadow-sm'
-          : 'bg-[#FAF8F5]/80 backdrop-blur-md border-b border-[#EAE4D7]/50 py-5'
+          ? 'bg-white/95 backdrop-blur-md border-b border-[#EEEEEE] py-3.5 shadow-minimal'
+          : 'bg-white/80 backdrop-blur-sm border-b border-[#EEEEEE]/60 py-4.5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -45,56 +45,53 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, onOpenAIMenu }) =
           {/* Brand Logo */}
           <div
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="cursor-pointer flex items-center space-x-3 group"
+            className="cursor-pointer flex items-center space-x-3 group text-left"
           >
-            <div className="w-10 h-10 rounded-full border border-[#B88E28]/40 bg-[#FFFFFF] p-0.5 flex items-center justify-center shadow-sm group-hover:border-[#B88E28] transition-all">
-              <div className="w-full h-full bg-[#FAF8F5] rounded-full flex items-center justify-center">
-                <ChefHat className="w-5 h-5 text-[#B88E28]" />
-              </div>
+            <div className="w-8 h-8 rounded-none border border-[#111111] bg-white flex items-center justify-center">
+              <ChefHat className="w-4 h-4 text-[#111111]" />
             </div>
             <div>
-              <span className="text-lg font-serif tracking-widest text-[#1C1917] uppercase font-bold block leading-none group-hover:text-[#B88E28] transition-colors">
+              <span className="text-base font-serif tracking-widest text-[#111111] uppercase font-bold block leading-none">
                 Yaseer Arafath
               </span>
-              <span className="text-[9px] tracking-widest uppercase text-[#B88E28] font-semibold block mt-1">
+              <span className="text-[9px] tracking-widest font-mono uppercase text-[#888888] block mt-1">
                 Head Chef • Slices Dubai
               </span>
             </div>
           </div>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center space-x-8 text-xs uppercase tracking-widest font-semibold text-[#57534E]">
+          <nav className="hidden md:flex items-center space-x-8 text-xs font-mono uppercase tracking-widest text-[#666666]">
             <button
               onClick={() => scrollToSection('about')}
-              className="hover:text-[#B88E28] transition-colors cursor-pointer"
+              className="hover:text-[#111111] transition-colors cursor-pointer"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection('gallery')}
-              className="hover:text-[#B88E28] transition-colors cursor-pointer"
+              className="hover:text-[#111111] transition-colors cursor-pointer"
             >
               Portfolio
             </button>
             <button
               onClick={() => scrollToSection('awards')}
-              className="hover:text-[#B88E28] transition-colors cursor-pointer flex items-center space-x-2"
+              className="hover:text-[#111111] transition-colors cursor-pointer flex items-center space-x-2"
             >
               <span>Awards</span>
-              <span className="bg-[#B88E28]/10 text-[#B88E28] text-[9px] px-2 py-0.5 rounded border border-[#B88E28]/30 flex items-center gap-1 font-mono">
-                <Trophy className="w-2.5 h-2.5" />
+              <span className="text-[9px] text-[#99731C] px-1.5 py-0.5 border border-[#99731C]/30 font-mono">
                 2024
               </span>
             </button>
             <button
               onClick={() => scrollToSection('services')}
-              className="hover:text-[#B88E28] transition-colors cursor-pointer"
+              className="hover:text-[#111111] transition-colors cursor-pointer"
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="hover:text-[#B88E28] transition-colors cursor-pointer"
+              className="hover:text-[#111111] transition-colors cursor-pointer"
             >
               Contact
             </button>
@@ -106,7 +103,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, onOpenAIMenu }) =
               href={CHEF_PROFILE.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#57534E] hover:text-[#B88E28] transition-colors p-2"
+              className="text-[#666666] hover:text-[#111111] transition-colors p-2"
               title="Instagram @yaseer.s.arafath"
             >
               <Instagram className="w-4 h-4" />
@@ -114,18 +111,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, onOpenAIMenu }) =
 
             <button
               onClick={onOpenAIMenu}
-              className="cursor-pointer bg-white hover:bg-[#F4F0E8] text-[#B88E28] text-xs px-4 py-2 rounded-full border border-[#B88E28]/30 flex items-center space-x-2 transition-all hover:border-[#B88E28] shadow-sm"
+              className="cursor-pointer text-[#666666] hover:text-[#111111] text-xs font-mono uppercase tracking-wider flex items-center space-x-1.5 transition-colors"
             >
-              <Sparkles className="w-3.5 h-3.5 text-[#B88E28]" />
-              <span className="font-semibold uppercase tracking-wider text-[10px]">Menu Concierge</span>
+              <Sparkles className="w-3.5 h-3.5 text-[#99731C]" />
+              <span>Menu Concierge</span>
             </button>
 
             <button
               onClick={onOpenBooking}
-              className="cursor-pointer bg-[#1C1917] hover:bg-[#B88E28] text-white font-semibold text-xs px-5 py-2.5 rounded-full shadow-md transition-all flex items-center space-x-2 transform hover:-translate-y-0.5 tracking-wider uppercase"
+              className="cursor-pointer bg-[#111111] hover:bg-[#333333] text-white font-medium text-xs px-5 py-2.5 rounded-none transition-colors tracking-widest uppercase"
             >
-              <Calendar className="w-3.5 h-3.5" />
-              <span>Inquire</span>
+              Inquire
             </button>
           </div>
 
@@ -133,13 +129,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, onOpenAIMenu }) =
           <div className="flex md:hidden items-center space-x-3">
             <button
               onClick={onOpenBooking}
-              className="cursor-pointer bg-[#B88E28] text-white text-xs px-3.5 py-1.5 rounded-full font-bold uppercase tracking-wider shadow-sm"
+              className="cursor-pointer bg-[#111111] text-white text-xs px-3.5 py-1.5 font-mono uppercase tracking-wider"
             >
               Inquire
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg text-[#1C1917] hover:text-[#B88E28] bg-white border border-[#EAE4D7]"
+              className="p-2 text-[#111111] bg-white border border-[#EEEEEE]"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -149,36 +145,36 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, onOpenAIMenu }) =
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#FAF8F5]/98 backdrop-blur-2xl border-b border-[#EAE4D7] px-6 pt-6 pb-8 space-y-5 shadow-xl animate-in slide-in-from-top-4">
-          <nav className="flex flex-col space-y-4 font-semibold text-[#1C1917] text-sm uppercase tracking-widest">
+        <div className="md:hidden bg-white border-b border-[#EEEEEE] px-6 pt-6 pb-8 space-y-5 shadow-minimal animate-in slide-in-from-top-4 text-left">
+          <nav className="flex flex-col space-y-4 font-mono text-[#111111] text-xs uppercase tracking-widest">
             <button
               onClick={() => scrollToSection('about')}
-              className="text-left py-2 border-b border-[#EAE4D7] hover:text-[#B88E28]"
+              className="text-left py-2 border-b border-[#EEEEEE] hover:text-[#99731C]"
             >
               About & Journey
             </button>
             <button
               onClick={() => scrollToSection('gallery')}
-              className="text-left py-2 border-b border-[#EAE4D7] hover:text-[#B88E28]"
+              className="text-left py-2 border-b border-[#EEEEEE] hover:text-[#99731C]"
             >
               Portfolio Gallery
             </button>
             <button
               onClick={() => scrollToSection('awards')}
-              className="text-left py-2 border-b border-[#EAE4D7] hover:text-[#B88E28] flex items-center justify-between"
+              className="text-left py-2 border-b border-[#EEEEEE] hover:text-[#99731C] flex items-center justify-between"
             >
               <span>Awards & Press</span>
-              <span className="bg-[#B88E28]/10 text-[#B88E28] text-xs px-2.5 py-0.5 rounded font-mono border border-[#B88E28]/30">Superchef 2024</span>
+              <span className="text-[#99731C] text-[10px] px-2 py-0.5 border border-[#99731C]/30">Superchef 2024</span>
             </button>
             <button
               onClick={() => scrollToSection('services')}
-              className="text-left py-2 border-b border-[#EAE4D7] hover:text-[#B88E28]"
+              className="text-left py-2 border-b border-[#EEEEEE] hover:text-[#99731C]"
             >
               Services & Catering
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="text-left py-2 border-b border-[#EAE4D7] hover:text-[#B88E28]"
+              className="text-left py-2 border-b border-[#EEEEEE] hover:text-[#99731C]"
             >
               Contact & Inquiries
             </button>
@@ -186,7 +182,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, onOpenAIMenu }) =
               href={CHEF_PROFILE.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="py-2 text-[#B88E28] flex items-center space-x-2 normal-case tracking-normal"
+              className="py-2 text-[#666666] flex items-center space-x-2 normal-case tracking-normal"
             >
               <Instagram className="w-4 h-4" />
               <span>Instagram @yaseer.s.arafath</span>
@@ -199,10 +195,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, onOpenAIMenu }) =
                 setMobileMenuOpen(false);
                 onOpenAIMenu();
               }}
-              className="w-full bg-white text-[#B88E28] text-xs py-3 rounded-xl border border-[#B88E28]/30 flex items-center justify-center space-x-2 font-semibold uppercase tracking-wider shadow-sm"
+              className="w-full bg-white text-[#111111] text-xs py-3 border border-[#111111] flex items-center justify-center space-x-2 font-mono uppercase tracking-wider"
             >
-              <Sparkles className="w-4 h-4 text-[#B88E28]" />
-              <span>Menu Concierge Consultation</span>
+              <Sparkles className="w-4 h-4 text-[#99731C]" />
+              <span>Menu Concierge</span>
             </button>
 
             <button
@@ -210,10 +206,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, onOpenAIMenu }) =
                 setMobileMenuOpen(false);
                 onOpenBooking();
               }}
-              className="w-full bg-[#1C1917] text-white font-bold text-xs py-3 rounded-xl shadow-md flex items-center justify-center space-x-2 uppercase tracking-widest"
+              className="w-full bg-[#111111] text-white text-xs py-3 font-mono uppercase tracking-widest"
             >
-              <Calendar className="w-4 h-4" />
-              <span>Inquire for VIP Booking</span>
+              Inquire for VIP Booking
             </button>
           </div>
         </div>
@@ -221,5 +216,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, onOpenAIMenu }) =
     </header>
   );
 };
+
 
 

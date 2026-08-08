@@ -1,46 +1,46 @@
 import React from 'react';
-import { ChefHat, Trophy, Instagram, Mail, MapPin, Heart } from 'lucide-react';
+import { ChefHat, Instagram, Mail, MapPin } from 'lucide-react';
 import { CHEF_PROFILE } from '../data/portfolioData';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#FAF8F5] border-t border-[#EAE4D7] text-[#57534E] py-16">
+    <footer className="bg-[#FFFFFF] border-t border-[#EEEEEE] text-[#666666] py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
           
           {/* Brand Info */}
           <div className="md:col-span-5 space-y-4 text-left">
             <div className="flex items-center space-x-3">
-              <div className="w-9 h-9 rounded-full bg-white border border-[#B88E28]/40 flex items-center justify-center shadow-sm">
-                <ChefHat className="w-5 h-5 text-[#B88E28]" />
+              <div className="w-8 h-8 bg-[#FAFAFA] border border-[#EEEEEE] flex items-center justify-center">
+                <ChefHat className="w-4 h-4 text-[#111111]" />
               </div>
               <div>
-                <span className="text-lg font-serif font-bold text-[#1C1917] tracking-wider block">
+                <span className="text-base font-serif font-bold text-[#111111] tracking-wider block uppercase">
                   Yaseer Arafath
                 </span>
-                <span className="text-[10px] text-[#B88E28] font-mono block font-semibold">
+                <span className="text-[9px] text-[#99731C] font-mono block font-semibold uppercase tracking-wider">
                   Head Chef • Slices Catering Dubai
                 </span>
               </div>
             </div>
 
-            <p className="text-xs text-[#44403C] leading-relaxed max-w-sm font-light">
+            <p className="text-xs text-[#555555] leading-relaxed max-w-sm font-light">
               Winner of UAE Superchef 2024 & Emirates Culinary Guild Silver Medalist. Bringing high-resolution culinary artistry, molecular gastronomy, and Levant heritage to luxury dining across Dubai.
             </p>
 
-            <div className="pt-2 flex items-center space-x-4">
+            <div className="pt-2 flex items-center space-x-3">
               <a
                 href={CHEF_PROFILE.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-white border border-[#EAE4D7] hover:border-[#B88E28] flex items-center justify-center text-[#B88E28] hover:bg-[#B88E28] hover:text-white transition-colors shadow-sm"
+                className="w-8 h-8 bg-[#FAFAFA] border border-[#EEEEEE] hover:border-[#111111] flex items-center justify-center text-[#111111] transition-colors"
                 title="Instagram"
               >
                 <Instagram className="w-4 h-4" />
               </a>
               <a
                 href={`mailto:${CHEF_PROFILE.contactEmail}`}
-                className="w-8 h-8 rounded-full bg-white border border-[#EAE4D7] hover:border-[#B88E28] flex items-center justify-center text-[#B88E28] hover:bg-[#B88E28] hover:text-white transition-colors shadow-sm"
+                className="w-8 h-8 bg-[#FAFAFA] border border-[#EEEEEE] hover:border-[#111111] flex items-center justify-center text-[#111111] transition-colors"
                 title="Email Concierge"
               >
                 <Mail className="w-4 h-4" />
@@ -49,31 +49,31 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="md:col-span-3 space-y-3 text-left">
-            <h4 className="text-[#1C1917] font-serif font-bold text-sm">Navigation</h4>
-            <ul className="space-y-2 text-xs">
+          <div className="md:col-span-3 space-y-3 text-left font-mono text-xs">
+            <h4 className="text-[#111111] font-serif font-bold text-sm">Navigation</h4>
+            <ul className="space-y-2">
               <li>
-                <a href="#about" className="hover:text-[#B88E28] transition-colors">
+                <a href="#about" className="hover:text-[#111111] transition-colors">
                   Story & Credentials
                 </a>
               </li>
               <li>
-                <a href="#awards" className="hover:text-[#B88E28] transition-colors">
+                <a href="#awards" className="hover:text-[#111111] transition-colors">
                   Awards & Press Cabinet
                 </a>
               </li>
               <li>
-                <a href="#gallery" className="hover:text-[#B88E28] transition-colors">
+                <a href="#gallery" className="hover:text-[#111111] transition-colors">
                   Signature Dish Plating
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-[#B88E28] transition-colors">
+                <a href="#services" className="hover:text-[#111111] transition-colors">
                   Catering & Freelance Services
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-[#B88E28] transition-colors">
+                <a href="#contact" className="hover:text-[#111111] transition-colors">
                   Book VIP Consultation
                 </a>
               </li>
@@ -81,15 +81,15 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Location & Roles */}
-          <div className="md:col-span-4 space-y-3 text-left">
-            <h4 className="text-[#1C1917] font-serif font-bold text-sm">Culinary Directorship</h4>
-            <div className="space-y-2 text-xs">
-              <div className="p-3 bg-white rounded-2xl border border-[#EAE4D7] space-y-1 shadow-sm">
-                <span className="text-[#B88E28] font-bold block">Slices Catering Dubai</span>
-                <span className="text-[#6B655F] text-[11px] block">Head Chef — High-End Banquets & VIP Events</span>
+          <div className="md:col-span-4 space-y-3 text-left font-mono text-xs">
+            <h4 className="text-[#111111] font-serif font-bold text-sm">Culinary Directorship</h4>
+            <div className="space-y-2">
+              <div className="p-3 bg-[#FAFAFA] border border-[#EEEEEE] space-y-1">
+                <span className="text-[#111111] font-bold block">Slices Catering Dubai</span>
+                <span className="text-[#888888] text-[11px] block">Head Chef — High-End Banquets & VIP Events</span>
               </div>
-              <div className="flex items-center space-x-2 text-[#6B655F] text-xs pt-1">
-                <MapPin className="w-4 h-4 text-[#B88E28] shrink-0" />
+              <div className="flex items-center space-x-2 text-[#888888] text-xs pt-1">
+                <MapPin className="w-3.5 h-3.5 text-[#99731C] shrink-0" />
                 <span>Dubai & Abu Dhabi, United Arab Emirates</span>
               </div>
             </div>
@@ -97,7 +97,7 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        <div className="mt-12 pt-8 border-t border-[#EAE4D7] flex flex-col sm:flex-row items-center justify-between text-xs text-[#6B655F] gap-4">
+        <div className="mt-12 pt-8 border-t border-[#EEEEEE] flex flex-col sm:flex-row items-center justify-between text-xs text-[#888888] font-mono gap-4">
           <p>© {new Date().getFullYear()} Chef Yaseer Arafath. All rights reserved.</p>
           <p className="flex items-center space-x-1">
             <span>Crafted for high-end culinary opportunities in Dubai</span>
@@ -107,3 +107,4 @@ export const Footer: React.FC = () => {
     </footer>
   );
 };
+
