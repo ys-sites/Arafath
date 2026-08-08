@@ -68,9 +68,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={() => handleNavClick()}
             className="cursor-pointer flex items-center space-x-3 group text-left"
           >
-            <div className="w-8 h-8 rounded-none border border-[#1A1817] bg-white flex items-center justify-center">
-              <ChefHat className="w-4 h-4 text-[#1A1817]" />
-            </div>
+            <img
+              src="/LOGO.png"
+              alt="Chef Yaseer Arafath Logo"
+              className="h-9 sm:h-10 w-auto object-contain"
+            />
             <div>
               <span className="text-base font-serif tracking-widest text-[#1A1817] uppercase font-bold block leading-none">
                 Yaseer Arafath

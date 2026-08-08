@@ -11,14 +11,16 @@ export const Footer: React.FC = () => {
           {/* Brand Info */}
           <div className="md:col-span-5 space-y-4 text-left">
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-[#FAFAFA] border border-[#EEEEEE] flex items-center justify-center">
-                <ChefHat className="w-4 h-4 text-[#111111]" />
-              </div>
+              <img
+                src="/LOGO.png"
+                alt="Chef Yaseer Arafath Logo"
+                className="h-10 w-auto object-contain"
+              />
               <div>
-                <span className="text-base font-serif font-bold text-[#111111] tracking-wider block uppercase">
+                <span className="text-base font-serif font-bold text-[#1A1817] tracking-wider block uppercase">
                   Yaseer Arafath
                 </span>
-                <span className="text-[9px] text-[#99731C] font-mono block font-semibold uppercase tracking-wider">
+                <span className="text-[9px] text-[#B88E28] font-mono block font-semibold uppercase tracking-wider">
                   Head Chef • Slices Catering Dubai
                 </span>
               </div>
