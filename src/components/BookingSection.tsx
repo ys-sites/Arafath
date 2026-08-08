@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'motion/react';
 import { Calendar, Users, MapPin, Mail, Phone, User, CheckCircle2, Loader2, Sparkles, Send } from 'lucide-react';
 import { CHEF_PROFILE } from '../data/portfolioData';
+import { ShinyText } from './ShinyText';
+import { BlurText } from './BlurText';
 
 interface BookingSectionProps {
   prefilledMenuTitle?: string;
@@ -16,7 +19,7 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
   const [phone, setPhone] = useState('');
   const [eventType, setEventType] = useState('Private VIP Dining');
   const [eventDate, setEventDate] = useState('');
-  const [guestCount, setGuestCount] = useState(20);
+  const [guestCount, setGuestCount] = useState<number | ''>(20);
   const [location, setLocation] = useState('Dubai, UAE');
   const [notes, setNotes] = useState('');
 
@@ -51,7 +54,7 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
           phone: phone || 'Not provided',
           eventType,
           eventDate: eventDate || 'To be decided',
-          guestCount,
+          guestCount: guestCount || 'Not specified',
           location,
           notes: notes || 'No extra notes',
           _subject: `New VIP Dining Inquiry: ${name} (${eventType})`,
@@ -83,7 +86,13 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
 
   return (
     <section id="contact" className="py-24 bg-[#FFFFFF] text-[#111111] border-b border-[#EEEEEE] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <motion.div
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.65, ease: 'easeOut' }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -91,11 +100,21 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
             Concierge & Inquiries
           </span>
           <h2 className="text-4xl sm:text-6xl font-serif text-[#111111] tracking-tight font-normal">
-            Inquire for <span className="italic font-serif font-light text-[#444444]">VIP Booking</span>
+            Inquire for{' '}
+            <ShinyText
+              text="VIP Booking"
+              color="#99731C"
+              shineColor="#F5E080"
+              speed={2.5}
+              className="italic font-serif font-light text-[#99731C]"
+            />
           </h2>
-          <p className="text-[#666666] text-sm sm:text-base font-light">
-            Request Head Chef Yaseer Arafath for private dining, high-capacity banquet direction via Slices Catering, menu consulting, or media engagements across Dubai and internationally.
-          </p>
+          <BlurText
+            text="Request Head Chef Yaseer Arafath for private dining, high-capacity banquet direction via Slices Catering, menu consulting, or media engagements across Dubai and internationally."
+            delay={25}
+            animateBy="words"
+            className="text-[#666666] text-sm sm:text-base font-light justify-center"
+          />
         </div>
 
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start text-left">
@@ -224,17 +243,22 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
                     />
                   </div>
 
+                  {/* Direct Number Input for Guest Count */}
                   <div>
-                    <label className="block text-[#888888] mb-1 uppercase tracking-wider text-[10px]">Guest Count ({guestCount})</label>
-                    <input
-                      type="range"
-                      min={2}
-                      max={500}
-                      step={5}
-                      value={guestCount}
-                      onChange={(e) => setGuestCount(Number(e.target.value))}
-                      className="w-full accent-[#111111] mt-3"
-                    />
+                    <label className="block text-[#888888] mb-1 uppercase tracking-wider text-[10px]">Estimated Guest Count *</label>
+                    <div className="relative">
+                      <input
+                        type="number"
+                        min={1}
+                        max={5000}
+                        required
+                        value={guestCount}
+                        onChange={(e) => setGuestCount(e.target.value === '' ? '' : Number(e.target.value))}
+                        placeholder="e.g. 50, 200, 1000"
+                        className="w-full bg-[#FAFAFA] border border-[#EEEEEE] pl-10 pr-4 py-3 text-[#111111] focus:outline-none focus:border-[#111111] font-sans"
+                      />
+                      <Users className="w-4 h-4 text-[#888888] absolute left-3 top-3.5" />
+                    </div>
                   </div>
                 </div>
 
@@ -311,7 +335,7 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
 
         </div>
 
-      </div>
+      </motion.div>
     </section>
   );
 };

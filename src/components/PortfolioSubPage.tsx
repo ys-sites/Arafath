@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'motion/react';
 import {
   ChefHat,
   GraduationCap,
@@ -22,6 +23,8 @@ import {
 } from 'lucide-react';
 import { CHEF_PROFILE, CHEF_STATS, CAREER_MILESTONES, PRESS_ITEMS, SIGNATURE_DISHES } from '../data/portfolioData';
 import { Dish } from '../types';
+import { ShinyText } from './ShinyText';
+import { BlurText } from './BlurText';
 
 interface PortfolioSubPageProps {
   onBackToHome: () => void;
@@ -146,11 +149,20 @@ Sous-vide precision braising, Binchotan charcoal grilling, cryogenic nitrogen ga
               </span>
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif text-[#1A1817] font-normal leading-[1.05] tracking-tight">
                 EXECUTIVE PORTFOLIO & <br />
-                <span className="italic font-serif font-light text-[#B88E28]">CULINARY DOSSIER</span>
+                <ShinyText
+                  text="CULINARY DOSSIER"
+                  color="#B88E28"
+                  shineColor="#FFF5B8"
+                  speed={2.5}
+                  className="italic font-serif font-light text-[#B88E28]"
+                />
               </h1>
-              <p className="text-base sm:text-lg font-serif text-[#5B564E] font-light italic leading-relaxed max-w-2xl">
-                Comprehensive documentation of Head Chef Yaseer Arafath's 10+ year career, verified competition trophies, press features, academic degree, and signature gastronomy portfolio in Dubai.
-              </p>
+              <BlurText
+                text="Comprehensive documentation of Head Chef Yaseer Arafath's 10+ year career, verified competition trophies, press features, academic degree, and signature gastronomy portfolio in Dubai."
+                delay={25}
+                animateBy="words"
+                className="text-base sm:text-lg font-serif text-[#5B564E] font-light italic leading-relaxed max-w-2xl"
+              />
 
               {/* Scaffolding Badges */}
               <div className="flex flex-wrap gap-2 pt-2 text-xs font-mono">

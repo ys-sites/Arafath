@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Dish } from '../types';
 import { SIGNATURE_DISHES } from '../data/portfolioData';
 import { ZoomIn, Award, Utensils, Wine } from 'lucide-react';
+import { ShinyText } from './ShinyText';
+import { BlurText } from './BlurText';
 
 interface GallerySectionProps {
   onSelectDishForBooking: (dishTitle: string) => void;
@@ -26,11 +28,21 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectDishForB
             Culinary Plating Portfolio
           </span>
           <h2 className="text-4xl sm:text-6xl font-serif text-[#111111] tracking-tight font-normal">
-            Signature <span className="italic font-serif font-light text-[#444444]">Plating Gallery</span>
+            Signature{' '}
+            <ShinyText
+              text="Plating Gallery"
+              color="#99731C"
+              shineColor="#F5E080"
+              speed={2.5}
+              className="italic font-serif font-light text-[#99731C]"
+            />
           </h2>
-          <p className="text-[#666666] text-sm sm:text-base font-light">
-            Explore Chef Yaseer Arafath's signature creations—from award-winning Levant lamb to artisanal VIP banquets and cold-pressed botanical elixirs.
-          </p>
+          <BlurText
+            text="Explore Chef Yaseer Arafath's signature creations—from award-winning Levant lamb to artisanal VIP banquets and cold-pressed botanical elixirs."
+            delay={30}
+            animateBy="words"
+            className="text-[#666666] text-sm sm:text-base font-light justify-center"
+          />
         </div>
 
         {/* Filter Bar */}

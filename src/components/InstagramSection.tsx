@@ -1,11 +1,20 @@
 import React from 'react';
-import { Instagram, Heart, MessageCircle, ExternalLink, Play, Film } from 'lucide-react';
+import { motion } from 'motion/react';
+import { Instagram, Heart, MessageCircle, ExternalLink, Play } from 'lucide-react';
 import { INSTAGRAM_POSTS, CHEF_PROFILE } from '../data/portfolioData';
+import { ShinyText } from './ShinyText';
+import { BlurText } from './BlurText';
 
 export const InstagramSection: React.FC = () => {
   return (
     <section id="instagram" className="py-24 bg-[#FFFFFF] text-[#111111] border-b border-[#EEEEEE] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <motion.div
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.65, ease: 'easeOut' }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -14,11 +23,21 @@ export const InstagramSection: React.FC = () => {
             <span>Social Journal</span>
           </div>
           <h2 className="text-4xl sm:text-6xl font-serif text-[#111111] tracking-tight font-normal">
-            Follow the <span className="italic font-serif font-light text-[#444444]">Culinary Journey</span>
+            Follow the{' '}
+            <ShinyText
+              text="Culinary Journey"
+              color="#99731C"
+              shineColor="#F5E080"
+              speed={2.5}
+              className="italic font-serif font-light text-[#99731C]"
+            />
           </h2>
-          <p className="text-[#666666] text-sm sm:text-base font-light">
-            Behind the scenes at Slices Catering Dubai, live Superchef competition highlights, signature plating reveals, and VIP banquet moments.
-          </p>
+          <BlurText
+            text="Behind the scenes at Slices Catering Dubai, live Superchef competition highlights, signature plating reveals, and VIP banquet moments."
+            delay={25}
+            animateBy="words"
+            className="text-[#666666] text-sm sm:text-base font-light justify-center"
+          />
         </div>
 
         {/* Profile Stats Bar */}
@@ -93,7 +112,7 @@ export const InstagramSection: React.FC = () => {
             </a>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

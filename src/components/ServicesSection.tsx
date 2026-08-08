@@ -1,6 +1,9 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { CULINARY_SERVICES } from '../data/portfolioData';
 import { UtensilsCrossed, Building2, ChefHat, Sparkles, CheckCircle2, ArrowRight } from 'lucide-react';
+import { ShinyText } from './ShinyText';
+import { BlurText } from './BlurText';
 
 interface ServicesSectionProps {
   onOpenBooking: () => void;
@@ -20,7 +23,13 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking,
 
   return (
     <section id="services" className="py-24 bg-[#FFFFFF] border-b border-[#EEEEEE] text-[#111111] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <motion.div
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.65, ease: 'easeOut' }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -28,11 +37,21 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking,
             Culinary Offerings
           </span>
           <h2 className="text-4xl sm:text-6xl font-serif text-[#111111] tracking-tight font-normal">
-            Services & <span className="italic font-serif font-light text-[#444444]">Executive Direction</span>
+            Services &{' '}
+            <ShinyText
+              text="Executive Direction"
+              color="#99731C"
+              shineColor="#F5E080"
+              speed={2.5}
+              className="italic font-serif font-light text-[#99731C]"
+            />
           </h2>
-          <p className="text-[#666666] text-sm sm:text-base font-light">
-            From intimate private dining to large-scale gala banquets for 2,000+ guests through Slices Catering Dubai, Head Chef Yaseer Arafath delivers uncompromising culinary perfection.
-          </p>
+          <BlurText
+            text="From intimate private dining to large-scale gala banquets for 2,000+ guests through Slices Catering Dubai, Head Chef Yaseer Arafath delivers uncompromising culinary perfection."
+            delay={25}
+            animateBy="words"
+            className="text-[#666666] text-sm sm:text-base font-light justify-center"
+          />
         </div>
 
         {/* Services Cards */}
@@ -106,7 +125,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking,
           </div>
         </div>
 
-      </div>
+      </motion.div>
     </section>
   );
 };
