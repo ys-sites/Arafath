@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChefHat, Calendar, Sparkles, Menu, X, Instagram, Trophy, FileText } from 'lucide-react';
+import { ChefHat, Calendar, Sparkles, Menu, X, Instagram, Trophy, FileText, Phone } from 'lucide-react';
 import { CHEF_PROFILE } from '../data/portfolioData';
 
 interface NavbarProps {
@@ -120,6 +120,16 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Right CTAs */}
           <div className="hidden lg:flex items-center space-x-4">
+            <a
+              href={CHEF_PROFILE.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#25D366] hover:text-[#1ebd59] transition-colors p-2"
+              title="WhatsApp Direct Chat"
+            >
+              <Phone className="w-4 h-4" />
+            </a>
+
             <a
               href={CHEF_PROFILE.instagramUrl}
               target="_blank"
