@@ -71,7 +71,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <img
               src="/logo svg.svg"
               alt="Chef Yaseer Arafath Logo"
-              className="h-11 sm:h-12 w-auto object-contain shrink-0 filter brightness-95 contrast-125 drop-shadow-xs"
+              className="h-11 sm:h-12 w-auto object-contain shrink-0 mix-blend-multiply"
             />
             <div>
               <span className="text-sm sm:text-base font-serif tracking-widest text-[#1A1817] uppercase font-bold block leading-none">

@@ -54,12 +54,12 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenBooking,
           />
         </div>
 
-        {/* Services Cards */}
+        {/* Services Cards with Hover Lift Animation */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
           {CULINARY_SERVICES.map((srv, idx) => (
             <div
               key={idx}
-              className="bg-white border border-[#EEEEEE] hover:border-[#111111] p-8 sm:p-10 transition-all duration-300 shadow-minimal flex flex-col justify-between space-y-8 group"
+              className="bg-white border border-[#EEEEEE] hover:border-[#111111] hover:-translate-y-2.5 hover:shadow-2xl p-8 sm:p-10 transition-all duration-300 shadow-minimal flex flex-col justify-between space-y-8 group cursor-pointer"
             >
               <div className="space-y-5">
                 <div className="w-12 h-12 bg-[#FAFAFA] border border-[#EEEEEE] flex items-center justify-center">

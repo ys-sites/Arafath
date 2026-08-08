@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
               <img
                 src="/logo svg.svg"
                 alt="Chef Yaseer Arafath Logo"
-                className="h-11 w-auto object-contain"
+                className="h-11 w-auto object-contain mix-blend-multiply"
               />
               <div>
                 <span className="text-base font-serif font-bold text-[#1A1817] tracking-wider block uppercase">

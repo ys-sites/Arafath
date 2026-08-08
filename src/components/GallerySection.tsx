@@ -75,7 +75,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectDishForB
             <div
               key={dish.id}
               onClick={() => setActiveDish(dish)}
-              className="group bg-white border border-[#EEEEEE] hover:border-[#111111] cursor-pointer transition-all duration-300 shadow-minimal flex flex-col justify-between"
+              className="group bg-white border border-[#EEEEEE] hover:border-[#111111] hover:-translate-y-2.5 hover:shadow-2xl cursor-pointer transition-all duration-300 shadow-minimal flex flex-col justify-between"
             >
               {/* Image Container */}
               <div className="relative h-64 overflow-hidden bg-[#FAFAFA]">

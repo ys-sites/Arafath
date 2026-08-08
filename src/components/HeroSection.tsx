@@ -22,8 +22,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking, onOpenP
           className="w-full h-full object-cover object-[70%_center] sm:object-right-center"
         />
         
-        {/* Scrim gradient: subtle on mobile so hero photo remains maximum visible */}
-        <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-[#FAF9F6]/90 via-[#FAF9F6]/50 sm:via-[#FAF9F6]/95 to-transparent z-10 pointer-events-none" />
+        {/* Scrim gradient ONLY on far-left behind text so hero photo is 100% crisp, clear, & vivid */}
+        <div className="absolute top-0 bottom-0 left-0 w-full sm:w-8/12 lg:w-6/12 bg-gradient-to-r from-[#FAF9F6] via-[#FAF9F6]/85 to-transparent z-10 pointer-events-none" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-20 pt-24 sm:pt-36 pb-12 sm:pb-24">
