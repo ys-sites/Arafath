@@ -124,7 +124,7 @@ export default function App() {
 
         {/* WhatsApp Direct Inquiry Button */}
         <a
-          href={`https://wa.me/971501234567?text=${whatsappMessage}`}
+          href={`https://api.whatsapp.com/send/?phone=971503023056&text=${whatsappMessage}&type=phone_number&app_absent=0`}
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-center justify-center bg-[#25D366] hover:bg-[#20ba5a] text-white w-12 h-12 rounded-full shadow-2xl shadow-[#25D366]/20 transition-all duration-300 hover:scale-110"

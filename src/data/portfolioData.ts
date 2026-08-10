@@ -18,7 +18,7 @@ Currently leading culinary direction as Head Chef at Slices Catering Dubai, Chef
   contactEmail: "yaseera.chef@gmail.com",
   phoneDisplay: "+971 50 302 3056",
   whatsappNumber: "+971 50 302 3056",
-  whatsappUrl: "https://wa.me/971503023056",
+  whatsappUrl: "https://api.whatsapp.com/send/?phone=971503023056&text&type=phone_number&app_absent=0",
   cateringCapacity: "10 to 2,000 Guests"
 };
 
