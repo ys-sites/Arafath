@@ -3,18 +3,14 @@ import { ChefHat, GraduationCap, Building2, Flame, Award, CheckCircle2, Calendar
 import { CHEF_PROFILE, CAREER_MILESTONES } from '../data/portfolioData';
 import { ShinyText } from './ShinyText';
 import { BlurText } from './BlurText';
+import { TimelineTree } from './TimelineTree';
 
 interface AboutSectionProps {
   onOpenBooking: () => void;
 }
 
 export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => {
-  const [activeTab, setActiveTab] = useState<'all' | 'award' | 'experience' | 'education'>('all');
   const [downloadSuccess, setDownloadSuccess] = useState(false);
-
-  const filteredMilestones = CAREER_MILESTONES.filter(
-    m => activeTab === 'all' || m.category === activeTab
-  );
 
   const handleDownloadDossier = () => {
     const dossierText = `
@@ -221,67 +217,8 @@ Sous-vide precision braising, Binchotan charcoal grilling, cryogenic nitrogen ga
 
         </div>
 
-        {/* Career Timeline */}
-        <div className="mt-20 text-left">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 pb-4 border-b border-[#E8E4DC] gap-4">
-            <div>
-              <h3 className="text-3xl font-serif text-[#1A1817] font-normal">Career Milestones Timeline</h3>
-              <p className="text-[#888888] text-xs font-mono mt-1">Key credentials across competitions, executive roles, and academic foundations</p>
-            </div>
-
-            {/* Filter Tabs */}
-            <div className="flex flex-wrap gap-2 font-mono text-xs">
-              {(['all', 'award', 'experience', 'education'] as const).map(tabKey => (
-                <button
-                  key={tabKey}
-                  onClick={() => setActiveTab(tabKey)}
-                  className={`px-4 py-2 uppercase tracking-wider font-semibold transition-all cursor-pointer ${
-                    activeTab === tabKey
-                      ? 'bg-[#1A1817] text-white'
-                      : 'bg-white text-[#68645E] hover:text-[#1A1817] border border-[#E8E4DC]'
-                  }`}
-                >
-                  {tabKey === 'all' ? 'All Milestones' : tabKey === 'award' ? 'Awards & Medals' : tabKey === 'experience' ? 'Executive Roles' : 'Education'}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredMilestones.map((item, idx) => (
-              <div
-                key={idx}
-                className="bg-white border border-[#E8E4DC] hover:border-[#1A1817] p-7 transition-all duration-300 shadow-minimal flex flex-col justify-between group"
-              >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-[#1A1817] font-mono text-xs font-semibold bg-[#FAF9F6] px-3 py-1 border border-[#E8E4DC]">
-                      {item.year}
-                    </span>
-                    {item.highlightBadge && (
-                      <span className="text-[10px] uppercase font-mono text-[#B88E28] bg-[#FAF9F6] px-2.5 py-0.5 border border-[#E8E4DC] font-semibold">
-                        {item.highlightBadge}
-                      </span>
-                    )}
-                  </div>
-
-                  <div>
-                    <h4 className="text-[#1A1817] font-serif text-lg font-normal group-hover:text-[#B88E28] transition-colors">
-                      {item.title}
-                    </h4>
-                    <p className="text-[#888888] text-xs mt-1 font-mono">
-                      {item.organization} • <span className="text-[#1A1817]">{item.location}</span>
-                    </p>
-                  </div>
-
-                  <p className="text-[#555555] text-xs leading-relaxed font-light">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* Career Timeline Tree */}
+        <TimelineTree />
 
       </div>
     </section>
