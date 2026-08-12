@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChefHat, Instagram, Mail, MapPin, Phone } from 'lucide-react';
+import { ChefHat, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import { CHEF_PROFILE } from '../data/portfolioData';
 
 export const Footer: React.FC = () => {
@@ -48,6 +48,15 @@ export const Footer: React.FC = () => {
                 title="Instagram @yaseer.s.arafath"
               >
                 <Instagram className="w-4 h-4" />
+              </a>
+              <a
+                href={CHEF_PROFILE.linkedinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 bg-[#FAFAFA] border border-[#EEEEEE] hover:border-[#0A66C2] flex items-center justify-center text-[#0A66C2] transition-colors"
+                title="LinkedIn Profile"
+              >
+                <Linkedin className="w-4 h-4" />
               </a>
               <a
                 href={`mailto:${CHEF_PROFILE.contactEmail}`}

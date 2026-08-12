@@ -17,18 +17,23 @@ export const SEOSchemaModal: React.FC<SEOSchemaModalProps> = ({ isOpen, onClose 
     "@type": "Person",
     "name": "Yaseer Arafath",
     "alternateName": "Chef Yaseer Arafath",
-    "jobTitle": "Head Chef",
+    "jobTitle": "Executive Chef",
     "worksFor": {
-      "@type": "FoodEstablishment",
-      "name": "Slices Catering",
+      "@type": "EducationalOrganization",
+      "name": "The Arbor School Dubai",
       "location": "Dubai, United Arab Emirates"
     },
+    "sameAs": [
+      "https://www.instagram.com/yaseer.s.arafath/",
+      "https://www.linkedin.com/in/yaseer-arafath-75b67017b/"
+    ],
     "alumniOf": {
       "@type": "EducationalOrganization",
       "name": "Bharathiar University",
       "department": "Department of Restaurant, Culinary & Catering Management"
     },
     "award": [
+      "5th Place - Date-A-Cheese 2026 Competition",
       "1st Prize Winner - UAE Superchef 2024",
       "Silver Medalist - Emirates Culinary Guild (Wathba Dates Festival 2023)"
     ],
@@ -38,9 +43,6 @@ export const SEOSchemaModal: React.FC<SEOSchemaModalProps> = ({ isOpen, onClose 
       "Molecular Gastronomy",
       "Binchotan Charcoal Grilling",
       "VIP Banquet Catering"
-    ],
-    "sameAs": [
-      "https://www.instagram.com/yaseer.s.arafath/"
     ],
     "address": {
       "@type": "PostalAddress",

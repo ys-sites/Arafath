@@ -2,31 +2,32 @@ import { Dish, Milestone, PressItem, InstagramPost } from '../types';
 
 export const CHEF_PROFILE = {
   name: "Chef Yaseer Arafath",
-  title: "Head Chef | Culinary Innovator & Gastronomer",
-  currentRole: "Head Chef at Slices Catering (Dubai, UAE)",
+  title: "Executive Chef | Culinary Innovator & Gastronomer",
+  currentRole: "Executive Chef at The Arbor School Dubai",
   portraitImage: "/yaseer.jpeg",
   kitchenImage: "/yaseer.jpeg",
   instagramHandle: "@yaseer.s.arafath",
   instagramUrl: "https://www.instagram.com/yaseer.s.arafath/",
   location: "Dubai, United Arab Emirates",
-  yearsExperience: "12+",
-  topTitle: "UAE Superchef 2024 Winner & ECG Silver Medalist",
-  bio: `Chef Yaseer Arafath is a celebrated Head Chef based in Dubai, UAE, renowned for elevating Middle Eastern & international gastronomy into fine-art dining experiences. With over a decade of high-end culinary expertise, Chef Yaseer combines rigorous classical techniques—sautéing, precise charcoal grilling, and delicate molecular gastronomy—with rich Arabian cultural heritage. 
+  yearsExperience: "15+",
+  topTitle: "Executive Chef @ Arbor • UAE Superchef 2024 Winner & Date-A-Cheese 2026 Finalist",
+  bio: `Chef Yaseer Arafath is an Executive Chef based in Dubai, UAE, currently heading culinary operations & "The Farmhouse" at The Arbor School Dubai. With over 15 years of high-end gastronomy, production management, and central kitchen leadership across the UAE, Chef Yaseer achieved HACCP Certification (AGA Certifications) for kitchen operations and retained the Dubai Municipality Gold Rating across canteen, kitchen, and café.
 
-Currently leading culinary direction as Head Chef at Slices Catering Dubai, Chef Yaseer crafts bespoke catering operations, private VIP dinners, and high-volume luxury events across the United Arab Emirates. His background includes culinary leadership roles at The Arbor School Dubai and the iconic Queen Elizabeth 2 (QE2 Hotel & Ocean Liner in Dubai), alongside formal academic credentials in Culinary & Catering Management from Bharathiar University.`,
-  quote: "Culinary artistry is the seamless bridge between deep heritage techniques and modern sensory expression. Every plate must tell a story of provenance, precision, and passion.",
+Currently leading executive culinary directorship at Arbor, Chef Yaseer crafts sustainable farm-to-table cuisine, live cookery lunches, and high-volume nutritional gastronomy. Previously Head Chef & Production Manager at Slices Catering Dubai for nearly 6 years (2,083 days), his achievements include placing 1st in the UAE Superchef 2024 Competition, 5th in the Date-A-Cheese 2026 Competition among hundreds of chefs, earning an Emirates Culinary Guild Silver Medal, and holding a Bachelor's Degree in Culinary & Catering Management (Grade A) from Bharathiar University.`,
+  quote: "Culinary artistry is the seamless bridge between deep heritage techniques, uncompromising food safety, and modern sensory expression.",
   contactEmail: "yaseer.s.arafath@gmail.com",
   phoneDisplay: "+971 50 302 3056",
   whatsappNumber: "+971 50 302 3056",
   whatsappUrl: "https://api.whatsapp.com/send/?phone=971503023056&text&type=phone_number&app_absent=0",
+  linkedinUrl: "https://www.linkedin.com/in/yaseer-arafath-75b67017b/",
   collaborationScope: "Executive Leadership & Consulting"
 };
 
 export const CHEF_STATS = [
-  { label: "Years of Culinary Mastery", value: "12+" },
-  { label: "UAE Superchef 2024 Title", value: "1st Place" },
-  { label: "Emirates Culinary Guild", value: "Silver Medal" },
-  { label: "High-End Projects Directed", value: "1,200+" },
+  { label: "Years of Executive Culinary Mastery", value: "15+" },
+  { label: "UAE Superchef 2024 Winner", value: "1st Place" },
+  { label: "Date-A-Cheese 2026 Competition", value: "5th Place" },
+  { label: "Food Safety & Audit Standard", value: "HACCP & Gold" },
 ];
 
 export const SIGNATURE_DISHES: Dish[] = [
@@ -75,7 +76,7 @@ export const SIGNATURE_DISHES: Dish[] = [
     ingredients: ["Dragonfruit (Pitaya)", "Papaya Rubies", "Golden Melon", "Fresh Berries", "Edible Pansies"],
     pairing: "Cold-Pressed Passionfruit & Yuzu Spritz",
     image: "/image.png",
-    badge: "Slices Catering VIP Favorite",
+    badge: "VIP Artisanal Display",
     awardWinning: false
   },
   {
@@ -87,7 +88,7 @@ export const SIGNATURE_DISHES: Dish[] = [
     ingredients: ["Shortcrust Tart Shells", "Savory Whipped Cream", "Paprika Dust", "Edible Botanical Flowers"],
     pairing: "Royal Emirates Coffee & Cardamom Infusion",
     image: "/image copy.png",
-    badge: "Banquet Hors d'œuvre Star",
+    badge: "Gourmet Culinary Feature",
     awardWinning: false
   },
   {
@@ -99,21 +100,54 @@ export const SIGNATURE_DISHES: Dish[] = [
     ingredients: ["Chef's Selection Fine Ingredients"],
     pairing: "Custom Sommelier Non-Alcoholic Pairing",
     image: "/image copy 2.png",
-    badge: "VIP Banquet Directorship",
+    badge: "Executive Tasting Directorship",
     awardWinning: true
   }
 ];
 
 export const CAREER_MILESTONES: Milestone[] = [
   {
+    year: "Aug 2025 – Present",
+    title: "Executive Chef",
+    organization: "The Arbor School Dubai (The Farmhouse)",
+    location: "Dubai, UAE",
+    description: "Heading 'The Farmhouse' culinary vision & operations. Achieved HACCP Certification via AGA Certifications and retained Dubai Municipality Gold Rating across canteen, kitchen & café.",
+    category: "experience",
+    highlightBadge: "Current Leadership Role"
+  },
+  {
+    year: "2026",
+    title: "5th Place Winner — Date-A-Cheese 2026 Competition",
+    organization: "Date-A-Cheese Culinary Competition",
+    location: "Dubai, UAE",
+    description: "Placed 5th among hundreds of competing professional chefs across the UAE, showcasing artisanal date-cheese pairings and precision technique.",
+    category: "award",
+    highlightBadge: "Top 5 UAE Finalist"
+  },
+  {
     year: "2024",
     title: "1st Prize Winner — UAE Superchef 2024",
     organization: "Xpatzhub Live Cooking Competition at Firki, Royal Ascot Hotel",
     location: "Dubai, UAE",
-    description: "Earned first place among top professional chefs in the United Arab Emirates in a high-stakes live culinary showdown, showcasing speed, precision plating, and exceptional taste harmony.",
+    description: "Earned first place among top professional chefs in the United Arab Emirates in a high-stakes live culinary showdown, showcasing speed, precision plating, and taste harmony.",
     category: "award",
-    highlightBadge: "First Place Trophy",
-    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80"
+    highlightBadge: "First Place Trophy"
+  },
+  {
+    year: "Aug 2022 – Aug 2025",
+    title: "Head Chef",
+    organization: "Slices Catering",
+    location: "Dubai, UAE",
+    description: "Directing large-scale gourmet culinary operations, menu development, luxury banquets, and daily high-volume gourmet offerings for 3+ years as Head Chef.",
+    category: "experience"
+  },
+  {
+    year: "Oct 2019 – Jul 2022",
+    title: "Production Manager",
+    organization: "Slices Catering",
+    location: "Dubai, UAE",
+    description: "Managed central kitchen production operations, menu costing, food safety compliance, and supply chain logistics over 2,083 total days at Slices.",
+    category: "experience"
   },
   {
     year: "2023",
@@ -122,58 +156,24 @@ export const CAREER_MILESTONES: Milestone[] = [
     location: "Abu Dhabi / Dubai, UAE",
     description: "Awarded Silver Medal by the association of the Emirates Culinary Guild for Arabian/Levant Cuisine Main Course, evaluated by international master chefs.",
     category: "award",
-    highlightBadge: "ECG Silver Medal",
+    highlightBadge: "ECG Silver Medal"
   },
   {
-    year: "2021 – Present",
-    title: "Head Chef",
-    organization: "Slices Catering",
-    location: "Dubai, UAE",
-    description: "Spearheading culinary operations, menu development, luxury banquets, VIP catering, and daily high-volume gourmet offerings for prestigious clients across Dubai and Abu Dhabi.",
-    category: "experience",
-    highlightBadge: "Current Leadership Role"
-  },
-  {
-    year: "2022",
-    title: "Expoculinaire Salon Culinaire UAE Medalist",
-    organization: "Sharjah Expo Center / Worldchefs",
-    location: "Sharjah & Dubai, UAE",
-    description: "Competed in the prestigious ExpoCulinaire live cook-off judged by Worldchefs certified judges, recognized for innovative technique and flavor balance.",
-    category: "award",
-    highlightBadge: "Salon Culinaire"
-  },
-  {
-    year: "2018 – 2021",
-    title: "Senior Culinary Lead & School Catering Operations",
-    organization: "The Arbor School Dubai",
-    location: "Dubai, UAE",
-    description: "Managed farm-to-table culinary initiatives, eco-conscious menu design, and large-scale nutritional gastronomy in alignment with sustainable culinary practices.",
-    category: "experience"
-  },
-  {
-    year: "2015 – 2018",
-    title: "Sous Chef / Culinary Specialist",
+    year: "Dec 2018 – Dec 2019",
+    title: "Chef De Partie",
     organization: "Queen Elizabeth 2 (QE2 Floating Hotel & Ocean Liner)",
     location: "Mina Rashid, Dubai, UAE",
     description: "Executed high-end maritime dining, luxury banquets, and classic fine dining menus aboard the historic QE2 liner in Dubai.",
     category: "experience"
   },
   {
-    year: "2024",
-    title: "Guest Culinary Judge & Keynote Demonstrator",
-    organization: "Department of Hotel Management, Sir Issac Newton Arts & Science College",
-    location: "India / International",
-    description: "Invited as Chief Guest & Live Cooking Judge to inspire upcoming hotel management students, demonstrating advanced plating and kitchen management.",
-    category: "press",
-    highlightBadge: "Academic Keynote"
-  },
-  {
-    year: "2007 – 2010",
+    year: "Jun 2007 – May 2010",
     title: "Bachelor's Degree in Restaurant, Culinary & Catering Management",
     organization: "Bharathiar University",
     location: "Coimbatore, India",
-    description: "Graduated with comprehensive formal grounding in food science, kitchen operations, menu engineering, sanitation, and hospitality management.",
-    category: "education"
+    description: "Graduated with Grade 'A' honors, building comprehensive grounding in food science, kitchen operations, menu engineering, sanitation, and hospitality management.",
+    category: "education",
+    highlightBadge: "Grade A Graduate"
   }
 ];
 

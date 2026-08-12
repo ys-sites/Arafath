@@ -57,7 +57,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenPortfolioSubPage
               </h1>
               
               <p className="text-xs sm:text-lg font-serif text-[#5B564E] font-light italic leading-relaxed">
-                Head Chef at Slices Catering
+                Executive Chef at The Arbor School Dubai
               </p>
             </div>
 

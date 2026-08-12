@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Mail, Phone, User, CheckCircle2, Loader2, Sparkles, Send, Briefcase, MapPin } from 'lucide-react';
+import { Mail, Phone, User, CheckCircle2, Loader2, Sparkles, Send, Briefcase, MapPin, Linkedin } from 'lucide-react';
 import { CHEF_PROFILE } from '../data/portfolioData';
 import { ShinyText } from './ShinyText';
 import { BlurText } from './BlurText';
@@ -158,18 +158,31 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
                 <Briefcase className="w-4 h-4 text-[#99731C] shrink-0" />
                 <div>
                   <span className="text-[#888888] block text-[10px]">Collaboration Scope</span>
-                  <span className="text-[#111111] font-semibold">Consulting, Leadership & Media</span>
+                  <span className="text-[#111111] font-semibold">Executive Leadership & Consulting</span>
                 </div>
               </div>
+
+              <a
+                href={CHEF_PROFILE.linkedinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-3 p-4 bg-[#FAFAFA] border border-[#EEEEEE] hover:border-[#0A66C2] transition-colors group"
+              >
+                <Linkedin className="w-4 h-4 text-[#0A66C2] shrink-0" />
+                <div>
+                  <span className="text-[#888888] block text-[10px]">LinkedIn Professional Network</span>
+                  <span className="text-[#0A66C2] font-semibold group-hover:underline">yaseer-arafath-75b67017b</span>
+                </div>
+              </a>
             </div>
 
             <div className="p-5 bg-[#FAFAFA] border border-[#EEEEEE] text-xs space-y-2">
               <div className="flex items-center space-x-2 text-[#99731C] font-mono font-semibold uppercase tracking-wider">
                 <Sparkles className="w-4 h-4 text-[#99731C]" />
-                <span>Culinary Leadership Guarantee</span>
+                <span>Executive Culinary Guarantee</span>
               </div>
               <p className="text-[#555555] leading-relaxed text-[11px] font-light">
-                12+ years of verified executive leadership, award-winning culinary innovation (UAE Superchef 2024 Winner), and high-capacity kitchen directorship.
+                15+ years of verified executive leadership, HACCP certified food safety directorship, Dubai Municipality Gold Rating, and award-winning culinary innovation (UAE Superchef 2024 Winner & Date-A-Cheese 2026 Finalist).
               </p>
             </div>
           </div>

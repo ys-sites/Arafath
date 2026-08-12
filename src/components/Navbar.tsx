@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChefHat, Calendar, Sparkles, Menu, X, Instagram, Trophy, FileText, Phone } from 'lucide-react';
+import { ChefHat, Calendar, Sparkles, Menu, X, Instagram, Linkedin, Trophy, FileText, Phone } from 'lucide-react';
 import { CHEF_PROFILE } from '../data/portfolioData';
 
 interface NavbarProps {
@@ -62,7 +62,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 Yaseer Arafath
               </span>
               <span className="text-[9px] sm:text-[10px] tracking-widest font-mono uppercase text-[#68645E] block mt-1 font-semibold">
-                Head Chef • Slices Dubai
+                Executive Chef • Arbor Dubai
               </span>
             </div>
           </div>
@@ -118,6 +118,16 @@ export const Navbar: React.FC<NavbarProps> = ({
               title="Instagram @yaseer.s.arafath"
             >
               <Instagram className="w-4 h-4" />
+            </a>
+
+            <a
+              href={CHEF_PROFILE.linkedinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#0A66C2] hover:opacity-80 transition-opacity p-2"
+              title="LinkedIn Profile"
+            >
+              <Linkedin className="w-4 h-4" />
             </a>
 
             <button

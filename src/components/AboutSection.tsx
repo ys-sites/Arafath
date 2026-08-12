@@ -16,31 +16,35 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
     const dossierText = `
 CHEF YASEER ARAFATH — EXECUTIVE CULINARY DOSSIER
 ==================================================
-Current Title: Head Chef at Slices Catering (Dubai, UAE)
+Current Title: Executive Chef at The Arbor School Dubai
 Location: Dubai & Abu Dhabi, United Arab Emirates
 Direct Contact: ${CHEF_PROFILE.contactEmail}
 Instagram: https://www.instagram.com/yaseer.s.arafath/
+LinkedIn: https://www.linkedin.com/in/yaseer-arafath-75b67017b/
 
 HONORS & ACCOLADES
 -------------------
+• 5th Place Winner — Date-A-Cheese 2026 Competition (Among 100s of top UAE chefs)
 • 1st Prize Winner — UAE Superchef 2024 (Xpatzhub Competition at Firki, Royal Ascot Hotel, June 2024)
 • Silver Medalist — Emirates Culinary Guild (Wathba Dates Festival, Dec 2023)
 • Medalist — ExpoCulinaire Salon Culinaire UAE (Worldchefs Certified)
 
+STANDARDS & CERTIFICATIONS
+--------------------------
+• HACCP Certification (AGA Certifications / Aligned Global Assurance Middle East ME)
+• Dubai Municipality Gold Rating (Retained across Kitchen, Canteen & Café)
+
 ACADEMIC CREDENTIALS
 --------------------
-• Bachelor's Degree in Restaurant, Culinary & Catering Management
+• Bachelor's Degree in Restaurant, Culinary & Catering Management (Grade A)
   Bharathiar University (2007 – 2010)
 
 EXECUTIVE CAREER HIGHLIGHTS
 ----------------------------
-• 2021 – Present: Head Chef @ Slices Catering Dubai (High-volume gourmet catering directorship)
-• 2018 – 2021: Senior Culinary Lead @ The Arbor School Dubai
-• 2015 – 2018: Sous Chef @ Queen Elizabeth 2 (QE2 Floating Hotel & Liner, Dubai)
-
-CULINARY METHODOLOGY
----------------------
-Sous-vide precision braising, Binchotan charcoal grilling, cryogenic nitrogen gastronomy, Levant heritage reductions, and high-capacity VIP banquet engineering.
+• Aug 2025 – Present: Executive Chef @ The Arbor School Dubai (The Farmhouse)
+• Aug 2022 – Aug 2025: Head Chef @ Slices Catering Dubai (3+ years leading high-volume gourmet catering)
+• Oct 2019 – Jul 2022: Production Manager @ Slices Catering Dubai (Central kitchen production & food safety)
+• Dec 2018 – Dec 2019: Chef De Partie @ Queen Elizabeth 2 (QE2 Floating Hotel & Liner, Dubai)
     `;
 
     const blob = new Blob([dossierText], { type: 'text/plain;charset=utf-8' });
@@ -77,7 +81,7 @@ Sous-vide precision braising, Binchotan charcoal grilling, cryogenic nitrogen ga
             />
           </h2>
           <BlurText
-            text="From formal catering management studies at Bharathiar University to steering operations on the QE2 ocean liner and leading culinary directorship as Head Chef at Slices Catering Dubai."
+            text="From formal culinary management studies at Bharathiar University to steering operations on the QE2 ocean liner, Slices Catering, and leading executive culinary directorship as Executive Chef at The Arbor School Dubai."
             delay={25}
             animateBy="words"
             className="text-[#68645E] text-sm sm:text-base leading-relaxed font-light justify-center"
@@ -93,7 +97,7 @@ Sous-vide precision braising, Binchotan charcoal grilling, cryogenic nitrogen ga
               <div className="relative h-[380px] lg:h-[480px] overflow-hidden group">
                 <img
                   src="/yaseer.jpeg"
-                  alt="Chef Yaseer Arafath Head Chef Dubai"
+                  alt="Chef Yaseer Arafath Executive Chef Dubai"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover object-top transition-all duration-700"
                 />
@@ -102,14 +106,14 @@ Sous-vide precision braising, Binchotan charcoal grilling, cryogenic nitrogen ga
                   <span className="text-[10px] font-mono uppercase text-[#B88E28] tracking-widest font-semibold block">
                     Chef Yaseer Arafath
                   </span>
-                  <p className="text-sm font-serif text-white font-normal">Head Chef @ Slices Catering Dubai</p>
+                  <p className="text-sm font-serif text-white font-normal">Executive Chef @ The Arbor School Dubai</p>
                 </div>
               </div>
 
               {/* Quick Credential Strip */}
               <div className="mt-3 p-3 bg-white border border-[#E8E4DC] flex items-center justify-between text-xs text-[#68645E]">
                 <span className="font-mono text-[11px] font-semibold text-[#1A1817]">Bharathiar University Alumnus</span>
-                <span className="font-mono text-[11px] text-[#888888]">Slices Catering Dubai</span>
+                <span className="font-mono text-[11px] text-[#888888]">Executive Chef — Arbor</span>
               </div>
             </div>
           </div>
@@ -119,7 +123,7 @@ Sous-vide precision braising, Binchotan charcoal grilling, cryogenic nitrogen ga
             <div className="space-y-5">
               <div className="flex items-center space-x-3 text-[#1A1817]">
                 <ChefHat className="w-5 h-5 text-[#B88E28]" />
-                <h3 className="text-2xl sm:text-3xl font-serif text-[#1A1817] font-normal">The Journey of Head Chef Yaseer Arafath</h3>
+                <h3 className="text-2xl sm:text-3xl font-serif text-[#1A1817] font-normal">The Journey of Executive Chef Yaseer Arafath</h3>
               </div>
               <p className="text-[#44403C] text-sm sm:text-base leading-relaxed whitespace-pre-line font-light">
                 {CHEF_PROFILE.bio}
