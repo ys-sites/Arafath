@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, Utensils, CheckCircle2, ArrowRight, Loader2, RefreshCw } from 'lucide-react';
+import { Sparkles, Utensils, CheckCircle2, Loader2, RefreshCw } from 'lucide-react';
 import { AIMenuResponse } from '../types';
 
 interface AIMenuCuratorModalProps {
@@ -13,11 +13,9 @@ export const AIMenuCuratorModal: React.FC<AIMenuCuratorModalProps> = ({
   onClose,
   onAttachMenuToBooking
 }) => {
-  const [eventType, setEventType] = useState('Exclusive VIP Dining');
+  const [conceptType, setConceptType] = useState('Restaurant & Hotel Menu Concept');
   const [cuisinePreference, setCuisinePreference] = useState('Levant & Modern Fusion');
-  const [guestCount, setGuestCount] = useState('25');
-  const [dietary, setDietary] = useState('Halal / Organic / GF Options');
-  const [budgetTier, setBudgetTier] = useState('Royal Fine Dining');
+  const [collaborationFocus, setCollaborationFocus] = useState('Executive Culinary Directorship');
   const [specificNotes, setSpecificNotes] = useState('Focus on signature date reductions, gold leaf accents, and live charcoal smoke presentation.');
 
   const [loading, setLoading] = useState(false);
@@ -34,11 +32,11 @@ export const AIMenuCuratorModal: React.FC<AIMenuCuratorModalProps> = ({
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          eventType,
+          eventType: conceptType,
           cuisinePreference,
-          guestCount,
-          dietary,
-          budgetTier,
+          guestCount: 'N/A (Consulting)',
+          dietary: collaborationFocus,
+          budgetTier: 'Executive Concept',
           specificNotes
         })
       });
@@ -65,7 +63,7 @@ export const AIMenuCuratorModal: React.FC<AIMenuCuratorModalProps> = ({
               <Sparkles className="w-4 h-4 text-[#99731C]" />
             </div>
             <div>
-              <h3 className="text-xl font-serif text-[#111111] font-normal">AI Bespoke Menu Curator</h3>
+              <h3 className="text-xl font-serif text-[#111111] font-normal">AI Culinary Concept Curator</h3>
               <p className="text-[10px] text-[#99731C] uppercase tracking-wider font-semibold">Chef Yaseer Arafath • Gemini Intelligence</p>
             </div>
           </div>
@@ -81,22 +79,21 @@ export const AIMenuCuratorModal: React.FC<AIMenuCuratorModalProps> = ({
         {!generatedMenu ? (
           <form onSubmit={handleGenerateMenu} className="mt-6 space-y-4 text-left">
             <p className="text-xs text-[#555555] leading-relaxed font-light">
-              Define your event parameters below. Chef Yaseer's AI Curator will generate an exclusive 4-course gourmet menu with dish descriptions, plating notes, and beverage pairings.
+              Select your culinary direction below. Chef Yaseer's AI Curator will generate a 4-course menu concept proposal with dish descriptions, plating notes, and flavor pairings for your review.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono">
               <div>
-                <label className="block text-[#888888] mb-1 uppercase tracking-wider text-[10px]">Event Type</label>
+                <label className="block text-[#888888] mb-1 uppercase tracking-wider text-[10px]">Concept Type</label>
                 <select
-                  value={eventType}
-                  onChange={(e) => setEventType(e.target.value)}
+                  value={conceptType}
+                  onChange={(e) => setConceptType(e.target.value)}
                   className="w-full bg-[#FAFAFA] border border-[#EEEEEE] px-4 py-3 text-[#111111] focus:outline-none focus:border-[#111111] font-sans"
                 >
-                  <option value="Exclusive VIP Dining">Exclusive VIP Private Dining</option>
-                  <option value="Gala Wedding Banquet">Gala Wedding Banquet</option>
-                  <option value="Corporate Hospitality">Corporate Hospitality Summit</option>
-                  <option value="Live Molecular Masterclass">Live Molecular Masterclass</option>
-                  <option value="Yacht / Villa Dinner">Yacht / Luxury Villa Dinner</option>
+                  <option value="Restaurant & Hotel Menu Concept">Restaurant & Hotel Menu Concept</option>
+                  <option value="Executive Fine Dining Tasting">Executive Fine Dining Tasting</option>
+                  <option value="Live Molecular Demonstration">Live Molecular Demonstration</option>
+                  <option value="Brand Partnership & Product Launch">Brand Partnership & Product Launch</option>
                 </select>
               </div>
 
@@ -113,51 +110,27 @@ export const AIMenuCuratorModal: React.FC<AIMenuCuratorModalProps> = ({
                   <option value="Seafood & Citrus Elixirs">Red Sea Seafood & Cold-Pressed Elixirs</option>
                 </select>
               </div>
-
-              <div>
-                <label className="block text-[#888888] mb-1 uppercase tracking-wider text-[10px]">Expected Guests</label>
-                <input
-                  type="text"
-                  value={guestCount}
-                  onChange={(e) => setGuestCount(e.target.value)}
-                  className="w-full bg-[#FAFAFA] border border-[#EEEEEE] px-4 py-3 text-[#111111] focus:outline-none focus:border-[#111111] font-sans"
-                  placeholder="e.g. 15, 50, 200"
-                />
-              </div>
-
-              <div>
-                <label className="block text-[#888888] mb-1 uppercase tracking-wider text-[10px]">Budget / Service Tier</label>
-                <select
-                  value={budgetTier}
-                  onChange={(e) => setBudgetTier(e.target.value)}
-                  className="w-full bg-[#FAFAFA] border border-[#EEEEEE] px-4 py-3 text-[#111111] focus:outline-none focus:border-[#111111] font-sans"
-                >
-                  <option value="Royal Fine Dining">Royal Fine Dining (Gold Leaf & Truffle)</option>
-                  <option value="Executive Premium">Executive Premium (4-Course)</option>
-                  <option value="Luxury Banquet">Gourmet Luxury Banquet</option>
-                </select>
-              </div>
             </div>
 
             <div className="text-xs font-mono">
-              <label className="block text-[#888888] mb-1 uppercase tracking-wider text-[10px]">Dietary Preferences</label>
+              <label className="block text-[#888888] mb-1 uppercase tracking-wider text-[10px]">Collaboration Focus</label>
               <input
                 type="text"
-                value={dietary}
-                onChange={(e) => setDietary(e.target.value)}
+                value={collaborationFocus}
+                onChange={(e) => setCollaborationFocus(e.target.value)}
                 className="w-full bg-[#FAFAFA] border border-[#EEEEEE] px-4 py-3 text-[#111111] focus:outline-none focus:border-[#111111] font-sans"
-                placeholder="e.g. Halal, Gluten-Free, Keto, Vegan option for 4 guests"
+                placeholder="e.g. Menu Revamp, Recipe R&D, Executive Directorship"
               />
             </div>
 
             <div className="text-xs font-mono">
-              <label className="block text-[#888888] mb-1 uppercase tracking-wider text-[10px]">Theme & Plating Preferences</label>
+              <label className="block text-[#888888] mb-1 uppercase tracking-wider text-[10px]">Culinary & Plating Vision Notes</label>
               <textarea
                 value={specificNotes}
                 onChange={(e) => setSpecificNotes(e.target.value)}
-                rows={2}
+                rows={3}
                 className="w-full bg-[#FAFAFA] border border-[#EEEEEE] px-4 py-3 text-[#111111] focus:outline-none focus:border-[#111111] resize-none font-sans font-light"
-                placeholder="Specific flavor notes, decor style, or special requests..."
+                placeholder="Specific flavor notes, decor style, or special culinary requests..."
               />
             </div>
 
@@ -170,12 +143,12 @@ export const AIMenuCuratorModal: React.FC<AIMenuCuratorModalProps> = ({
                 {loading ? (
                   <>
                     <Loader2 className="w-4 h-4 animate-spin text-white" />
-                    <span>Generating Custom Menu with Gemini...</span>
+                    <span>Generating Custom Concept with Gemini...</span>
                   </>
                 ) : (
                   <>
                     <Sparkles className="w-4 h-4 text-white" />
-                    <span>Curate Bespoke Event Menu</span>
+                    <span>Curate Culinary Concept</span>
                   </>
                 )}
               </button>
@@ -248,7 +221,7 @@ export const AIMenuCuratorModal: React.FC<AIMenuCuratorModalProps> = ({
                 className="flex-1 bg-[#111111] hover:bg-[#333333] text-white font-mono text-xs uppercase tracking-widest py-3.5 transition-colors text-center cursor-pointer flex items-center justify-center space-x-2"
               >
                 <CheckCircle2 className="w-4 h-4 text-white" />
-                <span>Attach Menu to Booking Request</span>
+                <span>Attach Concept to Collaboration Inquiry</span>
               </button>
 
               <button
@@ -267,5 +240,3 @@ export const AIMenuCuratorModal: React.FC<AIMenuCuratorModalProps> = ({
     </div>
   );
 };
-
-

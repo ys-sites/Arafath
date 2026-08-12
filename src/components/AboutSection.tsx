@@ -36,7 +36,7 @@ ACADEMIC CREDENTIALS
 
 EXECUTIVE CAREER HIGHLIGHTS
 ----------------------------
-• 2021 – Present: Head Chef @ Slices Catering Dubai (Banquets up to 2,000+ guests)
+• 2021 – Present: Head Chef @ Slices Catering Dubai (High-volume gourmet catering directorship)
 • 2018 – 2021: Senior Culinary Lead @ The Arbor School Dubai
 • 2015 – 2018: Sous Chef @ Queen Elizabeth 2 (QE2 Floating Hotel & Liner, Dubai)
 
@@ -150,7 +150,7 @@ Sous-vide precision braising, Binchotan charcoal grilling, cryogenic nitrogen ga
                 className="cursor-pointer bg-[#1A1817] hover:bg-[#383431] text-white uppercase tracking-widest px-6 py-3.5 transition-colors flex items-center justify-center space-x-2"
               >
                 <Calendar className="w-4 h-4 text-white" />
-                <span>Inquire for Executive Consultation</span>
+                <span>Inquire for Work & Collaboration</span>
               </button>
 
               <button

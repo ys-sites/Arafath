@@ -19,14 +19,14 @@ Currently leading culinary direction as Head Chef at Slices Catering Dubai, Chef
   phoneDisplay: "+971 50 302 3056",
   whatsappNumber: "+971 50 302 3056",
   whatsappUrl: "https://api.whatsapp.com/send/?phone=971503023056&text&type=phone_number&app_absent=0",
-  cateringCapacity: "10 to 2,000 Guests"
+  collaborationScope: "Executive Leadership & Consulting"
 };
 
 export const CHEF_STATS = [
   { label: "Years of Culinary Mastery", value: "12+" },
   { label: "UAE Superchef 2024 Title", value: "1st Place" },
   { label: "Emirates Culinary Guild", value: "Silver Medal" },
-  { label: "High-End Events Curated", value: "1,200+" },
+  { label: "High-End Projects Directed", value: "1,200+" },
 ];
 
 export const SIGNATURE_DISHES: Dish[] = [

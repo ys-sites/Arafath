@@ -51,7 +51,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectDishForB
             { id: 'all', label: 'All Creations' },
             { id: 'signature', label: 'Signature Dishes' },
             { id: 'levant', label: 'Modern Levant' },
-            { id: 'catering', label: 'VIP Banquets & Displays' },
+            { id: 'catering', label: 'Artisanal & Large Displays' },
             { id: 'dessert', label: 'Haute Desserts' },
             { id: 'drinks', label: 'Botanical Elixirs' },
           ].map((cat) => (
