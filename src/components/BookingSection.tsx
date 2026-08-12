@@ -171,7 +171,10 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
                 <Linkedin className="w-4 h-4 text-[#0A66C2] shrink-0" />
                 <div>
                   <span className="text-[#888888] block text-[10px]">LinkedIn Professional Network</span>
-                  <span className="text-[#0A66C2] font-semibold group-hover:underline">yaseer-arafath-75b67017b</span>
+                  <span className="text-[#0A66C2] font-semibold group-hover:underline flex items-center gap-1">
+                    <span>View Profile</span>
+                    <span className="text-[10px]">↗</span>
+                  </span>
                 </div>
               </a>
             </div>
