@@ -7,13 +7,11 @@ import { AwardsSection } from './components/AwardsSection';
 import { GallerySection } from './components/GallerySection';
 import { InstagramSection } from './components/InstagramSection';
 import { BookingSection } from './components/BookingSection';
-import { AIMenuCuratorModal } from './components/AIMenuCuratorModal';
 import { SEOSchemaModal } from './components/SEOSchemaModal';
 import { Footer } from './components/Footer';
-import { MessageSquare, Sparkles } from 'lucide-react';
+import { MessageSquare } from 'lucide-react';
 
 export default function App() {
-  const [isAIMenuOpen, setIsAIMenuOpen] = useState(false);
   const [isSEOModalOpen, setIsSEOModalOpen] = useState(false);
   const [prefilledMenuTitle, setPrefilledMenuTitle] = useState('');
   const [prefilledMenuSummary, setPrefilledMenuSummary] = useState('');
@@ -34,18 +32,12 @@ export default function App() {
     handleScrollToBooking();
   };
 
-  const handleAttachMenuToBooking = (menuTitle: string, menuSummary: string) => {
-    setPrefilledMenuTitle(menuTitle);
-    setPrefilledMenuSummary(menuSummary);
-    handleScrollToBooking();
-  };
-
   const handleGoHome = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const whatsappMessage = encodeURIComponent(
-    "Hello Chef Yaseer! I would like to inquire about private catering / culinary collaboration."
+    "Hello Chef Yaseer! I would like to inquire about culinary collaboration."
   );
 
   return (
@@ -54,7 +46,6 @@ export default function App() {
       <Navbar
         onGoHome={handleGoHome}
         onOpenBooking={handleScrollToBooking}
-        onOpenAIMenu={() => setIsAIMenuOpen(true)}
         onOpenSEOModal={() => setIsSEOModalOpen(true)}
       />
 
@@ -62,7 +53,6 @@ export default function App() {
       <main>
         <HeroSection
           onOpenBooking={handleScrollToBooking}
-          onOpenAIMenu={() => setIsAIMenuOpen(true)}
           onOpenPortfolioSubPage={handleScrollToAbout}
         />
 
@@ -88,16 +78,6 @@ export default function App() {
 
       {/* Floating Action Buttons */}
       <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3 items-end">
-        {/* Quick Menu AI Floating Trigger */}
-        <button
-          onClick={() => setIsAIMenuOpen(true)}
-          className="group flex items-center gap-2 bg-white/95 backdrop-blur-md border border-[#B88E28]/40 hover:border-[#B88E28] text-[#1A1817] px-4 py-2.5 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer"
-          title="Bespoke Menu Consultation"
-        >
-          <Sparkles className="w-4 h-4 text-[#B88E28] animate-pulse" />
-          <span className="text-xs font-semibold uppercase tracking-wider hidden sm:inline">Menu Concierge</span>
-        </button>
-
         {/* WhatsApp Direct Inquiry Button */}
         <a
           href={`https://api.whatsapp.com/send/?phone=971503023056&text=${whatsappMessage}&type=phone_number&app_absent=0`}
@@ -114,12 +94,6 @@ export default function App() {
       <Footer />
 
       {/* Modals */}
-      <AIMenuCuratorModal
-        isOpen={isAIMenuOpen}
-        onClose={() => setIsAIMenuOpen(false)}
-        onAttachMenuToBooking={handleAttachMenuToBooking}
-      />
-
       <SEOSchemaModal
         isOpen={isSEOModalOpen}
         onClose={() => setIsSEOModalOpen(false)}
@@ -127,6 +101,3 @@ export default function App() {
     </div>
   );
 }
-
-
-

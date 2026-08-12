@@ -5,14 +5,12 @@ import { CHEF_PROFILE } from '../data/portfolioData';
 interface NavbarProps {
   onGoHome: () => void;
   onOpenBooking: () => void;
-  onOpenAIMenu: () => void;
   onOpenSEOModal: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   onGoHome,
-  onOpenBooking,
-  onOpenAIMenu
+  onOpenBooking
 }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -55,9 +53,9 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="cursor-pointer flex items-center space-x-2.5 sm:space-x-3.5 group text-left"
           >
             <img
-              src="/logo svg.svg"
+              src="/LOGO.png"
               alt="Chef Yaseer Arafath Logo"
-              className="h-11 sm:h-12 w-auto object-contain shrink-0 mix-blend-multiply"
+              className="h-10 sm:h-12 w-auto object-contain shrink-0"
             />
             <div>
               <span className="text-sm sm:text-base font-serif tracking-widest text-[#1A1817] uppercase font-bold block leading-none">
@@ -123,14 +121,6 @@ export const Navbar: React.FC<NavbarProps> = ({
             </a>
 
             <button
-              onClick={onOpenAIMenu}
-              className="cursor-pointer text-[#68645E] hover:text-[#1A1817] text-xs font-mono uppercase tracking-wider flex items-center space-x-1.5 transition-colors"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-[#B88E28]" />
-              <span>Menu Concierge</span>
-            </button>
-
-            <button
               onClick={onOpenBooking}
               className="cursor-pointer bg-[#1A1817] hover:bg-[#383431] text-white font-mono text-xs px-5 py-2.5 rounded-none transition-colors tracking-widest uppercase"
             >
@@ -190,22 +180,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
-                onOpenAIMenu();
-              }}
-              className="w-full bg-white text-[#1A1817] text-xs py-3 border border-[#1A1817] flex items-center justify-center space-x-2 font-mono uppercase tracking-wider"
-            >
-              <Sparkles className="w-4 h-4 text-[#B88E28]" />
-              <span>Menu Concierge</span>
-            </button>
-
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
                 onOpenBooking();
               }}
               className="w-full bg-[#1A1817] text-white text-xs py-3 font-mono uppercase tracking-widest"
             >
-              Inquire for VIP Booking
+              Inquire to Work & Collaborate
             </button>
           </div>
         </div>

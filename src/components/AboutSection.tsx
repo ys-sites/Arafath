@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { ChefHat, GraduationCap, Building2, Flame, Award, CheckCircle2, Calendar, Sparkles, Download } from 'lucide-react';
 import { CHEF_PROFILE, CAREER_MILESTONES } from '../data/portfolioData';
+import { ShinyText } from './ShinyText';
+import { BlurText } from './BlurText';
 
 interface AboutSectionProps {
   onOpenBooking: () => void;
@@ -69,11 +71,21 @@ Sous-vide precision braising, Binchotan charcoal grilling, cryogenic nitrogen ga
             Biography & Credentials
           </span>
           <h2 className="text-4xl sm:text-6xl font-serif text-[#1A1817] tracking-tight font-normal">
-            A Decade of <span className="italic font-serif font-light text-[#4A4640]">Culinary Distinction</span>
+            A Decade of{' '}
+            <ShinyText
+              text="Culinary Distinction"
+              color="#B88E28"
+              shineColor="#FFF5B8"
+              speed={2.5}
+              className="italic font-serif font-light text-[#B88E28]"
+            />
           </h2>
-          <p className="text-[#68645E] text-sm sm:text-base leading-relaxed font-light">
-            From formal catering management studies at Bharathiar University to steering operations on the QE2 ocean liner and leading culinary directorship as Head Chef at Slices Catering Dubai.
-          </p>
+          <BlurText
+            text="From formal catering management studies at Bharathiar University to steering operations on the QE2 ocean liner and leading culinary directorship as Head Chef at Slices Catering Dubai."
+            delay={25}
+            animateBy="words"
+            className="text-[#68645E] text-sm sm:text-base leading-relaxed font-light justify-center"
+          />
         </div>
 
         {/* Bio & Kitchen Action Grid */}

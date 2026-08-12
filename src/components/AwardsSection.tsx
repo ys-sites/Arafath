@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Trophy, Award, Newspaper, ExternalLink, CheckCircle2 } from 'lucide-react';
 import { PRESS_ITEMS } from '../data/portfolioData';
+import { ShinyText } from './ShinyText';
+import { BlurText } from './BlurText';
 
 export const AwardsSection: React.FC = () => {
   const [selectedPress, setSelectedPress] = useState<typeof PRESS_ITEMS[0] | null>(null);
@@ -15,11 +17,21 @@ export const AwardsSection: React.FC = () => {
             Accolades & Press Features
           </span>
           <h2 className="text-4xl sm:text-6xl font-serif text-[#1A1817] tracking-tight font-normal">
-            Recognized by <span className="italic font-serif font-light text-[#4A4640]">Industry Authorities</span>
+            Recognized by{' '}
+            <ShinyText
+              text="Industry Authorities"
+              color="#B88E28"
+              shineColor="#FFF5B8"
+              speed={2.5}
+              className="italic font-serif font-light text-[#B88E28]"
+            />
           </h2>
-          <p className="text-[#68645E] text-sm sm:text-base font-light">
-            Award-winning culinary excellence verified by national competitions, the Emirates Culinary Guild, and premier UAE press publications.
-          </p>
+          <BlurText
+            text="Award-winning culinary excellence verified by national competitions, the Emirates Culinary Guild, and premier UAE press publications."
+            delay={25}
+            animateBy="words"
+            className="text-[#68645E] text-sm sm:text-base font-light justify-center"
+          />
         </div>
 
         {/* Feature Spotlight Grid */}

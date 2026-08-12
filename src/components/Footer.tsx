@@ -12,9 +12,9 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-5 space-y-4 text-left">
             <div className="flex items-center space-x-3">
               <img
-                src="/logo svg.svg"
+                src="/LOGO.png"
                 alt="Chef Yaseer Arafath Logo"
-                className="h-11 w-auto object-contain mix-blend-multiply"
+                className="h-10 sm:h-12 w-auto object-contain"
               />
               <div>
                 <span className="text-base font-serif font-bold text-[#1A1817] tracking-wider block uppercase">

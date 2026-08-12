@@ -5,11 +5,10 @@ import { BlurText } from './BlurText';
 
 interface HeroSectionProps {
   onOpenBooking: () => void;
-  onOpenAIMenu: () => void;
   onOpenPortfolioSubPage: () => void;
 }
 
-export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking, onOpenPortfolioSubPage }) => {
+export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenPortfolioSubPage }) => {
   return (
     <section className="relative min-h-[90vh] sm:min-h-screen w-full flex items-center overflow-hidden bg-[#FAF9F6] text-[#1A1817] border-b border-[#E8E4DC]">
       
