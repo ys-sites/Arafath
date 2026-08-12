@@ -79,13 +79,8 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-[#111111] transition-colors">
-                  Catering & Freelance Services
-                </a>
-              </li>
-              <li>
                 <a href="#contact" className="hover:text-[#111111] transition-colors">
-                  Book VIP Consultation
+                  Contact & Inquiries
                 </a>
               </li>
             </ul>

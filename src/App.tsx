@@ -5,33 +5,27 @@ import { StatsBanner } from './components/StatsBanner';
 import { AboutSection } from './components/AboutSection';
 import { AwardsSection } from './components/AwardsSection';
 import { GallerySection } from './components/GallerySection';
-import { ServicesSection } from './components/ServicesSection';
 import { InstagramSection } from './components/InstagramSection';
 import { BookingSection } from './components/BookingSection';
-import { PortfolioSubPage } from './components/PortfolioSubPage';
 import { AIMenuCuratorModal } from './components/AIMenuCuratorModal';
 import { SEOSchemaModal } from './components/SEOSchemaModal';
 import { Footer } from './components/Footer';
 import { MessageSquare, Sparkles } from 'lucide-react';
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'home' | 'portfolio'>('home');
   const [isAIMenuOpen, setIsAIMenuOpen] = useState(false);
   const [isSEOModalOpen, setIsSEOModalOpen] = useState(false);
   const [prefilledMenuTitle, setPrefilledMenuTitle] = useState('');
   const [prefilledMenuSummary, setPrefilledMenuSummary] = useState('');
 
   const handleScrollToBooking = () => {
-    if (currentView !== 'home') {
-      setCurrentView('home');
-      setTimeout(() => {
-        const element = document.getElementById('contact');
-        if (element) element.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    } else {
-      const element = document.getElementById('contact');
-      if (element) element.scrollIntoView({ behavior: 'smooth' });
-    }
+    const element = document.getElementById('contact');
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleScrollToAbout = () => {
+    const element = document.getElementById('about');
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
   };
 
   const handleSelectDishForBooking = (dishTitle: string) => {
@@ -47,12 +41,6 @@ export default function App() {
   };
 
   const handleGoHome = () => {
-    setCurrentView('home');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handleOpenPortfolioSubPage = () => {
-    setCurrentView('portfolio');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -64,51 +52,39 @@ export default function App() {
     <div className="min-h-screen bg-[#FAF9F6] text-[#1A1817] font-sans selection:bg-[#1A1817] selection:text-white relative">
       {/* Top Fixed Header */}
       <Navbar
-        currentView={currentView}
         onGoHome={handleGoHome}
-        onOpenPortfolioSubPage={handleOpenPortfolioSubPage}
         onOpenBooking={handleScrollToBooking}
         onOpenAIMenu={() => setIsAIMenuOpen(true)}
         onOpenSEOModal={() => setIsSEOModalOpen(true)}
       />
 
-      {/* Dynamic View Switcher */}
-      {currentView === 'home' ? (
-        <main>
-          <HeroSection
-            onOpenBooking={handleScrollToBooking}
-            onOpenAIMenu={() => setIsAIMenuOpen(true)}
-            onOpenPortfolioSubPage={handleOpenPortfolioSubPage}
-          />
+      {/* Main Single-Page Portfolio */}
+      <main>
+        <HeroSection
+          onOpenBooking={handleScrollToBooking}
+          onOpenAIMenu={() => setIsAIMenuOpen(true)}
+          onOpenPortfolioSubPage={handleScrollToAbout}
+        />
 
-          <StatsBanner />
+        <StatsBanner />
 
-          <GallerySection
-            onSelectDishForBooking={handleSelectDishForBooking}
-          />
+        <AboutSection
+          onOpenBooking={handleScrollToBooking}
+        />
 
-          <ServicesSection
-            onOpenBooking={handleScrollToBooking}
-            onOpenAIMenu={() => setIsAIMenuOpen(true)}
-          />
+        <AwardsSection />
 
-          <InstagramSection />
+        <GallerySection
+          onSelectDishForBooking={handleSelectDishForBooking}
+        />
 
-          <BookingSection
-            prefilledMenuTitle={prefilledMenuTitle}
-            prefilledMenuSummary={prefilledMenuSummary}
-          />
-        </main>
-      ) : (
-        <main>
-          <PortfolioSubPage
-            onBackToHome={handleGoHome}
-            onOpenBooking={handleScrollToBooking}
-            onOpenAIMenu={() => setIsAIMenuOpen(true)}
-            onSelectDishForBooking={handleSelectDishForBooking}
-          />
-        </main>
-      )}
+        <InstagramSection />
+
+        <BookingSection
+          prefilledMenuTitle={prefilledMenuTitle}
+          prefilledMenuSummary={prefilledMenuSummary}
+        />
+      </main>
 
       {/* Floating Action Buttons */}
       <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3 items-end">

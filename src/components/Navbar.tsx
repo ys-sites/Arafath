@@ -3,18 +3,14 @@ import { ChefHat, Calendar, Sparkles, Menu, X, Instagram, Trophy, FileText, Phon
 import { CHEF_PROFILE } from '../data/portfolioData';
 
 interface NavbarProps {
-  currentView: 'home' | 'portfolio';
   onGoHome: () => void;
-  onOpenPortfolioSubPage: () => void;
   onOpenBooking: () => void;
   onOpenAIMenu: () => void;
   onOpenSEOModal: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
-  currentView,
   onGoHome,
-  onOpenPortfolioSubPage,
   onOpenBooking,
   onOpenAIMenu
 }) => {
@@ -35,21 +31,11 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const handleNavClick = (sectionId?: string) => {
     setMobileMenuOpen(false);
-    if (currentView !== 'home') {
-      onGoHome();
-      setTimeout(() => {
-        if (sectionId) {
-          const element = document.getElementById(sectionId);
-          if (element) element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
+    if (sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) element.scrollIntoView({ behavior: 'smooth' });
     } else {
-      if (sectionId) {
-        const element = document.getElementById(sectionId);
-        if (element) element.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
@@ -85,31 +71,27 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center space-x-8 text-xs font-mono uppercase tracking-widest text-[#68645E]">
-            {/* Dedicated Portfolio Sub-Page Trigger */}
             <button
-              onClick={onOpenPortfolioSubPage}
-              className={`flex items-center space-x-1.5 transition-colors cursor-pointer ${
-                currentView === 'portfolio'
-                  ? 'text-[#1A1817] font-bold border-b border-[#1A1817]'
-                  : 'hover:text-[#1A1817]'
-              }`}
+              onClick={() => handleNavClick('about')}
+              className="hover:text-[#1A1817] transition-colors cursor-pointer"
             >
-              <FileText className="w-3.5 h-3.5 text-[#B88E28]" />
-              <span>Full Portfolio Dossier</span>
+              <span>Biography</span>
             </button>
 
             <button
               onClick={() => handleNavClick('awards')}
               className="hover:text-[#1A1817] transition-colors cursor-pointer"
             >
-              <span>Awards</span>
+              <span>Awards & Press</span>
             </button>
+            
             <button
-              onClick={() => handleNavClick('services')}
+              onClick={() => handleNavClick('gallery')}
               className="hover:text-[#1A1817] transition-colors cursor-pointer"
             >
-              Services
+              <span>Signature Plating</span>
             </button>
+            
             <button
               onClick={() => handleNavClick('contact')}
               className="hover:text-[#1A1817] transition-colors cursor-pointer"
@@ -179,32 +161,22 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="md:hidden bg-white border-b border-[#E8E4DC] px-6 pt-6 pb-8 space-y-5 shadow-minimal animate-in slide-in-from-top-4 text-left">
           <nav className="flex flex-col space-y-4 font-mono text-[#1A1817] text-xs uppercase tracking-widest">
             <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenPortfolioSubPage();
-              }}
-              className="text-left py-2 border-b border-[#E8E4DC] text-[#B88E28] font-bold flex items-center justify-between"
-            >
-              <span>Full Portfolio & Dossier</span>
-              <FileText className="w-4 h-4 text-[#B88E28]" />
-            </button>
-            <button
-              onClick={() => handleNavClick('gallery')}
+              onClick={() => handleNavClick('about')}
               className="text-left py-2 border-b border-[#E8E4DC] hover:text-[#B88E28]"
             >
-              Signature Plating
+              <span>Biography & Credentials</span>
             </button>
             <button
               onClick={() => handleNavClick('awards')}
               className="text-left py-2 border-b border-[#E8E4DC] hover:text-[#B88E28]"
             >
-              <span>Awards & Press</span>
+              <span>Awards & Press Cabinet</span>
             </button>
             <button
-              onClick={() => handleNavClick('services')}
+              onClick={() => handleNavClick('gallery')}
               className="text-left py-2 border-b border-[#E8E4DC] hover:text-[#B88E28]"
             >
-              Services & Catering
+              Signature Plating Portfolio
             </button>
             <button
               onClick={() => handleNavClick('contact')}

@@ -91,18 +91,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking, onOpenP
             {/* Action CTAs */}
             <div className="pt-1 sm:pt-2 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-3">
               <button
-                onClick={onOpenBooking}
+                onClick={onOpenPortfolioSubPage}
                 className="w-full sm:w-auto cursor-pointer bg-[#1A1817] hover:bg-[#383431] text-white font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] px-6 sm:px-8 py-3 sm:py-4 transition-colors flex items-center justify-center space-x-2 sm:space-x-3 shadow-minimal"
               >
-                <span>Inquire for VIP Dining</span>
+                <span>Explore Portfolio</span>
                 <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
-              </button>
-
-              <button
-                onClick={onOpenPortfolioSubPage}
-                className="w-full sm:w-auto cursor-pointer border border-[#1A1817] text-[#1A1817] hover:bg-[#1A1817] hover:text-white font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] px-6 sm:px-7 py-3 sm:py-4 transition-all flex items-center justify-center space-x-2 bg-white/80 backdrop-blur-xs"
-              >
-                <span>View Full Portfolio</span>
               </button>
             </div>
 
