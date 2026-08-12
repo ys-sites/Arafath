@@ -15,7 +15,7 @@ export const CHEF_PROFILE = {
 
 Currently leading culinary direction as Head Chef at Slices Catering Dubai, Chef Yaseer crafts bespoke catering operations, private VIP dinners, and high-volume luxury events across the United Arab Emirates. His background includes culinary leadership roles at The Arbor School Dubai and the iconic Queen Elizabeth 2 (QE2 Hotel & Ocean Liner in Dubai), alongside formal academic credentials in Culinary & Catering Management from Bharathiar University.`,
   quote: "Culinary artistry is the seamless bridge between deep heritage techniques and modern sensory expression. Every plate must tell a story of provenance, precision, and passion.",
-  contactEmail: "yaseera.chef@gmail.com",
+  contactEmail: "yaseer.s.arafath@gmail.com",
   phoneDisplay: "+971 50 302 3056",
   whatsappNumber: "+971 50 302 3056",
   whatsappUrl: "https://api.whatsapp.com/send/?phone=971503023056&text&type=phone_number&app_absent=0",

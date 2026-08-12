@@ -42,7 +42,7 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
     setLoading(true);
 
     try {
-      const res = await fetch('https://formsubmit.co/ajax/sharafath2001@hotmail.com', {
+      const res = await fetch(`https://formsubmit.co/ajax/${CHEF_PROFILE.contactEmail}`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
@@ -65,19 +65,19 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
       if (res.ok) {
         setSubmittedBooking({
           bookingId: `BK-${Math.floor(1000 + Math.random() * 9000)}`,
-          message: 'Thank you! Your VIP inquiry has been transmitted directly to sharafath2001@hotmail.com and Chef Yaseer Arafath\'s concierge team. We will review your event details and respond within 12 hours.'
+          message: `Thank you! Your VIP inquiry has been transmitted directly to ${CHEF_PROFILE.contactEmail} and Chef Yaseer Arafath's concierge team. We will review your event details and respond within 12 hours.`
         });
       } else {
         setSubmittedBooking({
           bookingId: `BK-${Math.floor(1000 + Math.random() * 9000)}`,
-          message: 'Thank you! Your VIP inquiry has been transmitted to sharafath2001@hotmail.com. We will respond within 12 hours.'
+          message: `Thank you! Your VIP inquiry has been transmitted to ${CHEF_PROFILE.contactEmail}. We will respond within 12 hours.`
         });
       }
     } catch (err) {
       console.error('Error submitting booking via FormSubmit:', err);
       setSubmittedBooking({
         bookingId: `BK-${Math.floor(1000 + Math.random() * 9000)}`,
-        message: 'Thank you! Your VIP inquiry has been transmitted to sharafath2001@hotmail.com. We will respond within 12 hours.'
+        message: `Thank you! Your VIP inquiry has been transmitted to ${CHEF_PROFILE.contactEmail}. We will respond within 12 hours.`
       });
     } finally {
       setLoading(false);

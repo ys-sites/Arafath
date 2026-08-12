@@ -60,7 +60,7 @@ CHEF YASEER ARAFATH — EXECUTIVE CULINARY DOSSIER
 ==================================================
 Current Title: Head Chef at Slices Catering (Dubai, UAE)
 Location: Dubai & Abu Dhabi, United Arab Emirates
-Direct Contact: yaseera.chef@gmail.com
+Direct Contact: ${CHEF_PROFILE.contactEmail}
 Instagram: https://www.instagram.com/yaseer.s.arafath/
 
 HONORS & ACCOLADES
