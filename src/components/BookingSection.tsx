@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Calendar, Users, MapPin, Mail, Phone, User, CheckCircle2, Loader2, Sparkles, Send } from 'lucide-react';
+import { Mail, Phone, User, CheckCircle2, Loader2, Sparkles, Send, Briefcase, MapPin } from 'lucide-react';
 import { CHEF_PROFILE } from '../data/portfolioData';
 import { ShinyText } from './ShinyText';
 import { BlurText } from './BlurText';
@@ -17,10 +17,8 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [eventType, setEventType] = useState('Private VIP Dining');
-  const [eventDate, setEventDate] = useState('');
-  const [guestCount, setGuestCount] = useState<number | ''>(20);
-  const [location, setLocation] = useState('Dubai, UAE');
+  const [inquiryCategory, setInquiryCategory] = useState('Executive Culinary Leadership');
+  const [organization, setOrganization] = useState('');
   const [notes, setNotes] = useState('');
 
   const [loading, setLoading] = useState(false);
@@ -31,7 +29,7 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
 
   useEffect(() => {
     if (prefilledMenuTitle) {
-      setNotes(`[ATTACHED PROPOSAL: ${prefilledMenuTitle}]\n${prefilledMenuSummary || ''}`);
+      setNotes(`[REFERRED FEATURE: ${prefilledMenuTitle}]\n${prefilledMenuSummary || ''}`);
     }
   }, [prefilledMenuTitle, prefilledMenuSummary]);
 
@@ -52,32 +50,30 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
           name,
           email,
           phone: phone || 'Not provided',
-          eventType,
-          eventDate: eventDate || 'To be decided',
-          guestCount: guestCount || 'Not specified',
-          location,
-          notes: notes || 'No extra notes',
-          _subject: `New VIP Dining Inquiry: ${name} (${eventType})`,
+          inquiryCategory,
+          organization: organization || 'Not specified',
+          notes: notes || 'No extra details provided',
+          _subject: `New Work & Collaboration Inquiry: ${name} (${inquiryCategory})`,
           _captcha: 'false'
         })
       });
 
       if (res.ok) {
         setSubmittedBooking({
-          bookingId: `BK-${Math.floor(1000 + Math.random() * 9000)}`,
-          message: `Thank you! Your VIP inquiry has been transmitted directly to ${CHEF_PROFILE.contactEmail} and Chef Yaseer Arafath's concierge team. We will review your event details and respond within 12 hours.`
+          bookingId: `INQ-${Math.floor(1000 + Math.random() * 9000)}`,
+          message: `Thank you! Your collaboration inquiry has been transmitted directly to ${CHEF_PROFILE.contactEmail}. Chef Yaseer Arafath's executive team will review your proposal and respond within 12 hours.`
         });
       } else {
         setSubmittedBooking({
-          bookingId: `BK-${Math.floor(1000 + Math.random() * 9000)}`,
-          message: `Thank you! Your VIP inquiry has been transmitted to ${CHEF_PROFILE.contactEmail}. We will respond within 12 hours.`
+          bookingId: `INQ-${Math.floor(1000 + Math.random() * 9000)}`,
+          message: `Thank you! Your collaboration inquiry has been transmitted to ${CHEF_PROFILE.contactEmail}. We will respond within 12 hours.`
         });
       }
     } catch (err) {
-      console.error('Error submitting booking via FormSubmit:', err);
+      console.error('Error submitting inquiry via FormSubmit:', err);
       setSubmittedBooking({
-        bookingId: `BK-${Math.floor(1000 + Math.random() * 9000)}`,
-        message: `Thank you! Your VIP inquiry has been transmitted to ${CHEF_PROFILE.contactEmail}. We will respond within 12 hours.`
+        bookingId: `INQ-${Math.floor(1000 + Math.random() * 9000)}`,
+        message: `Thank you! Your collaboration inquiry has been transmitted to ${CHEF_PROFILE.contactEmail}. We will respond within 12 hours.`
       });
     } finally {
       setLoading(false);
@@ -97,12 +93,12 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#99731C] font-semibold block">
-            Concierge & Inquiries
+            Work & Collaboration
           </span>
           <h2 className="text-4xl sm:text-6xl font-serif text-[#111111] tracking-tight font-normal">
-            Inquire for{' '}
+            Inquire to{' '}
             <ShinyText
-              text="VIP Booking"
+              text="Work & Collaborate"
               color="#99731C"
               shineColor="#F5E080"
               speed={2.5}
@@ -110,7 +106,7 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
             />
           </h2>
           <BlurText
-            text="Request Head Chef Yaseer Arafath for private dining, high-capacity banquet direction via Slices Catering, menu consulting, or media engagements across Dubai and internationally."
+            text="Get in touch with Head Chef Yaseer Arafath for executive culinary leadership, restaurant consulting, brand partnerships, media engagements, or strategic culinary projects across Dubai and internationally."
             delay={25}
             animateBy="words"
             className="text-[#666666] text-sm sm:text-base font-light justify-center"
@@ -122,9 +118,9 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
           {/* Left Contact Card */}
           <div className="lg:col-span-5 bg-white border border-[#EEEEEE] p-8 sm:p-10 space-y-8 shadow-minimal">
             <div className="space-y-3">
-              <h3 className="text-2xl font-serif text-[#111111] font-normal">Executive Concierge</h3>
+              <h3 className="text-2xl font-serif text-[#111111] font-normal">Executive Directorship</h3>
               <p className="text-xs text-[#555555] leading-relaxed font-light">
-                Whether you require a bespoke multi-course tasting menu for a luxury residence or full banquet operations through Slices Catering Dubai, our concierge team responds within 12 hours.
+                Whether you are exploring executive culinary directorship, menu consulting, brand partnerships, or high-level culinary projects, Chef Yaseer responds within 12 hours.
               </p>
             </div>
 
@@ -153,16 +149,16 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
               <div className="flex items-center space-x-3 p-4 bg-[#FAFAFA] border border-[#EEEEEE]">
                 <MapPin className="w-4 h-4 text-[#99731C] shrink-0" />
                 <div>
-                  <span className="text-[#888888] block text-[10px]">Primary Location</span>
+                  <span className="text-[#888888] block text-[10px]">Primary Base</span>
                   <span className="text-[#111111] font-semibold">Dubai, United Arab Emirates</span>
                 </div>
               </div>
 
               <div className="flex items-center space-x-3 p-4 bg-[#FAFAFA] border border-[#EEEEEE]">
-                <Users className="w-4 h-4 text-[#99731C] shrink-0" />
+                <Briefcase className="w-4 h-4 text-[#99731C] shrink-0" />
                 <div>
-                  <span className="text-[#888888] block text-[10px]">Event Capacity</span>
-                  <span className="text-[#111111] font-semibold">{CHEF_PROFILE.cateringCapacity}</span>
+                  <span className="text-[#888888] block text-[10px]">Collaboration Scope</span>
+                  <span className="text-[#111111] font-semibold">Consulting, Leadership & Media</span>
                 </div>
               </div>
             </div>
@@ -170,10 +166,10 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
             <div className="p-5 bg-[#FAFAFA] border border-[#EEEEEE] text-xs space-y-2">
               <div className="flex items-center space-x-2 text-[#99731C] font-mono font-semibold uppercase tracking-wider">
                 <Sparkles className="w-4 h-4 text-[#99731C]" />
-                <span>Superchef Standards Guarantee</span>
+                <span>Culinary Leadership Guarantee</span>
               </div>
               <p className="text-[#555555] leading-relaxed text-[11px] font-light">
-                100% Halal certified ingredients, bespoke molecular presentation, live charcoal grill setups, and custom floral design execution.
+                12+ years of verified executive leadership, award-winning culinary innovation (UAE Superchef 2024 Winner), and high-capacity kitchen directorship.
               </p>
             </div>
           </div>
@@ -183,7 +179,7 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
             {!submittedBooking ? (
               <form onSubmit={handleSubmit} className="space-y-5">
                 <h3 className="text-2xl font-serif text-[#111111] font-normal mb-6">
-                  Submit Event Details
+                  Work & Collaboration Inquiry
                 </h3>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono">
@@ -195,7 +191,7 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
                         required
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        placeholder="e.g. Sheikh Rashid / Victoria Smith"
+                        placeholder="e.g. Alexander Vance / Partner"
                         className="w-full bg-[#FAFAFA] border border-[#EEEEEE] pl-10 pr-4 py-3 text-[#111111] focus:outline-none focus:border-[#111111] font-sans"
                       />
                       <User className="w-4 h-4 text-[#888888] absolute left-3 top-3.5" />
@@ -210,7 +206,7 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
                         required
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        placeholder="e.g. client@domain.com"
+                        placeholder="e.g. partner@company.com"
                         className="w-full bg-[#FAFAFA] border border-[#EEEEEE] pl-10 pr-4 py-3 text-[#111111] focus:outline-none focus:border-[#111111] font-sans"
                       />
                       <Mail className="w-4 h-4 text-[#888888] absolute left-3 top-3.5" />
@@ -234,65 +230,38 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
                   <div>
                     <label className="block text-[#888888] mb-1 uppercase tracking-wider text-[10px]">Inquiry Category</label>
                     <select
-                      value={eventType}
-                      onChange={(e) => setEventType(e.target.value)}
+                      value={inquiryCategory}
+                      onChange={(e) => setInquiryCategory(e.target.value)}
                       className="w-full bg-[#FAFAFA] border border-[#EEEEEE] px-4 py-3 text-[#111111] focus:outline-none focus:border-[#111111] font-sans"
                     >
-                      <option value="Private VIP Dining">Private VIP Villa / Yacht Dining</option>
-                      <option value="Slices Banquet Catering">Large Banquet Catering (Slices)</option>
-                      <option value="Menu Engineering Consulting">Restaurant / Hotel Menu Consulting</option>
-                      <option value="Live Cooking Masterclass">Live Culinary Show & Masterclass</option>
-                      <option value="Press / Brand Endorsement">Media / Press / Brand Partnership</option>
+                      <option value="Executive Culinary Leadership">Executive Culinary Leadership</option>
+                      <option value="Menu Engineering & Consulting">Restaurant & Hotel Menu Consulting</option>
+                      <option value="Brand Endorsement & Partnership">Brand Partnership & Endorsement</option>
+                      <option value="Live Demonstration & Masterclass">Live Culinary Show & Masterclass</option>
+                      <option value="Other Strategic Collaboration">Other Strategic Collaboration</option>
                     </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-[#888888] mb-1 uppercase tracking-wider text-[10px]">Preferred Event Date</label>
-                    <input
-                      type="date"
-                      value={eventDate}
-                      onChange={(e) => setEventDate(e.target.value)}
-                      className="w-full bg-[#FAFAFA] border border-[#EEEEEE] px-4 py-3 text-[#111111] focus:outline-none focus:border-[#111111] font-sans"
-                    />
-                  </div>
-
-                  {/* Direct Number Input for Guest Count */}
-                  <div>
-                    <label className="block text-[#888888] mb-1 uppercase tracking-wider text-[10px]">Estimated Guest Count *</label>
-                    <div className="relative">
-                      <input
-                        type="number"
-                        min={1}
-                        max={5000}
-                        required
-                        value={guestCount}
-                        onChange={(e) => setGuestCount(e.target.value === '' ? '' : Number(e.target.value))}
-                        placeholder="e.g. 50, 200, 1000"
-                        className="w-full bg-[#FAFAFA] border border-[#EEEEEE] pl-10 pr-4 py-3 text-[#111111] focus:outline-none focus:border-[#111111] font-sans"
-                      />
-                      <Users className="w-4 h-4 text-[#888888] absolute left-3 top-3.5" />
-                    </div>
                   </div>
                 </div>
 
                 <div className="text-xs font-mono">
-                  <label className="block text-[#888888] mb-1 uppercase tracking-wider text-[10px]">Venue Location</label>
+                  <label className="block text-[#888888] mb-1 uppercase tracking-wider text-[10px]">Company / Organization / Location</label>
                   <input
                     type="text"
-                    value={location}
-                    onChange={(e) => setLocation(e.target.value)}
-                    placeholder="e.g. Palm Jumeirah Villa / Emirates Palace Abu Dhabi"
+                    value={organization}
+                    onChange={(e) => setOrganization(e.target.value)}
+                    placeholder="e.g. Slices Group Dubai / Ritz-Carlton UAE"
                     className="w-full bg-[#FAFAFA] border border-[#EEEEEE] px-4 py-3 text-[#111111] focus:outline-none focus:border-[#111111] font-sans"
                   />
                 </div>
 
                 <div className="text-xs font-mono">
-                  <label className="block text-[#888888] mb-1 uppercase tracking-wider text-[10px]">Dietary & Event Requirements</label>
+                  <label className="block text-[#888888] mb-1 uppercase tracking-wider text-[10px]">Project & Collaboration Details *</label>
                   <textarea
-                    rows={3}
+                    rows={4}
+                    required
                     value={notes}
                     onChange={(e) => setNotes(e.target.value)}
-                    placeholder="Describe specific dish requests, dietary restrictions, or attached menu consultation notes..."
+                    placeholder="Describe your project requirements, consulting scope, media request, or collaboration proposal..."
                     className="w-full bg-[#FAFAFA] border border-[#EEEEEE] px-4 py-3 text-[#111111] focus:outline-none focus:border-[#111111] resize-none font-sans font-light"
                   />
                 </div>
@@ -310,7 +279,7 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
                   ) : (
                     <>
                       <Send className="w-4 h-4 text-white" />
-                      <span>Submit Inquiry to Concierge</span>
+                      <span>Submit Collaboration Inquiry</span>
                     </>
                   )}
                 </button>
@@ -352,6 +321,3 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
     </section>
   );
 };
-
-
-

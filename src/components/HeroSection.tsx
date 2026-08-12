@@ -65,7 +65,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking, onOpenP
             {/* Position Narrative: Hidden on mobile to let background photo shine through */}
             <div className="hidden sm:block">
               <BlurText
-                text="Directing luxury banquets, private VIP villa dinners, and bespoke molecular culinary experiences across the United Arab Emirates with over a decade of classical precision."
+                text="Directing executive culinary operations, menu engineering, and high-resolution gastronomy across the United Arab Emirates with over a decade of classical precision."
                 delay={30}
                 animateBy="words"
                 className="text-sm sm:text-base text-[#68645E] max-w-xl font-light leading-relaxed"
