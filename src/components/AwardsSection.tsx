@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Trophy, Award, Newspaper, ExternalLink, CheckCircle2 } from 'lucide-react';
+import { Trophy, Award, Newspaper, ExternalLink, CheckCircle2, ZoomIn } from 'lucide-react';
 import { PRESS_ITEMS } from '../data/portfolioData';
 import { ShinyText } from './ShinyText';
 import { BlurText } from './BlurText';
 
 export const AwardsSection: React.FC = () => {
   const [selectedPress, setSelectedPress] = useState<typeof PRESS_ITEMS[0] | null>(null);
+  const [isPhotoModalOpen, setIsPhotoModalOpen] = useState(false);
 
   return (
     <section id="awards" className="py-24 bg-[#FFFFFF] border-b border-[#E8E4DC] text-[#1A1817] relative">
@@ -27,15 +28,69 @@ export const AwardsSection: React.FC = () => {
             />
           </h2>
           <BlurText
-            text="Award-winning culinary excellence verified by national competitions, the Emirates Culinary Guild, and premier UAE press publications."
+            text="Award-winning culinary excellence verified by national competitions, Hozpitality Excellence Awards, the Emirates Culinary Guild, and premier UAE publications."
             delay={25}
             animateBy="words"
             className="text-[#68645E] text-sm sm:text-base font-light justify-center"
           />
         </div>
 
+        {/* 2021 Gold Award Featured Ceremony Spotlight Banner */}
+        <div className="mt-14 bg-[#FAF9F6] border border-[#B88E28]/30 hover:border-[#B88E28] transition-colors p-6 sm:p-8 shadow-minimal">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center text-left">
+            <div className="lg:col-span-5 relative group cursor-pointer overflow-hidden border border-[#E8E4DC]" onClick={() => setIsPhotoModalOpen(true)}>
+              <img
+                src="/WhatsApp Image 2026-08-12 at 12.24.10 PM.jpeg"
+                alt="Chef Yaseer Arafath 2021 Gold Award Ceremony"
+                className="w-full h-72 sm:h-80 object-cover object-top group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute top-3 left-3 bg-[#B88E28] text-white text-[10px] font-mono uppercase tracking-wider px-3 py-1 font-bold flex items-center space-x-1">
+                <Trophy className="w-3 h-3 text-white" />
+                <span>2021 GOLD AWARD</span>
+              </div>
+              <div className="absolute bottom-3 right-3 bg-white/90 p-2 text-[#1A1817] border border-[#E8E4DC] opacity-90 group-hover:opacity-100 transition-opacity">
+                <ZoomIn className="w-4 h-4 text-[#B88E28]" />
+              </div>
+              <div className="absolute bottom-3 left-3 text-white font-mono text-[11px]">
+                Click to inspect ceremony photo
+              </div>
+            </div>
+
+            <div className="lg:col-span-7 space-y-4">
+              <div className="flex items-center space-x-2 text-[#B88E28] font-mono text-xs font-bold uppercase tracking-wider">
+                <Award className="w-4 h-4" />
+                <span>Middle East Chef Excellence Awards 2021</span>
+              </div>
+
+              <h3 className="text-2xl sm:text-4xl font-serif text-[#1A1817] font-normal leading-snug">
+                Gold Award: Sous Chef of the Year 2021
+              </h3>
+
+              <p className="text-[#B88E28] font-mono text-xs font-semibold">
+                Presented by Hozpitality Group • Slices Catering Services Dubai
+              </p>
+
+              <p className="text-[#44403C] text-sm leading-relaxed font-light">
+                Chef Yaseer Arafath was conferred the prestigious <strong>Gold Award for Sous Chef of the Year</strong> at the 4th Middle East Chef Excellence Awards in recognition of exceptional culinary operations, high-capacity central kitchen management, and gourmet menu innovation.
+              </p>
+
+              <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-mono text-[#68645E]">
+                <span className="flex items-center space-x-1.5 bg-white px-3 py-1.5 border border-[#E8E4DC]">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#B88E28]" />
+                  <span>Verified Ceremony Stage Photo</span>
+                </span>
+                <span className="flex items-center space-x-1.5 bg-white px-3 py-1.5 border border-[#E8E4DC]">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#B88E28]" />
+                  <span>Slices Catering Leadership</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Feature Spotlight Grid */}
-        <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch text-left">
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch text-left">
           
           {/* Main Trophy Card: Superchef 2024 */}
           <div className="lg:col-span-7 bg-white border border-[#E8E4DC] p-8 sm:p-10 shadow-minimal relative flex flex-col justify-between hover:border-[#1A1817] transition-colors">
@@ -128,11 +183,9 @@ export const AwardsSection: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {PRESS_ITEMS.map((press) => (
-              <a
+              <div
                 key={press.id}
-                href={press.url || "https://www.instagram.com/yaseer.s.arafath/"}
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={() => setSelectedPress(press)}
                 className="bg-white border border-[#E8E4DC] hover:border-[#1A1817] p-7 transition-all duration-300 shadow-minimal cursor-pointer flex flex-col justify-between group"
               >
                 <div className="space-y-4">
@@ -156,12 +209,44 @@ export const AwardsSection: React.FC = () => {
                   <span>{press.linkText}</span>
                   <ExternalLink className="w-3.5 h-3.5 text-[#B88E28]" />
                 </div>
-              </a>
+              </div>
             ))}
           </div>
         </div>
 
       </div>
+
+      {/* 2021 Gold Award Photo Zoom Modal */}
+      {isPhotoModalOpen && (
+        <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-white border border-[#E8E4DC] max-w-2xl w-full p-6 relative space-y-4 text-left shadow-2xl overflow-hidden">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-mono text-[#B88E28] uppercase tracking-widest bg-[#FAF9F6] px-3.5 py-1 border border-[#E8E4DC]">
+                2021 Gold Award Presentation Ceremony
+              </span>
+              <button
+                onClick={() => setIsPhotoModalOpen(false)}
+                className="text-[#68645E] hover:text-[#1A1817] text-xs bg-[#FAF9F6] border border-[#E8E4DC] px-3 py-1 cursor-pointer font-mono"
+              >
+                ✕ Close
+              </button>
+            </div>
+
+            <div className="relative max-h-[60vh] overflow-hidden bg-[#FAFAFA] border border-[#E8E4DC]">
+              <img
+                src="/WhatsApp Image 2026-08-12 at 12.24.10 PM.jpeg"
+                alt="Sous Chef of the Year 2021 Gold Award Ceremony"
+                className="w-full h-full object-contain"
+              />
+            </div>
+
+            <div className="space-y-1 font-mono text-xs text-[#555555]">
+              <p className="font-semibold text-[#1A1817]">Hospitality Excellence - Sous Chef of the Year (Gold Award)</p>
+              <p>Conferred to Yaseer Arafath, Sous Chef at Slices Catering Services Dubai (Hozpitality Group)</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Press Item Lightbox Modal */}
       {selectedPress && (
@@ -178,6 +263,16 @@ export const AwardsSection: React.FC = () => {
                 ✕ Close
               </button>
             </div>
+
+            {selectedPress.image && (
+              <div className="relative h-64 overflow-hidden border border-[#E8E4DC] bg-[#FAFAFA]">
+                <img
+                  src={selectedPress.image}
+                  alt={selectedPress.title}
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+            )}
 
             <h3 className="text-2xl font-serif text-[#1A1817] font-normal leading-tight">
               {selectedPress.title}
@@ -203,6 +298,7 @@ export const AwardsSection: React.FC = () => {
     </section>
   );
 };
+
 
 
 

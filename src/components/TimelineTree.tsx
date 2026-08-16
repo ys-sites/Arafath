@@ -7,6 +7,7 @@ import { Milestone } from '../types';
 export const TimelineTree: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'all' | 'award' | 'experience' | 'education'>('all');
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+  const [selectedMilestoneImage, setSelectedMilestoneImage] = useState<string | null>(null);
 
   const filteredMilestones = CAREER_MILESTONES.filter(
     m => activeTab === 'all' || m.category === activeTab
@@ -150,6 +151,23 @@ export const TimelineTree: React.FC = () => {
                           )}
                         </div>
 
+                        {/* Optional Milestone Image Preview */}
+                        {item.image && (
+                          <div
+                            onClick={() => setSelectedMilestoneImage(item.image!)}
+                            className="relative h-40 overflow-hidden border border-[#E8E4DC] cursor-pointer group/img"
+                          >
+                            <img
+                              src={item.image}
+                              alt={item.title}
+                              className="w-full h-full object-cover object-top group-hover/img:scale-105 transition-transform duration-500"
+                            />
+                            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center text-white font-mono text-xs">
+                              Click to view certificate photo
+                            </div>
+                          </div>
+                        )}
+
                         {/* Title & Organization */}
                         <div>
                           <h4 className="text-[#1A1817] font-serif text-xl sm:text-2xl font-normal leading-snug group-hover:text-[#B88E28] transition-colors">
@@ -186,6 +204,33 @@ export const TimelineTree: React.FC = () => {
         </div>
 
       </div>
+
+      {/* Milestone Image Lightbox Modal */}
+      {selectedMilestoneImage && (
+        <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-white border border-[#E8E4DC] max-w-2xl w-full p-6 relative space-y-4 text-left shadow-2xl overflow-hidden">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-mono text-[#B88E28] uppercase tracking-widest bg-[#FAF9F6] px-3.5 py-1 border border-[#E8E4DC]">
+                Milestone Record Photo
+              </span>
+              <button
+                onClick={() => setSelectedMilestoneImage(null)}
+                className="text-[#68645E] hover:text-[#1A1817] text-xs bg-[#FAF9F6] border border-[#E8E4DC] px-3 py-1 cursor-pointer font-mono"
+              >
+                ✕ Close
+              </button>
+            </div>
+
+            <div className="relative max-h-[60vh] overflow-hidden bg-[#FAFAFA] border border-[#E8E4DC]">
+              <img
+                src={selectedMilestoneImage}
+                alt="Milestone Record"
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

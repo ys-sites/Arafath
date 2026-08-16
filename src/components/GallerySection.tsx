@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Dish } from '../types';
 import { SIGNATURE_DISHES } from '../data/portfolioData';
-import { ZoomIn, Award, Utensils, Wine } from 'lucide-react';
+import { ZoomIn, Award, Utensils, Wine, ChevronDown } from 'lucide-react';
 import { ShinyText } from './ShinyText';
 import { BlurText } from './BlurText';
 
@@ -12,11 +12,16 @@ interface GallerySectionProps {
 export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectDishForBooking }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [activeDish, setActiveDish] = useState<Dish | null>(null);
+  const [showAll, setShowAll] = useState<boolean>(false);
 
   const filteredDishes = SIGNATURE_DISHES.filter((dish) => {
     if (selectedCategory === 'all') return true;
     return dish.category === selectedCategory;
   });
+
+  const displayedDishes = (selectedCategory === 'all' && !showAll)
+    ? filteredDishes.slice(0, 6)
+    : filteredDishes;
 
   return (
     <section id="gallery" className="py-24 bg-[#FFFFFF] text-[#111111] relative border-b border-[#EEEEEE]">
@@ -38,7 +43,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectDishForB
             />
           </h2>
           <BlurText
-            text="Explore Chef Yaseer Arafath's signature creations—from award-winning Levant lamb to artisanal VIP banquets and cold-pressed botanical elixirs."
+            text="Explore Chef Yaseer Arafath's signature creations—from award-winning Levant short rib to artisanal VIP banquets, seafood delicacies, and fine desserts."
             delay={30}
             animateBy="words"
             className="text-[#666666] text-sm sm:text-base font-light justify-center"
@@ -53,11 +58,13 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectDishForB
             { id: 'levant', label: 'Modern Levant' },
             { id: 'catering', label: 'Artisanal & Large Displays' },
             { id: 'dessert', label: 'Haute Desserts' },
-            { id: 'drinks', label: 'Botanical Elixirs' },
           ].map((cat) => (
             <button
               key={cat.id}
-              onClick={() => setSelectedCategory(cat.id)}
+              onClick={() => {
+                setSelectedCategory(cat.id);
+                if (cat.id !== 'all') setShowAll(true);
+              }}
               className={`px-4 py-2 uppercase tracking-wider font-semibold transition-all duration-200 shrink-0 cursor-pointer ${
                 selectedCategory === cat.id
                   ? 'bg-[#111111] text-white'
@@ -71,7 +78,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectDishForB
 
         {/* Dish Grid */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredDishes.map((dish) => (
+          {displayedDishes.map((dish) => (
             <div
               key={dish.id}
               onClick={() => setActiveDish(dish)}
@@ -137,6 +144,19 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onSelectDishForB
             </div>
           ))}
         </div>
+
+        {/* View More Work Button */}
+        {selectedCategory === 'all' && (
+          <div className="mt-14 text-center">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="inline-flex items-center space-x-3 bg-[#111111] hover:bg-[#333333] text-white font-mono text-xs uppercase tracking-widest px-8 py-4 border border-[#111111] shadow-minimal transition-all cursor-pointer group hover:scale-[1.02]"
+            >
+              <span>{showAll ? 'Show Featured 6 Dishes' : `View More Work (${SIGNATURE_DISHES.length} Signature Creations)`}</span>
+              <ChevronDown className={`w-4 h-4 text-[#99731C] transition-transform duration-300 ${showAll ? 'rotate-180' : ''}`} />
+            </button>
+          </div>
+        )}
 
       </div>
 

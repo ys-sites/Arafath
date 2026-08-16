@@ -39,68 +39,188 @@ export const SIGNATURE_DISHES: Dish[] = [
     technique: "Wood-smoking, butter pan-searing, 72-hour veal bone reduction, Ratte potato confit",
     ingredients: ["Prime Beef Tenderloin", "Foie Gras", "Toasted Brioche", "Confit Ratte Potato", "Veal Demi-Glace"],
     pairing: "Non-Alcoholic Smoked Oak & Blackberry Reduction",
-    image: "/Wood flavored Beef Tenderloin Rossini, Toasted Brioche,Foie Grass, Confit Ratte Potato & Veal Demi glaze.jpeg",
+    image: "/Menu/Wood flavored Beef Tenderloin Rossini, Toasted Brioche,Foie Grass, Confit Ratte Potato & Veal Demi glaze.jpeg",
     badge: "Haute Cuisine Feature",
     awardWinning: true
   },
   {
     id: "dish-2",
-    title: "Charcoal Croissant Casserole with Parmesan Sauce",
-    category: "signature",
-    description: "Artisanal charcoal croissant casserole served with rich aged Parmesan emulsion and micro herbal garnishes.",
-    technique: "Charcoal puff lamination, slow casserole baking, aged Parmesan reduction",
-    ingredients: ["Activated Charcoal Croissant", "Aged Parmesan Cream", "Organic Micro Herbs", "Clarified Butter"],
-    pairing: "Cold-Pressed Botanical Rosemary Tonic",
-    image: "/Charcoal croissant casserole Parmesan sauce.jpeg",
-    badge: "Chef's Signature Innovation",
-    awardWinning: true
-  },
-  {
-    id: "dish-3",
     title: "Beet Chappathi Braised Short Rib & Kumquat Hummus",
     category: "levant",
     description: "Slow-braised short rib wrapped in vibrant beetroot chappathi, paired with citrus kumquat hummus and artisanal pepper pickle.",
     technique: "12-hour short rib braising, beetroot flatbread lamination, kumquat ultrasonic emulsification",
     ingredients: ["Braised Beef Short Rib", "Beetroot Chappathi", "Kumquat Hummus", "Pepper Pickle", "Micro Sprouts"],
     pairing: "Spiced Pomegranate & Hibiscus Elixir",
-    image: "/Beet Chappathi Braised short rib kumquat Hummus pepper Pickle.jpeg",
+    image: "/Menu/Beet Chappathi Braised short rib kumquat Hummus pepper Pickle.jpeg",
     badge: "Superchef 2024 Winning Creation",
     awardWinning: true
   },
   {
+    id: "dish-3",
+    title: "Pan-Seared Atlantic Salmon & Cauliflower Mousseline",
+    category: "signature",
+    description: "Crispy skin Atlantic salmon fillet served on velvet cauliflower mousseline with sun-dried tomatoes, roasted cherry tomatoes, and scallion curls.",
+    technique: "Crispy pan-searing, cauliflower velvet pureeing, tomato confit reduction",
+    ingredients: ["Atlantic Salmon", "Cauliflower Mousseline", "Sun-Dried Tomatoes", "Roasted Tomatoes", "Scallions"],
+    pairing: "Chilled Citrus Lemongrass Infusion",
+    image: "/Menu/WhatsApp Image 2026-08-13 at 11.10.48 AM (7).jpeg",
+    badge: "Executive Culinary Feature",
+    awardWinning: true
+  },
+  {
     id: "dish-4",
-    title: "VIP Artisanal Tropical Fruit Boats",
-    category: "catering",
-    description: "Handcrafted bamboo boats filled with diced dragonfruit, golden melon, papaya rubies, and fresh berries, garnished with edible pansies.",
-    technique: "Precision fruit carving, botanical flower infusion, chilled VIP presentation",
-    ingredients: ["Dragonfruit (Pitaya)", "Papaya Rubies", "Golden Melon", "Fresh Berries", "Edible Pansies"],
-    pairing: "Cold-Pressed Passionfruit & Yuzu Spritz",
-    image: "/image.png",
-    badge: "VIP Artisanal Display",
+    title: "Herb-Stuffed Chicken Ballotine with Poultry Jus",
+    category: "signature",
+    description: "Tender roasted chicken ballotine stuffed with wild herb duxelles, served over roasted broccolini, root vegetables, and rich poultry jus.",
+    technique: "Sous-vide precision ballotine, herb duxelles stuffing, pan-glazing",
+    ingredients: ["Organic Chicken Breast", "Wild Herb Duxelles", "Roasted Broccolini", "Poultry Reduction"],
+    pairing: "Cold-Pressed Rosemary Botanical Tonic",
+    image: "/Menu/WhatsApp Image 2026-08-12 at 12.24.10 PM (3).jpeg",
+    badge: "Classic Gastronomy",
     awardWinning: false
   },
   {
     id: "dish-5",
-    title: "Savory Whipped Cream & Botanical Tarts",
+    title: "Velvet Chocolate Sphere & Raspberry Amber Gel",
     category: "dessert",
-    description: "Delicate shortcrust pastry shells filled with savory whipped cream mousse, smoked paprika dust, and edible flower garnishes.",
-    technique: "Shortcrust pastry baking, whipped mousse piping, spice dusting",
-    ingredients: ["Shortcrust Tart Shells", "Savory Whipped Cream", "Paprika Dust", "Edible Botanical Flowers"],
-    pairing: "Royal Emirates Coffee & Cardamom Infusion",
-    image: "/image copy.png",
-    badge: "Gourmet Culinary Feature",
-    awardWinning: false
+    description: "Artisanal chocolate velvet dome with raspberry core, amber fruit gel cube, pistachio sponge micro-cake, and toasted hazelnut crumble.",
+    technique: "Velvet cacao spraying, amber gel slicing, pistachio microwave sponge",
+    ingredients: ["Dark Cacao Mousse", "Fresh Raspberries", "Amber Fruit Gel", "Pistachio Sponge", "Toasted Hazelnut"],
+    pairing: "Royal Emirates Cardamom Coffee",
+    image: "/Menu/WhatsApp Image 2026-08-12 at 12.24.10 PM (1).jpeg",
+    badge: "Haute Pastry Creation",
+    awardWinning: true
   },
   {
     id: "dish-6",
-    title: "Bespoke Plated Culinary Degustation",
+    title: "Crispy Panko Arancini with Truffle Mushroom Velouté",
     category: "catering",
-    description: "Haute cuisine tasting course crafted for exclusive VIP private villa dining across the United Arab Emirates.",
-    technique: "Live molecular plating, emulsion reduction, micro-green accenting",
-    ingredients: ["Chef's Selection Fine Ingredients"],
-    pairing: "Custom Sommelier Non-Alcoholic Pairing",
-    image: "/image copy 2.png",
-    badge: "Executive Tasting Directorship",
+    description: "Golden panko-crusted risotto arancini resting on creamed truffle mushroom sauce with tender asparagus spears and edamame.",
+    technique: "Risotto ball lamination, panko frying, truffle mushroom reduction",
+    ingredients: ["Arborio Rice Arancini", "Truffle Mushroom Velouté", "Charred Asparagus", "Edamame Beans"],
+    pairing: "Sparkling Pear & Thyme Mocktail",
+    image: "/Menu/WhatsApp Image 2026-08-13 at 11.10.48 AM (3).jpeg",
+    badge: "Gourmet Banquet Highlight",
+    awardWinning: false
+  },
+  {
+    id: "dish-7",
+    title: "Crispy Katsu & Cauliflower Saffron Coconut Curry",
+    category: "levant",
+    description: "Golden katsu crisp over fragrant basmati rice, charred cauliflower florets, and aromatic saffron coconut curry with bell pepper julienne.",
+    technique: "Panko pan-crisping, saffron coconut emulsion, low-temp cauliflower roasting",
+    ingredients: ["Crispy Katsu Fillet", "Basmati Rice", "Roasted Cauliflower", "Saffron Coconut Curry"],
+    pairing: "Chilled Mango Ginger Lassi",
+    image: "/Menu/WhatsApp Image 2026-08-13 at 11.10.48 AM (6).jpeg",
+    badge: "Modern Fusion Dish",
+    awardWinning: false
+  },
+  {
+    id: "dish-8",
+    title: "Gourmet Wagyu Sliders with Wild Rocket & Halloumi",
+    category: "catering",
+    description: "Juicy artisanal Wagyu beef patties on toasted brioche buns topped with seared halloumi, wild rocket, and garlic truffle aioli.",
+    technique: "Cast-iron seared Wagyu, brioche toaster lamination, truffle garlic emulsification",
+    ingredients: ["Prime Wagyu Beef", "Brioche Buns", "Seared Halloumi", "Wild Rocket", "Truffle Aioli"],
+    pairing: "Smoked Applewood Botanical Tonic",
+    image: "/Menu/WhatsApp Image 2026-08-13 at 11.08.26 AM (3).jpeg",
+    badge: "VIP Event Favorite",
+    awardWinning: false
+  },
+  {
+    id: "dish-9",
+    title: "Tamago Ribbons & Smashed Avocado Sourdough",
+    category: "signature",
+    description: "Delicate Japanese tamago egg ribbons layered over smashed avocado sourdough with roasted cherry tomatoes, labneh, and chili oil drizzle.",
+    technique: "Tamago crepe slicing, avocado mashing, chili oil infusion",
+    ingredients: ["Tamago Egg Ribbons", "Smashed Avocado", "Seeded Sourdough", "Labneh", "Chili Oil"],
+    pairing: "Iced Green Tea & Citrus Tonic",
+    image: "/Menu/WhatsApp Image 2026-08-13 at 11.10.48 AM (2).jpeg",
+    badge: "Artisanal Breakfast Feature",
+    awardWinning: false
+  },
+  {
+    id: "dish-10",
+    title: "VIP Luxury Banquet & Canapé Buffet Spread",
+    category: "catering",
+    description: "Opulent catering installation featuring multi-tiered savory canapés, botanical elixir shot glasses, mini sliders, and fruit skewers.",
+    technique: "Multi-tiered buffet curation, precision canapé assembly, high-capacity presentation",
+    ingredients: ["Artisanal Canapés", "Botanical Shot Glass Elixirs", "Gourmet Tartlets", "Fruit Skewers"],
+    pairing: "Custom Sommelier Non-Alcoholic Elixir Bar",
+    image: "/Menu/WhatsApp Image 2026-08-13 at 11.08.26 AM (4).jpeg",
+    badge: "Executive Catering Directorship",
+    awardWinning: true
+  },
+  {
+    id: "dish-11",
+    title: "Artisanal Gourmet Breakfast & Parfait Bar",
+    category: "catering",
+    description: "Luxury breakfast buffet station featuring matcha chia pudding glasses, mango coconut sago flutes, and mini brioche sliders.",
+    technique: "Matcha chia hydration, mango sago layering, high-end event staging",
+    ingredients: ["Organic Matcha Chia", "Mango Coconut Sago", "Fresh Berries", "Mini Brioche Sliders"],
+    pairing: "Freshly Pressed Botanical Juice Selection",
+    image: "/Menu/WhatsApp Image 2026-08-13 at 11.08.27 AM.jpeg",
+    badge: "VIP Banquet Directorship",
+    awardWinning: false
+  },
+  {
+    id: "dish-12",
+    title: "Chilled Soba Noodle Salad with Lemon Ponzu",
+    category: "signature",
+    description: "Refreshing buckwheat soba noodles tossed with tender bok choy, julienned zucchini, edamame, and zesty lemon ponzu dressing.",
+    technique: "Soba blanching & chilling, vegetable julienning, ponzu emulsification",
+    ingredients: ["Buckwheat Soba Noodles", "Bok Choy", "Edamame", "Julienned Zucchini", "Lemon Ponzu"],
+    pairing: "Chilled Yuzu Sparkler",
+    image: "/Menu/WhatsApp Image 2026-08-13 at 11.10.48 AM (1).jpeg",
+    badge: "Healthy Gastronomy Feature",
+    awardWinning: false
+  },
+  {
+    id: "dish-13",
+    title: "Wild Blueberry Compote & Fresh Fig Granola Bowl",
+    category: "dessert",
+    description: "Rich wild blueberry compote layered with Greek yogurt, toasted nut granola, sliced fresh figs, green apple, and chia seeds.",
+    technique: "Wild berry simmering, honey nut granola roasting, precision fruit fan plating",
+    ingredients: ["Wild Blueberry Compote", "Greek Yogurt", "Fresh Figs", "Toasted Granola", "Chia Seeds"],
+    pairing: "Cold-Pressed Passionfruit & Mint Elixir",
+    image: "/Menu/WhatsApp Image 2026-08-13 at 11.10.48 AM (4).jpeg",
+    badge: "Gourmet Breakfast Feature",
+    awardWinning: false
+  },
+  {
+    id: "dish-14",
+    title: "Crispy Katsu Bao Buns & Gourmet Bento Platter",
+    category: "catering",
+    description: "Steamed lotus leaf bao buns stuffed with crispy chicken katsu and sriracha mayo, accompanied by fruit boats and tuile dessert pots.",
+    technique: "Lotus bao steaming, chicken katsu frying, tuile baking",
+    ingredients: ["Steamed Bao Buns", "Crispy Chicken Katsu", "Sriracha Mayo", "Fruit Boats", "Tuile Pots"],
+    pairing: "Sparkling Yuzu Lychee Tonic",
+    image: "/Menu/WhatsApp Image 2026-08-13 at 11.09.59 AM (1).jpeg",
+    badge: "VIP Bento Platter",
+    awardWinning: false
+  },
+  {
+    id: "dish-15",
+    title: "Sesame Crusted Amuse-Bouche Canapé",
+    category: "catering",
+    description: "Black and white sesame-crusted morsel served on a toasted crisp round with roasted bell pepper, black olive ring, and micro basil.",
+    technique: "Sesame crusting, mini brioche toast crunching, micro-canapé assembly",
+    ingredients: ["Sesame Seed Crust", "Toasted Brioche Base", "Roasted Bell Pepper", "Black Olive Ring"],
+    pairing: "Chilled Sparkling Botanical Tonic",
+    image: "/Menu/WhatsApp Image 2026-08-12 at 12.24.11 PM.jpeg",
+    badge: "Amuse-Bouche Feature",
+    awardWinning: false
+  },
+  {
+    id: "dish-16",
+    title: "Artisanal Lamb Sausage Shakshuka with Sourdough",
+    category: "levant",
+    description: "Spiced tomato skillet with artisanal lamb sausage, poached organic eggs, crumbled feta cheese, mint sprigs, and charred sourdough.",
+    technique: "Skillet simmering, egg poaching, lamb sausage searing, sourdough charring",
+    ingredients: ["Artisanal Lamb Sausage", "Spiced Tomato Ragout", "Poached Organic Eggs", "Feta Cheese"],
+    pairing: "Spiced Cardamom & Mint Elixir",
+    image: "/Menu/WhatsApp Image 2026-08-13 at 11.08.26 AM (1).jpeg",
+    badge: "Authentic Levant Feature",
     awardWinning: true
   }
 ];
@@ -132,6 +252,16 @@ export const CAREER_MILESTONES: Milestone[] = [
     description: "Earned first place among top professional chefs in the United Arab Emirates in a high-stakes live culinary showdown, showcasing speed, precision plating, and taste harmony.",
     category: "award",
     highlightBadge: "First Place Trophy"
+  },
+  {
+    year: "2021",
+    title: "Gold Award Winner — Hozpitality Excellence Awards",
+    organization: "4th Middle East Chef Excellence Awards",
+    location: "Dubai, UAE",
+    description: "Awarded Gold Award for Sous Chef of the Year at Slices Catering Services Dubai, presented on stage at the Hozpitality Excellence Awards ceremony.",
+    category: "award",
+    highlightBadge: "Sous Chef of the Year Gold Award",
+    image: "/WhatsApp Image 2026-08-12 at 12.24.10 PM.jpeg"
   },
   {
     year: "Aug 2022 – Aug 2025",
@@ -201,11 +331,12 @@ export const PRESS_ITEMS: PressItem[] = [
   {
     id: "press-3",
     source: "Hozpitality Excellence Awards",
-    title: "Middle East Chef Excellence Award Winner — Slices Catering",
-    date: "2021 - 2024",
-    excerpt: "Recognized at the 4th Middle East Chef Excellence Awards for culinary directorship, molecular techniques, and high-capacity banquet management in Dubai.",
-    linkText: "View Hozpitality Record",
-    url: "https://www.hozpitality.com/",
+    title: "Hozpitality Excellence 2021 Gold Award — Sous Chef of the Year",
+    date: "2021",
+    excerpt: "Awarded the prestigious Gold Award for Sous Chef of the Year at the 4th Middle East Chef Excellence Awards for culinary leadership and executive banquet operations at Slices Catering Services Dubai.",
+    linkText: "View Gold Award Ceremony Photo",
+    url: "/WhatsApp Image 2026-08-12 at 12.24.10 PM.jpeg",
+    image: "/WhatsApp Image 2026-08-12 at 12.24.10 PM.jpeg",
     verifiedWinner: true
   }
 ];
@@ -213,47 +344,69 @@ export const PRESS_ITEMS: PressItem[] = [
 export const INSTAGRAM_POSTS: InstagramPost[] = [
   {
     id: "ig-1",
-    caption: "",
+    caption: "Live Culinary Masterclass & Signature Plating",
     likes: 1482,
     comments: 124,
     type: "video",
     videoUrl: "/vid 1.mp4",
     imageUrl: "/vid 1.mp4",
     instagramUrl: "https://www.instagram.com/yaseer.s.arafath/",
-    tags: []
+    tags: ["ChefMasterclass", "DubaiChefs", "Gastronomy"]
   },
   {
     id: "ig-2",
-    caption: "",
+    caption: "High-Capacity Banquet Production behind the scenes",
     likes: 930,
     comments: 68,
     type: "video",
     videoUrl: "/vid 2.mp4",
     imageUrl: "/vid 2.mp4",
     instagramUrl: "https://www.instagram.com/yaseer.s.arafath/",
-    tags: []
+    tags: ["SlicesCatering", "BanquetOps", "CulinaryDirectorship"]
   },
   {
     id: "ig-3",
-    caption: "",
+    caption: "UAE Superchef 2024 Live Cooking Highlights",
     likes: 1120,
     comments: 89,
     type: "video",
     videoUrl: "/vid 3.mp4",
     imageUrl: "/vid 3.mp4",
     instagramUrl: "https://www.instagram.com/yaseer.s.arafath/",
-    tags: []
+    tags: ["Superchef2024", "1stPrize", "LiveCooking"]
   },
   {
     id: "ig-4",
-    caption: "",
+    caption: "VIP Private Dining & Molecular Gastronomy",
     likes: 854,
     comments: 52,
     type: "video",
     videoUrl: "/vid 4.mp4",
     imageUrl: "/vid 4.mp4",
     instagramUrl: "https://www.instagram.com/yaseer.s.arafath/",
-    tags: []
+    tags: ["PrivateChef", "MolecularGastronomy", "LuxuryDining"]
+  },
+  {
+    id: "ig-5",
+    caption: "Farmhouse Culinary Vision & Live Cooking Showcase",
+    likes: 1045,
+    comments: 76,
+    type: "video",
+    videoUrl: "/vid 5.mp4",
+    imageUrl: "/vid 5.mp4",
+    instagramUrl: "https://www.instagram.com/yaseer.s.arafath/",
+    tags: ["FarmToTable", "ExecutiveChef", "ArborSchool"]
+  },
+  {
+    id: "ig-6",
+    caption: "Emirates Culinary Guild & Levant Flavor Mastery",
+    likes: 1290,
+    comments: 98,
+    type: "video",
+    videoUrl: "/vid 6.mp4",
+    imageUrl: "/vid 6.mp4",
+    instagramUrl: "https://www.instagram.com/yaseer.s.arafath/",
+    tags: ["LevantCuisine", "EmiratesCulinaryGuild", "CulinaryArt"]
   }
 ];
 

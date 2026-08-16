@@ -325,33 +325,222 @@ Sous-vide precision braising, Binchotan charcoal grilling, cryogenic nitrogen ga
             </div>
           </div>
 
-          {/* Academic Credentials Box */}
-          <div className="mt-12 bg-white border border-[#E8E4DC] p-8 sm:p-10 shadow-minimal text-left grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-            <div className="md:col-span-8 space-y-3">
-              <span className="text-[11px] font-mono uppercase text-[#B88E28] tracking-widest font-semibold block">
-                Formal Academic Qualification
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-serif text-[#1A1817] font-normal">
-                Bachelor's Degree in Restaurant, Culinary & Catering Management
-              </h3>
-              <p className="text-xs sm:text-sm text-[#68645E] font-mono">
-                Bharathiar University • Coimbatore, India (2007 – 2010)
-              </p>
-              <p className="text-xs sm:text-sm text-[#44403C] leading-relaxed font-light">
-                Comprehensive 3-year academic degree curriculum encompassing classical food chemistry, large-scale kitchen directorship, menu engineering, sanitation standards, and hospitality logistics.
-              </p>
+          {/* Academic & International Food Safety Certifications Cabinet */}
+          <div className="mt-14 space-y-8 text-left">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[#E8E4DC] pb-4 gap-2">
+              <div>
+                <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#B88E28] font-semibold block">
+                  Accredited Credentials Cabinet
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-serif text-[#1A1817] font-normal">
+                  Academic Degree & International Food Safety Certifications
+                </h3>
+              </div>
+              <span className="text-xs font-mono text-[#888888]">Verified Global & Government Standards</span>
             </div>
 
-            <div className="md:col-span-4 bg-[#FAF9F6] border border-[#E8E4DC] p-6 space-y-3 font-mono text-xs">
-              <div className="flex items-center space-x-2 text-[#B88E28] font-semibold">
-                <GraduationCap className="w-4 h-4 text-[#B88E28]" />
-                <span>Degree Verification Record</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              
+              {/* 1. Bharathiar University B.Sc. Degree */}
+              <div className="bg-white border border-[#E8E4DC] hover:border-[#1A1817] p-7 transition-all shadow-minimal flex flex-col justify-between space-y-5 group">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="bg-[#1A1817] text-white font-mono text-[10px] uppercase tracking-wider px-2.5 py-0.5 font-bold">
+                      ACADEMIC DEGREE
+                    </span>
+                    <span className="text-[11px] font-mono text-[#B88E28] font-semibold">Apr 2010 / 2011</span>
+                  </div>
+
+                  <h4 className="text-xl font-serif text-[#1A1817] font-normal group-hover:text-[#B88E28] transition-colors leading-snug">
+                    B.Sc. Catering Science & Hotel Management
+                  </h4>
+
+                  <p className="text-xs font-mono text-[#68645E]">
+                    Bharathiar University (Faculty of Science) • Rathnavel Subramaniam College of Arts & Science (Autonomous)
+                  </p>
+
+                  <p className="text-xs text-[#44403C] leading-relaxed font-light">
+                    3-year formal Bachelor of Science degree in food chemistry, menu engineering, sanitation, and hotel management.
+                  </p>
+
+                  <div className="p-3 bg-[#FAF9F6] border border-[#E8E4DC] space-y-1 font-mono text-[11px] text-[#555555]">
+                    <div className="flex justify-between">
+                      <span>Honors Classification:</span>
+                      <span className="text-[#1A1817] font-semibold">First Class (Part III)</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Reg / Cert No:</span>
+                      <span className="text-[#888888]">071CH094 / 287888</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-3 border-t border-[#E8E4DC] flex items-center justify-between font-mono text-[11px] text-[#68645E]">
+                  <span>Status: Grade A Graduate</span>
+                  <CheckCircle2 className="w-4 h-4 text-[#B88E28]" />
+                </div>
               </div>
-              <ul className="space-y-1.5 text-[11px] text-[#68645E]">
-                <li>• Major: Culinary Arts & Food Science</li>
-                <li>• Major: Catering & Event Logistics</li>
-                <li>• Status: Graduated with Honors</li>
-              </ul>
+
+              {/* 2. Highfield Level 3 International HACCP */}
+              <div className="bg-white border border-[#E8E4DC] hover:border-[#1A1817] p-7 transition-all shadow-minimal flex flex-col justify-between space-y-5 group">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="bg-[#B88E28] text-white font-mono text-[10px] uppercase tracking-wider px-2.5 py-0.5 font-bold">
+                      HIGHFIELD CERTIFIED
+                    </span>
+                    <span className="text-[11px] font-mono text-[#B88E28] font-semibold">10 Jan 2022</span>
+                  </div>
+
+                  <h4 className="text-xl font-serif text-[#1A1817] font-normal group-hover:text-[#B88E28] transition-colors leading-snug">
+                    Level 3 International Award in HACCP for Catering
+                  </h4>
+
+                  <p className="text-xs font-mono text-[#68645E]">
+                    Highfield Qualifications (UK & Global Leader) • Splendid Quality Consultants
+                  </p>
+
+                  <p className="text-xs text-[#44403C] leading-relaxed font-light">
+                    Hazard Analysis Critical Control Point system design, thermal control, allergen management, and critical limits verification.
+                  </p>
+
+                  <div className="p-3 bg-[#FAF9F6] border border-[#E8E4DC] space-y-1 font-mono text-[11px] text-[#555555]">
+                    <div className="flex justify-between">
+                      <span>Certificate Number:</span>
+                      <span className="text-[#1A1817] font-semibold">HAC3911003</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Awarding Body:</span>
+                      <span className="text-[#888888]">Highfield Qualifications</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-3 border-t border-[#E8E4DC] flex items-center justify-between font-mono text-[11px] text-[#68645E]">
+                  <span>Status: Certified Master</span>
+                  <CheckCircle2 className="w-4 h-4 text-[#B88E28]" />
+                </div>
+              </div>
+
+              {/* 3. Highfield Level 4 Managing Food Safety */}
+              <div className="bg-white border border-[#E8E4DC] hover:border-[#1A1817] p-7 transition-all shadow-minimal flex flex-col justify-between space-y-5 group">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="bg-[#1A1817] text-white font-mono text-[10px] uppercase tracking-wider px-2.5 py-0.5 font-bold">
+                      EXECUTIVE LEVEL 4
+                    </span>
+                    <span className="text-[11px] font-mono text-[#B88E28] font-semibold">Food Safety</span>
+                  </div>
+
+                  <h4 className="text-xl font-serif text-[#1A1817] font-normal group-hover:text-[#B88E28] transition-colors leading-snug">
+                    Level 4 Award in Managing Food Safety for Catering
+                  </h4>
+
+                  <p className="text-xs font-mono text-[#68645E]">
+                    Highfield Qualifications • Advanced Catering Standards
+                  </p>
+
+                  <p className="text-xs text-[#44403C] leading-relaxed font-light">
+                    Senior kitchen food safety management, staff sanitation training directorship, cross-contamination prevention, and audit readiness.
+                  </p>
+
+                  <div className="p-3 bg-[#FAF9F6] border border-[#E8E4DC] space-y-1 font-mono text-[11px] text-[#555555]">
+                    <div className="flex justify-between">
+                      <span>Governance Level:</span>
+                      <span className="text-[#1A1817] font-semibold">Level 4 Executive</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Focus:</span>
+                      <span className="text-[#888888]">Central Kitchen Auditing</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-3 border-t border-[#E8E4DC] flex items-center justify-between font-mono text-[11px] text-[#68645E]">
+                  <span>Status: Verified Director</span>
+                  <CheckCircle2 className="w-4 h-4 text-[#B88E28]" />
+                </div>
+              </div>
+
+              {/* 4. TSI Quality Services Level 5 Food Safety */}
+              <div className="bg-white border border-[#E8E4DC] hover:border-[#1A1817] p-7 transition-all shadow-minimal flex flex-col justify-between space-y-5 group">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="bg-[#B88E28] text-white font-mono text-[10px] uppercase tracking-wider px-2.5 py-0.5 font-bold">
+                      TSI LEVEL 5 AUDIT
+                    </span>
+                    <span className="text-[11px] font-mono text-[#B88E28] font-semibold">Quality SOC</span>
+                  </div>
+
+                  <h4 className="text-xl font-serif text-[#1A1817] font-normal group-hover:text-[#B88E28] transition-colors leading-snug">
+                    Level 5 Award in Food Safety & Operational Audit
+                  </h4>
+
+                  <p className="text-xs font-mono text-[#68645E]">
+                    TSI Quality Services L.L.C. S.O.C.
+                  </p>
+
+                  <p className="text-xs text-[#44403C] leading-relaxed font-light">
+                    Advanced operational audit directorship, quality assurance protocol execution, and central kitchen compliance across Dubai facilities.
+                  </p>
+
+                  <div className="p-3 bg-[#FAF9F6] border border-[#E8E4DC] space-y-1 font-mono text-[11px] text-[#555555]">
+                    <div className="flex justify-between">
+                      <span>Certification Body:</span>
+                      <span className="text-[#1A1817] font-semibold">TSI Quality Services</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Scope:</span>
+                      <span className="text-[#888888]">Central Production Audits</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-3 border-t border-[#E8E4DC] flex items-center justify-between font-mono text-[11px] text-[#68645E]">
+                  <span>Status: Executive Auditor</span>
+                  <CheckCircle2 className="w-4 h-4 text-[#B88E28]" />
+                </div>
+              </div>
+
+              {/* 5. Dubai Municipality Gold Rating & HACCP Operations */}
+              <div className="bg-white border border-[#E8E4DC] hover:border-[#1A1817] p-7 transition-all shadow-minimal flex flex-col justify-between space-y-5 group md:col-span-2 lg:col-span-2">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="bg-[#1A1817] text-white font-mono text-[10px] uppercase tracking-wider px-2.5 py-0.5 font-bold">
+                      GOVERNMENT RATING
+                    </span>
+                    <span className="text-[11px] font-mono text-[#B88E28] font-semibold">Dubai Municipality</span>
+                  </div>
+
+                  <h4 className="text-xl font-serif text-[#1A1817] font-normal group-hover:text-[#B88E28] transition-colors leading-snug">
+                    Dubai Municipality Gold Rating & HACCP Kitchen Certification
+                  </h4>
+
+                  <p className="text-xs font-mono text-[#68645E]">
+                    The Arbor School Dubai & Slices Catering Central Operations
+                  </p>
+
+                  <p className="text-xs text-[#44403C] leading-relaxed font-light">
+                    Retained Dubai Municipality Gold Rating across Kitchen, Canteen, and Café. Conferred HACCP Certification via AGA Certifications (Aligned Global Assurance ME) for zero-fault food safety, temperature tracking, and hygiene governance.
+                  </p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3 bg-[#FAF9F6] border border-[#E8E4DC] font-mono text-[11px] text-[#555555]">
+                    <div>
+                      <span className="text-[#888888] block">Rating Level:</span>
+                      <span className="text-[#B88E28] font-bold">Dubai Municipality Gold Rating</span>
+                    </div>
+                    <div>
+                      <span className="text-[#888888] block">HACCP Assessor Body:</span>
+                      <span className="text-[#1A1817] font-semibold">AGA Certifications (ME)</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-3 border-t border-[#E8E4DC] flex items-center justify-between font-mono text-[11px] text-[#68645E]">
+                  <span>Status: Retained Gold Standard Compliance</span>
+                  <CheckCircle2 className="w-4 h-4 text-[#B88E28]" />
+                </div>
+              </div>
+
             </div>
           </div>
 
