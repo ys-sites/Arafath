@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { ChefHat, GraduationCap, Building2, Flame, Award, CheckCircle2, Calendar, Sparkles, Download } from 'lucide-react';
-import { CHEF_PROFILE, CAREER_MILESTONES } from '../data/portfolioData';
+import { ChefHat, GraduationCap, Building2, Flame, Award, CheckCircle2, Calendar, Sparkles, FileText, ExternalLink, Eye, Download, X } from 'lucide-react';
+import { CHEF_PROFILE } from '../data/portfolioData';
 import { ShinyText } from './ShinyText';
 import { BlurText } from './BlurText';
 import { TimelineTree } from './TimelineTree';
@@ -10,56 +10,7 @@ interface AboutSectionProps {
 }
 
 export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => {
-  const [downloadSuccess, setDownloadSuccess] = useState(false);
-
-  const handleDownloadDossier = () => {
-    const dossierText = `
-CHEF YASEER ARAFATH — EXECUTIVE CULINARY DOSSIER
-==================================================
-Current Title: Executive Chef at The Arbor School Dubai
-Location: Dubai & Abu Dhabi, United Arab Emirates
-Direct Contact: ${CHEF_PROFILE.contactEmail}
-Instagram: https://www.instagram.com/yaseer.s.arafath/
-LinkedIn: https://www.linkedin.com/in/yaseer-arafath-75b67017b/
-
-HONORS & ACCOLADES
--------------------
-• 5th Place Winner — Date-A-Cheese 2026 Competition (Among 100s of top UAE chefs)
-• 1st Prize Winner — UAE Superchef 2024 (Xpatzhub Competition at Firki, Royal Ascot Hotel, June 2024)
-• Silver Medalist — Emirates Culinary Guild (Wathba Dates Festival, Dec 2023)
-• Medalist — ExpoCulinaire Salon Culinaire UAE (Worldchefs Certified)
-
-STANDARDS & CERTIFICATIONS
---------------------------
-• HACCP Certification (AGA Certifications / Aligned Global Assurance Middle East ME)
-• Dubai Municipality Gold Rating (Retained across Kitchen, Canteen & Café)
-
-ACADEMIC CREDENTIALS
---------------------
-• Bachelor's Degree in Restaurant, Culinary & Catering Management (Grade A)
-  Bharathiar University (2007 – 2010)
-
-EXECUTIVE CAREER HIGHLIGHTS
-----------------------------
-• Aug 2025 – Present: Executive Chef @ The Arbor School Dubai (The Farmhouse)
-• Aug 2022 – Aug 2025: Head Chef @ Slices Catering Dubai (3+ years leading high-volume gourmet catering)
-• Oct 2019 – Jul 2022: Production Manager @ Slices Catering Dubai (Central kitchen production & food safety)
-• Dec 2018 – Dec 2019: Chef De Partie @ Queen Elizabeth 2 (QE2 Floating Hotel & Liner, Dubai)
-    `;
-
-    const blob = new Blob([dossierText], { type: 'text/plain;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'Chef_Yaseer_Arafath_Executive_Dossier.txt';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
-
-    setDownloadSuccess(true);
-    setTimeout(() => setDownloadSuccess(false), 3000);
-  };
+  const [selectedPdf, setSelectedPdf] = useState<{ title: string; url: string } | null>(null);
 
   return (
     <section id="about" className="py-24 bg-[#FFFFFF] text-[#1A1817] relative border-b border-[#E8E4DC]">
@@ -91,17 +42,17 @@ EXECUTIVE CAREER HIGHLIGHTS
         {/* Bio & Kitchen Action Grid */}
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
           
-          {/* Action Photo Column */}
-          <div className="lg:col-span-5 relative">
-            <div className="h-full min-h-[420px] rounded-none bg-[#FAF9F6] border border-[#E8E4DC] p-3 shadow-minimal relative flex flex-col justify-between">
-              <div className="relative h-[380px] lg:h-[480px] overflow-hidden group">
+          {/* Action Photo Column — Clean Full Height Layout without excess blank space */}
+          <div className="lg:col-span-5 relative flex flex-col">
+            <div className="bg-[#FAF9F6] border border-[#E8E4DC] p-3 shadow-minimal flex flex-col flex-1">
+              <div className="relative w-full flex-1 min-h-[420px] lg:min-h-[480px] overflow-hidden group">
                 <img
                   src="/yaseer.jpeg"
                   alt="Chef Yaseer Arafath Executive Chef Dubai"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover object-top transition-all duration-700"
+                  className="w-full h-full object-cover object-top transition-all duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1A1817]/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1A1817]/85 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-5 left-5 right-5 text-left space-y-1">
                   <span className="text-[10px] font-mono uppercase text-[#B88E28] tracking-widest font-semibold block">
                     Chef Yaseer Arafath
@@ -110,7 +61,7 @@ EXECUTIVE CAREER HIGHLIGHTS
                 </div>
               </div>
 
-              {/* Quick Credential Strip */}
+              {/* Quick Credential Strip Tightly Attached */}
               <div className="mt-3 p-3 bg-white border border-[#E8E4DC] flex items-center justify-between text-xs text-[#68645E]">
                 <span className="font-mono text-[11px] font-semibold text-[#1A1817]">Bharathiar University Alumnus</span>
                 <span className="font-mono text-[11px] text-[#888888]">Executive Chef — Arbor</span>
@@ -164,62 +115,173 @@ EXECUTIVE CAREER HIGHLIGHTS
                 <Calendar className="w-4 h-4 text-white" />
                 <span>Inquire for Work & Collaboration</span>
               </button>
-
-              <button
-                onClick={handleDownloadDossier}
-                className="cursor-pointer border border-[#E8E4DC] hover:border-[#1A1817] bg-[#FAF9F6] text-[#1A1817] uppercase tracking-wider px-5 py-3.5 transition-colors flex items-center justify-center space-x-2"
-              >
-                <Download className="w-3.5 h-3.5 text-[#B88E28]" />
-                <span>{downloadSuccess ? 'Dossier Downloaded' : 'Download Resume PDF'}</span>
-              </button>
             </div>
           </div>
 
         </div>
 
-        {/* Academic & Guild Recognition Section */}
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+        {/* Academic & Certified Food Safety Documents Section */}
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
           
           {/* Degree Card */}
-          <div className="bg-white border border-[#E8E4DC] p-8 shadow-minimal space-y-4 hover:border-[#1A1817] transition-colors">
-            <div className="flex items-start space-x-4">
-              <div className="w-10 h-10 bg-[#FAF9F6] border border-[#E8E4DC] flex items-center justify-center shrink-0">
-                <GraduationCap className="w-5 h-5 text-[#1A1817]" />
+          <div className="bg-white border border-[#E8E4DC] p-7 shadow-minimal space-y-4 hover:border-[#1A1817] transition-colors flex flex-col justify-between">
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3 text-[#1A1817]">
+                <GraduationCap className="w-5 h-5 text-[#B88E28]" />
+                <span className="text-[10px] font-mono uppercase text-[#B88E28] tracking-wider font-semibold">Academic Degree</span>
               </div>
-              <div>
-                <span className="text-[10px] font-mono uppercase text-[#B88E28] tracking-wider font-semibold">Academic Qualification</span>
-                <h4 className="text-[#1A1817] font-serif text-lg font-normal mt-0.5">Bachelor's in Restaurant, Culinary & Catering Management</h4>
-                <p className="text-[#888888] text-xs mt-1 font-mono">Bharathiar University (2007–2010)</p>
-              </div>
+              <h4 className="text-[#1A1817] font-serif text-lg font-normal">B.Sc. Catering Science & Hotel Management</h4>
+              <p className="text-[#888888] text-xs font-mono">Bharathiar University (April 2010 / First Class Honors)</p>
+              <p className="text-[#555555] text-xs leading-relaxed font-light">
+                Formal 3-year degree in classical food chemistry, large-scale kitchen operations, menu engineering, sanitation, and catering logistics.
+              </p>
             </div>
-            <p className="text-[#555555] text-xs sm:text-sm leading-relaxed pl-14 font-light">
-              Full 3-year formal degree covering classical food science, large-scale kitchen operations, menu engineering, sanitation, and catering logistics.
-            </p>
+            <div className="pt-3 border-t border-[#E8E4DC] text-xs font-mono text-[#B88E28] font-semibold">
+              Reg. No: 071CH094
+            </div>
           </div>
 
-          {/* Guild Recognition Card */}
-          <div className="bg-white border border-[#E8E4DC] p-8 shadow-minimal space-y-4 hover:border-[#1A1817] transition-colors">
-            <div className="flex items-center space-x-3 text-[#1A1817]">
-              <Award className="w-5 h-5 text-[#B88E28]" />
-              <h4 className="text-[#1A1817] font-serif text-lg font-normal">Emirates Culinary Guild Recognition</h4>
+          {/* Highfield Food Safety Level 4 PDF Card */}
+          <div className="bg-white border border-[#E8E4DC] p-7 shadow-minimal space-y-4 hover:border-[#1A1817] transition-colors flex flex-col justify-between">
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3 text-[#1A1817]">
+                <FileText className="w-5 h-5 text-[#B88E28]" />
+                <span className="text-[10px] font-mono uppercase text-[#B88E28] tracking-wider font-semibold">Level 4 Award</span>
+              </div>
+              <h4 className="text-[#1A1817] font-serif text-lg font-normal">Highfield Level 4 Managing Food Safety</h4>
+              <p className="text-[#888888] text-xs font-mono">Highfield Qualifications • International Standard</p>
+              <p className="text-[#555555] text-xs leading-relaxed font-light">
+                Executive food safety management, HACCP plan design, temperature audit compliance, and kitchen allergen control.
+              </p>
             </div>
-            <ul className="space-y-3 text-xs sm:text-sm text-[#555555] font-light">
-              <li className="flex items-start space-x-3">
-                <CheckCircle2 className="w-4 h-4 text-[#B88E28] shrink-0 mt-0.5" />
-                <span>Silver Medalist at Wathba Dates Festival & Auction (Dec 2023) for Levant Main Course.</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <CheckCircle2 className="w-4 h-4 text-[#B88E28] shrink-0 mt-0.5" />
-                <span>ExpoCulinaire Salon Culinaire medalist recognized by Worldchefs international judges.</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <CheckCircle2 className="w-4 h-4 text-[#B88E28] shrink-0 mt-0.5" />
-                <span>Guest Chief Judge & Demonstrator at Sir Issac Newton Hotel Management Dept.</span>
-              </li>
-            </ul>
+            
+            <div className="pt-3 border-t border-[#E8E4DC] flex items-center justify-between font-mono text-xs">
+              <button
+                onClick={() => setSelectedPdf({
+                  title: 'Highfield Level 4 Award in Managing Food Safety for Catering',
+                  url: '/Food Safety Level-4.pdf'
+                })}
+                className="flex items-center space-x-1.5 text-[#1A1817] hover:text-[#B88E28] font-semibold cursor-pointer"
+              >
+                <Eye className="w-3.5 h-3.5 text-[#B88E28]" />
+                <span>View PDF Document</span>
+              </button>
+              <a
+                href="/Food Safety Level-4.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#888888] hover:text-[#1A1817] flex items-center space-x-1"
+                title="Open in new window"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            </div>
+          </div>
+
+          {/* TSI Food Safety Level 5 PDF Card */}
+          <div className="bg-white border border-[#E8E4DC] p-7 shadow-minimal space-y-4 hover:border-[#1A1817] transition-colors flex flex-col justify-between">
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3 text-[#1A1817]">
+                <Award className="w-5 h-5 text-[#B88E28]" />
+                <span className="text-[10px] font-mono uppercase text-[#B88E28] tracking-wider font-semibold">Level 5 Audit</span>
+              </div>
+              <h4 className="text-[#1A1817] font-serif text-lg font-normal">Level 5 Food Safety & Operational Audit</h4>
+              <p className="text-[#888888] text-xs font-mono">TSI Quality Services L.L.C. S.O.C.</p>
+              <p className="text-[#555555] text-xs leading-relaxed font-light">
+                Central kitchen operational audit directorship, quality assurance protocols, and municipal compliance standards.
+              </p>
+            </div>
+
+            <div className="pt-3 border-t border-[#E8E4DC] flex items-center justify-between font-mono text-xs">
+              <button
+                onClick={() => setSelectedPdf({
+                  title: 'Level 5 Award in Food Safety & Operational Audit Management',
+                  url: '/Yaseer-Arafath-.pdf'
+                })}
+                className="flex items-center space-x-1.5 text-[#1A1817] hover:text-[#B88E28] font-semibold cursor-pointer"
+              >
+                <Eye className="w-3.5 h-3.5 text-[#B88E28]" />
+                <span>View PDF Document</span>
+              </button>
+              <a
+                href="/Yaseer-Arafath-.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#888888] hover:text-[#1A1817] flex items-center space-x-1"
+                title="Open in new window"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            </div>
           </div>
 
         </div>
+
+        {/* Interactive PDF Document Viewer Modal */}
+        {selectedPdf && (
+          <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+            <div className="bg-white border border-[#E8E4DC] max-w-4xl w-full h-[88vh] flex flex-col shadow-2xl overflow-hidden relative text-left">
+              
+              {/* Modal Header */}
+              <div className="p-4 sm:p-5 bg-[#1A1817] text-white flex items-center justify-between">
+                <div className="flex items-center space-x-3">
+                  <FileText className="w-5 h-5 text-[#B88E28]" />
+                  <div>
+                    <h3 className="font-serif text-base sm:text-lg font-normal leading-snug">{selectedPdf.title}</h3>
+                    <span className="text-[11px] font-mono text-[#B88E28]">Official Certified Document</span>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-2">
+                  <a
+                    href={selectedPdf.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hidden sm:flex items-center space-x-1.5 bg-[#383431] hover:bg-[#4A4640] text-white px-3 py-1.5 text-xs font-mono"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5 text-[#B88E28]" />
+                    <span>New Tab</span>
+                  </a>
+                  <a
+                    href={selectedPdf.url}
+                    download
+                    className="flex items-center space-x-1.5 bg-[#B88E28] hover:bg-[#9E781E] text-white px-3 py-1.5 text-xs font-mono font-semibold"
+                  >
+                    <Download className="w-3.5 h-3.5" />
+                    <span>Download</span>
+                  </a>
+                  <button
+                    onClick={() => setSelectedPdf(null)}
+                    className="bg-[#383431] hover:bg-red-900 text-white p-1.5 cursor-pointer ml-2"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Embedded PDF Canvas / Viewer */}
+              <div className="flex-1 bg-[#2A2A2A] relative">
+                <iframe
+                  src={`${selectedPdf.url}#toolbar=1`}
+                  className="w-full h-full border-0"
+                  title={selectedPdf.title}
+                />
+              </div>
+
+              {/* Modal Footer */}
+              <div className="p-3 bg-[#FAF9F6] border-t border-[#E8E4DC] flex items-center justify-between text-xs font-mono text-[#68645E]">
+                <span>Document: {selectedPdf.url.replace('/', '')}</span>
+                <button
+                  onClick={() => setSelectedPdf(null)}
+                  className="text-[#1A1817] font-semibold hover:underline cursor-pointer"
+                >
+                  Close Viewer
+                </button>
+              </div>
+
+            </div>
+          </div>
+        )}
 
         {/* Career Timeline Tree */}
         <TimelineTree />

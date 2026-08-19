@@ -19,7 +19,10 @@ import {
   ZoomIn,
   Mail,
   MapPin,
-  Share2
+  Share2,
+  Eye,
+  FileText,
+  X
 } from 'lucide-react';
 import { CHEF_PROFILE, CHEF_STATS, CAREER_MILESTONES, PRESS_ITEMS, SIGNATURE_DISHES } from '../data/portfolioData';
 import { Dish } from '../types';
@@ -44,6 +47,7 @@ export const PortfolioSubPage: React.FC<PortfolioSubPageProps> = ({
   const [selectedPress, setSelectedPress] = useState<typeof PRESS_ITEMS[0] | null>(null);
   const [activeDish, setActiveDish] = useState<Dish | null>(null);
   const [downloadSuccess, setDownloadSuccess] = useState(false);
+  const [selectedPdf, setSelectedPdf] = useState<{ title: string; url: string } | null>(null);
 
   const filteredMilestones = CAREER_MILESTONES.filter(
     m => timelineFilter === 'all' || m.category === timelineFilter
@@ -121,18 +125,10 @@ Sous-vide precision braising, Binchotan charcoal grilling, cryogenic nitrogen ga
 
           <div className="flex items-center space-x-3">
             <button
-              onClick={handleDownloadDossier}
-              className="bg-[#FAFAFA] border border-[#E8E4DC] hover:border-[#1A1817] text-[#1A1817] px-3.5 py-1.5 flex items-center space-x-1.5 cursor-pointer transition-colors"
-            >
-              <Download className="w-3.5 h-3.5 text-[#B88E28]" />
-              <span>{downloadSuccess ? 'Downloaded Dossier' : 'Download Press Resume'}</span>
-            </button>
-            
-            <button
               onClick={onOpenBooking}
-              className="bg-[#1A1817] hover:bg-[#383431] text-white px-4 py-1.5 cursor-pointer transition-colors uppercase tracking-wider font-semibold"
+              className="bg-[#1A1817] hover:bg-[#383431] text-white px-5 py-2 cursor-pointer transition-colors uppercase tracking-wider font-semibold"
             >
-              Inquire
+              Inquire for Services
             </button>
           </div>
         </div>
@@ -455,9 +451,26 @@ Sous-vide precision braising, Binchotan charcoal grilling, cryogenic nitrogen ga
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-[#E8E4DC] flex items-center justify-between font-mono text-[11px] text-[#68645E]">
-                  <span>Status: Verified Director</span>
-                  <CheckCircle2 className="w-4 h-4 text-[#B88E28]" />
+                <div className="pt-3 border-t border-[#E8E4DC] flex items-center justify-between font-mono text-xs">
+                  <button
+                    onClick={() => setSelectedPdf({
+                      title: 'Highfield Level 4 Award in Managing Food Safety for Catering',
+                      url: '/Food Safety Level-4.pdf'
+                    })}
+                    className="flex items-center space-x-1.5 text-[#1A1817] hover:text-[#B88E28] font-semibold cursor-pointer"
+                  >
+                    <Eye className="w-3.5 h-3.5 text-[#B88E28]" />
+                    <span>View PDF Document</span>
+                  </button>
+                  <a
+                    href="/Food Safety Level-4.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#888888] hover:text-[#1A1817] flex items-center space-x-1"
+                    title="Open in new window"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
                 </div>
               </div>
 
@@ -495,9 +508,26 @@ Sous-vide precision braising, Binchotan charcoal grilling, cryogenic nitrogen ga
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-[#E8E4DC] flex items-center justify-between font-mono text-[11px] text-[#68645E]">
-                  <span>Status: Executive Auditor</span>
-                  <CheckCircle2 className="w-4 h-4 text-[#B88E28]" />
+                <div className="pt-3 border-t border-[#E8E4DC] flex items-center justify-between font-mono text-xs">
+                  <button
+                    onClick={() => setSelectedPdf({
+                      title: 'Level 5 Award in Food Safety & Operational Audit Management',
+                      url: '/Yaseer-Arafath-.pdf'
+                    })}
+                    className="flex items-center space-x-1.5 text-[#1A1817] hover:text-[#B88E28] font-semibold cursor-pointer"
+                  >
+                    <Eye className="w-3.5 h-3.5 text-[#B88E28]" />
+                    <span>View PDF Document</span>
+                  </button>
+                  <a
+                    href="/Yaseer-Arafath-.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#888888] hover:text-[#1A1817] flex items-center space-x-1"
+                    title="Open in new window"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
                 </div>
               </div>
 
@@ -963,6 +993,70 @@ Sous-vide precision braising, Binchotan charcoal grilling, cryogenic nitrogen ga
                   </button>
                 </div>
               </div>
+            </div>
+
+          </div>
+        </div>
+      {/* Interactive PDF Document Viewer Modal */}
+      {selectedPdf && (
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+          <div className="bg-white border border-[#E8E4DC] max-w-4xl w-full h-[88vh] flex flex-col shadow-2xl overflow-hidden relative text-left">
+            
+            {/* Modal Header */}
+            <div className="p-4 sm:p-5 bg-[#1A1817] text-white flex items-center justify-between">
+              <div className="flex items-center space-x-3">
+                <FileText className="w-5 h-5 text-[#B88E28]" />
+                <div>
+                  <h3 className="font-serif text-base sm:text-lg font-normal leading-snug">{selectedPdf.title}</h3>
+                  <span className="text-[11px] font-mono text-[#B88E28]">Official Certified Document</span>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-2">
+                <a
+                  href={selectedPdf.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hidden sm:flex items-center space-x-1.5 bg-[#383431] hover:bg-[#4A4640] text-white px-3 py-1.5 text-xs font-mono"
+                >
+                  <ExternalLink className="w-3.5 h-3.5 text-[#B88E28]" />
+                  <span>New Tab</span>
+                </a>
+                <a
+                  href={selectedPdf.url}
+                  download
+                  className="flex items-center space-x-1.5 bg-[#B88E28] hover:bg-[#9E781E] text-white px-3 py-1.5 text-xs font-mono font-semibold"
+                >
+                  <Download className="w-3.5 h-3.5" />
+                  <span>Download</span>
+                </a>
+                <button
+                  onClick={() => setSelectedPdf(null)}
+                  className="bg-[#383431] hover:bg-red-900 text-white p-1.5 cursor-pointer ml-2"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+
+            {/* Embedded PDF Canvas / Viewer */}
+            <div className="flex-1 bg-[#2A2A2A] relative">
+              <iframe
+                src={`${selectedPdf.url}#toolbar=1`}
+                className="w-full h-full border-0"
+                title={selectedPdf.title}
+              />
+            </div>
+
+            {/* Modal Footer */}
+            <div className="p-3 bg-[#FAF9F6] border-t border-[#E8E4DC] flex items-center justify-between text-xs font-mono text-[#68645E]">
+              <span>Document: {selectedPdf.url.replace('/', '')}</span>
+              <button
+                onClick={() => setSelectedPdf(null)}
+                className="text-[#1A1817] font-semibold hover:underline cursor-pointer"
+              >
+                Close Viewer
+              </button>
             </div>
 
           </div>

@@ -38,13 +38,13 @@ export const AwardsSection: React.FC = () => {
         {/* 2021 Gold Award Featured Ceremony Spotlight Banner */}
         <div className="mt-14 bg-[#FAF9F6] border border-[#B88E28]/30 hover:border-[#B88E28] transition-colors p-6 sm:p-8 shadow-minimal">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center text-left">
-            <div className="lg:col-span-5 relative group cursor-pointer overflow-hidden border border-[#E8E4DC]" onClick={() => setIsPhotoModalOpen(true)}>
+            <div className="lg:col-span-5 relative group cursor-pointer overflow-hidden border border-[#E8E4DC] bg-[#111111] h-80 sm:h-[400px]" onClick={() => setIsPhotoModalOpen(true)}>
               <img
-                src="/WhatsApp Image 2026-08-12 at 12.24.10 PM.jpeg"
+                src="/gold_award_2021_enhanced.png"
                 alt="Chef Yaseer Arafath 2021 Gold Award Ceremony"
-                className="w-full h-72 sm:h-80 object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover object-bottom group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
               <div className="absolute top-3 left-3 bg-[#B88E28] text-white text-[10px] font-mono uppercase tracking-wider px-3 py-1 font-bold flex items-center space-x-1">
                 <Trophy className="w-3 h-3 text-white" />
                 <span>2021 GOLD AWARD</span>
@@ -52,8 +52,8 @@ export const AwardsSection: React.FC = () => {
               <div className="absolute bottom-3 right-3 bg-white/90 p-2 text-[#1A1817] border border-[#E8E4DC] opacity-90 group-hover:opacity-100 transition-opacity">
                 <ZoomIn className="w-4 h-4 text-[#B88E28]" />
               </div>
-              <div className="absolute bottom-3 left-3 text-white font-mono text-[11px]">
-                Click to inspect ceremony photo
+              <div className="absolute bottom-3 left-3 text-white font-mono text-[11px] drop-shadow-md">
+                Click to view enhanced ceremony photo
               </div>
             </div>
 
@@ -232,11 +232,11 @@ export const AwardsSection: React.FC = () => {
               </button>
             </div>
 
-            <div className="relative max-h-[60vh] overflow-hidden bg-[#FAFAFA] border border-[#E8E4DC]">
+            <div className="relative max-h-[70vh] overflow-hidden bg-[#111111] border border-[#E8E4DC]">
               <img
-                src="/WhatsApp Image 2026-08-12 at 12.24.10 PM.jpeg"
+                src="/gold_award_2021_enhanced.png"
                 alt="Sous Chef of the Year 2021 Gold Award Ceremony"
-                className="w-full h-full object-contain"
+                className="w-full h-full max-h-[65vh] object-contain mx-auto"
               />
             </div>
 
