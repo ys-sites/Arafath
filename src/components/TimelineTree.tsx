@@ -155,15 +155,15 @@ export const TimelineTree: React.FC = () => {
                         {item.image && (
                           <div
                             onClick={() => setSelectedMilestoneImage(item.image!)}
-                            className="relative h-40 overflow-hidden border border-[#E8E4DC] cursor-pointer group/img"
+                            className="relative h-48 overflow-hidden border border-[#E8E4DC] cursor-pointer group/img bg-[#111111]"
                           >
                             <img
                               src={item.image}
                               alt={item.title}
-                              className="w-full h-full object-cover object-top group-hover/img:scale-105 transition-transform duration-500"
+                              className="w-full h-full object-cover object-bottom group-hover/img:scale-105 transition-transform duration-500"
                             />
-                            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center text-white font-mono text-xs">
-                              Click to view certificate photo
+                            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center text-white font-mono text-xs">
+                              Click to view full photo
                             </div>
                           </div>
                         )}
@@ -205,27 +205,27 @@ export const TimelineTree: React.FC = () => {
 
       </div>
 
-      {/* Milestone Image Lightbox Modal */}
+      {/* Milestone Image Lightbox Modal — Full Dimensions View */}
       {selectedMilestoneImage && (
-        <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-white border border-[#E8E4DC] max-w-2xl w-full p-6 relative space-y-4 text-left shadow-2xl overflow-hidden">
+        <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+          <div className="bg-white border border-[#E8E4DC] max-w-4xl w-full p-6 sm:p-7 relative space-y-4 text-left shadow-2xl overflow-hidden max-h-[92vh] flex flex-col">
             <div className="flex items-center justify-between">
               <span className="text-xs font-mono text-[#B88E28] uppercase tracking-widest bg-[#FAF9F6] px-3.5 py-1 border border-[#E8E4DC]">
-                Milestone Record Photo
+                Milestone Record Photo (Full Dimensions)
               </span>
               <button
                 onClick={() => setSelectedMilestoneImage(null)}
-                className="text-[#68645E] hover:text-[#1A1817] text-xs bg-[#FAF9F6] border border-[#E8E4DC] px-3 py-1 cursor-pointer font-mono"
+                className="text-[#68645E] hover:text-[#1A1817] text-xs bg-[#FAF9F6] border border-[#E8E4DC] px-3.5 py-1.5 cursor-pointer font-mono font-semibold"
               >
                 ✕ Close
               </button>
             </div>
 
-            <div className="relative max-h-[60vh] overflow-hidden bg-[#FAFAFA] border border-[#E8E4DC]">
+            <div className="relative flex-1 min-h-[60vh] max-h-[78vh] overflow-hidden bg-[#111111] border border-[#E8E4DC] flex items-center justify-center">
               <img
                 src={selectedMilestoneImage}
                 alt="Milestone Record"
-                className="w-full h-full object-contain"
+                className="w-full h-full max-h-[75vh] object-contain mx-auto"
               />
             </div>
           </div>

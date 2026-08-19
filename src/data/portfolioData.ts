@@ -261,7 +261,7 @@ export const CAREER_MILESTONES: Milestone[] = [
     description: "Awarded Gold Award for Sous Chef of the Year at Slices Catering Services Dubai, presented on stage at the Hozpitality Excellence Awards ceremony.",
     category: "award",
     highlightBadge: "Sous Chef of the Year Gold Award",
-    image: "/WhatsApp Image 2026-08-12 at 12.24.10 PM.jpeg"
+    image: "/gold_award_2021_enhanced.png"
   },
   {
     year: "Aug 2022 – Aug 2025",
