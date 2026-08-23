@@ -234,7 +234,7 @@ export const CAREER_MILESTONES: Milestone[] = [
     description: "Heading 'The Farmhouse' culinary vision & operations. Achieved HACCP Certification via AGA Certifications and retained Dubai Municipality Gold Rating across canteen, kitchen & café.",
     category: "experience",
     highlightBadge: "Current Leadership Role",
-    image: "/image 1.png"
+    image: "/image.png"
   },
   {
     year: "2026",
@@ -280,7 +280,7 @@ export const CAREER_MILESTONES: Milestone[] = [
     description: "Managed central kitchen production operations, menu costing, food safety compliance, and supply chain logistics over 2,083 total days at Slices.",
     category: "experience",
     highlightBadge: "2,083 Days Leadership",
-    image: "/image.png"
+    image: "/image 1.png"
   },
   {
     year: "2023",
