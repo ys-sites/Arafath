@@ -34,7 +34,7 @@ const BLOG_POSTS: BlogPost[] = [
 Heading "The Farmhouse" culinary operations at The Arbor School Dubai, we have implemented rigorous thermal logs, critical control point checks, allergen segregation, and high-capacity sanitary workflows.
 
 Special thanks to our dedicated kitchen brigade and AGA Certifications for verifying our kitchen governance standards. We continue to elevate farm-to-table school dining across Dubai.`,
-    image: "/image.png",
+    image: "/image 1.png",
     likes: 80,
     comments: 3,
     shares: 3,
@@ -56,7 +56,7 @@ Today marks my last day at Slices Catering Services Dubai, and I want to take a 
 Over these years, our team successfully managed high-capacity central kitchen production, catered VIP events up to 2,000+ guests, secured the 2021 Hozpitality Gold Award for Sous Chef of the Year, won 1st Prize at UAE Superchef 2024, and earned an Emirates Culinary Guild Silver Medal.
 
 Deepest gratitude to the directors, kitchen brigade, and partners who made this journey extraordinary. Ready for the next executive chapter at The Arbor School Dubai!`,
-    image: "/image copy.png",
+    image: "/image.png",
     likes: 77,
     comments: 16,
     shares: 5,

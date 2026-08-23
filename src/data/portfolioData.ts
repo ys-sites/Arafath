@@ -234,7 +234,7 @@ export const CAREER_MILESTONES: Milestone[] = [
     description: "Heading 'The Farmhouse' culinary vision & operations. Achieved HACCP Certification via AGA Certifications and retained Dubai Municipality Gold Rating across canteen, kitchen & café.",
     category: "experience",
     highlightBadge: "Current Leadership Role",
-    image: "/image.png"
+    image: "/image 1.png"
   },
   {
     year: "2026",
@@ -274,11 +274,13 @@ export const CAREER_MILESTONES: Milestone[] = [
   },
   {
     year: "Oct 2019 – Jul 2022",
-    title: "Production Manager",
+    title: "Production Manager & Head Chef Leadership",
     organization: "Slices Catering",
     location: "Dubai, UAE",
     description: "Managed central kitchen production operations, menu costing, food safety compliance, and supply chain logistics over 2,083 total days at Slices.",
-    category: "experience"
+    category: "experience",
+    highlightBadge: "2,083 Days Leadership",
+    image: "/image.png"
   },
   {
     year: "2023",
