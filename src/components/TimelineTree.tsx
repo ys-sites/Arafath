@@ -159,7 +159,8 @@ export const TimelineTree: React.FC = () => {
                             <img
                               src={item.image}
                               alt={item.title}
-                              className="w-full h-full object-cover object-center group-hover/img:scale-105 transition-transform duration-500"
+                              className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500"
+                              style={{ objectPosition: item.image === '/image 1.png' ? 'center 15%' : 'center' }}
                             />
                             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center text-white font-mono text-xs">
                               Click to view full photo
