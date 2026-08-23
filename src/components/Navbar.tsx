@@ -82,6 +82,13 @@ export const Navbar: React.FC<NavbarProps> = ({
             >
               <span>Awards & Press</span>
             </button>
+
+            <button
+              onClick={() => handleNavClick('journal')}
+              className="hover:text-[#1A1817] transition-colors cursor-pointer"
+            >
+              <span>Journal & Updates</span>
+            </button>
             
             <button
               onClick={() => handleNavClick('gallery')}
@@ -171,6 +178,12 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="text-left py-2 border-b border-[#E8E4DC] hover:text-[#B88E28]"
             >
               <span>Awards & Press Cabinet</span>
+            </button>
+            <button
+              onClick={() => handleNavClick('journal')}
+              className="text-left py-2 border-b border-[#E8E4DC] hover:text-[#B88E28]"
+            >
+              <span>Journal & LinkedIn Updates</span>
             </button>
             <button
               onClick={() => handleNavClick('gallery')}

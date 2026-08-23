@@ -4,6 +4,7 @@ import { HeroSection } from './components/HeroSection';
 import { StatsBanner } from './components/StatsBanner';
 import { AboutSection } from './components/AboutSection';
 import { AwardsSection } from './components/AwardsSection';
+import { LinkedInBlogSection } from './components/LinkedInBlogSection';
 import { GallerySection } from './components/GallerySection';
 import { InstagramSection } from './components/InstagramSection';
 import { BookingSection } from './components/BookingSection';
@@ -63,6 +64,8 @@ export default function App() {
         />
 
         <AwardsSection />
+
+        <LinkedInBlogSection />
 
         <GallerySection
           onSelectDishForBooking={handleSelectDishForBooking}

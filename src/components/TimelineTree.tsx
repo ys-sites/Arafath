@@ -79,12 +79,11 @@ export const TimelineTree: React.FC = () => {
       {/* Main Tree Container */}
       <div className="relative max-w-5xl mx-auto px-2 sm:px-0">
         
-        {/* Central Vertical Tree Line Spine (Desktop Center, Mobile Left) */}
-        <div className="absolute left-4 sm:left-1/2 top-4 bottom-4 w-[2px] bg-gradient-to-b from-[#B88E28]/30 via-[#1A1817]/20 to-[#B88E28]/30 -translate-x-1/2 hidden sm:block pointer-events-none" />
-        <div className="absolute left-4 top-4 bottom-4 w-[2px] bg-gradient-to-b from-[#B88E28]/30 via-[#1A1817]/20 to-[#B88E28]/30 -translate-x-1/2 sm:hidden pointer-events-none" />
+        {/* Central Vertical Tree Line Spine (Desktop Center, Mobile & Tablet Left) */}
+        <div className="absolute left-4 md:left-1/2 top-4 bottom-4 w-[2px] bg-gradient-to-b from-[#B88E28]/40 via-[#1A1817]/20 to-[#B88E28]/40 -translate-x-1/2 pointer-events-none" />
 
         {/* Milestone Tree Items */}
-        <div className="space-y-12 sm:space-y-16">
+        <div className="space-y-10 md:space-y-16">
           <AnimatePresence mode="popLayout">
             {filteredMilestones.map((item, idx) => {
               const isEven = idx % 2 === 0;
@@ -100,16 +99,16 @@ export const TimelineTree: React.FC = () => {
                   transition={{ duration: 0.5, ease: 'easeOut', delay: idx * 0.08 }}
                   onMouseEnter={() => setHoveredIdx(idx)}
                   onMouseLeave={() => setHoveredIdx(null)}
-                  className={`relative flex flex-col sm:flex-row items-center ${
-                    isEven ? 'sm:flex-row-reverse' : ''
+                  className={`relative flex flex-col md:flex-row items-stretch md:items-center ${
+                    isEven ? 'md:flex-row-reverse' : ''
                   } group`}
                 >
                   
                   {/* Empty Spacer Column for Desktop Grid Alignment */}
-                  <div className="w-full sm:w-1/2 hidden sm:block" />
+                  <div className="w-full md:w-1/2 hidden md:block" />
 
-                  {/* Central Node Orb */}
-                  <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 z-20 flex items-center justify-center">
+                  {/* Node Orb on Vertical Spine */}
+                  <div className="absolute left-4 md:left-1/2 -translate-x-1/2 top-7 md:top-1/2 md:-translate-y-1/2 z-20 flex items-center justify-center">
                     <motion.div
                       animate={{
                         scale: hoveredIdx === idx ? 1.25 : 1,
@@ -122,45 +121,45 @@ export const TimelineTree: React.FC = () => {
                   </div>
 
                   {/* Content Card Column */}
-                  <div className="w-full sm:w-1/2 pl-12 sm:pl-0 sm:px-8">
+                  <div className="w-full md:w-1/2 pl-12 md:pl-0 md:px-8">
                     <motion.div
                       whileHover={{ y: -4 }}
                       transition={{ duration: 0.3 }}
-                      className="bg-white border border-[#E8E4DC] hover:border-[#1A1817] p-6 sm:p-7 shadow-minimal transition-all duration-300 relative group-hover:shadow-xl"
+                      className="bg-white border border-[#E8E4DC] hover:border-[#1A1817] p-5 sm:p-7 shadow-minimal transition-all duration-300 relative group-hover:shadow-xl"
                     >
-                      {/* Connector Branch Line on Hover */}
+                      {/* Connector Branch Line (Connected on Mobile, Tablet & Desktop) */}
                       <div
-                        className={`absolute top-1/2 -translate-y-1/2 hidden sm:block w-8 h-[2px] bg-[#E8E4DC] group-hover:bg-[#B88E28] transition-colors ${
-                          isEven ? '-right-8' : '-left-8'
+                        className={`absolute w-6 md:w-8 h-[2px] bg-[#E8E4DC] group-hover:bg-[#B88E28] transition-colors top-7 md:top-1/2 md:-translate-y-1/2 ${
+                          isEven ? '-left-6 md:-right-8' : '-left-6 md:-left-8'
                         }`}
                       />
 
                       <div className="space-y-4">
                         {/* Year & Highlight Badge */}
-                        <div className="flex flex-wrap items-center justify-between gap-2">
-                          <span className="inline-flex items-center space-x-1.5 text-[#1A1817] font-mono text-xs font-bold bg-[#FAF9F6] px-3 py-1 border border-[#E8E4DC]">
+                        <div className="flex flex-wrap items-center justify-between gap-2 font-mono">
+                          <span className="inline-flex items-center space-x-1.5 text-[#1A1817] text-xs font-bold bg-[#FAF9F6] px-3 py-1 border border-[#E8E4DC] shrink-0">
                             <Calendar className="w-3.5 h-3.5 text-[#B88E28]" />
                             <span>{item.year}</span>
                           </span>
 
                           {item.highlightBadge && (
-                            <span className="text-[10px] uppercase font-mono text-[#B88E28] bg-[#FAF9F6] px-2.5 py-1 border border-[#E8E4DC] font-semibold flex items-center space-x-1">
-                              <Sparkles className="w-3 h-3 text-[#B88E28]" />
-                              <span>{item.highlightBadge}</span>
+                            <span className="text-[10px] sm:text-xs uppercase text-[#B88E28] bg-[#FAF9F6] px-2.5 py-1 border border-[#E8E4DC] font-semibold flex items-center space-x-1 tracking-tight sm:tracking-wider max-w-full">
+                              <Sparkles className="w-3 h-3 text-[#B88E28] shrink-0" />
+                              <span className="truncate">{item.highlightBadge}</span>
                             </span>
                           )}
                         </div>
 
-                        {/* Optional Milestone Image Preview */}
+                        {/* Milestone Image Preview with Widescreen 16:9 Aspect Ratio */}
                         {item.image && (
                           <div
                             onClick={() => setSelectedMilestoneImage(item.image!)}
-                            className="relative h-48 overflow-hidden border border-[#E8E4DC] cursor-pointer group/img bg-[#111111]"
+                            className="relative aspect-[16/9] w-full overflow-hidden border border-[#E8E4DC] cursor-pointer group/img bg-[#111111] max-h-[280px]"
                           >
                             <img
                               src={item.image}
                               alt={item.title}
-                              className="w-full h-full object-cover object-bottom group-hover/img:scale-105 transition-transform duration-500"
+                              className="w-full h-full object-cover object-center group-hover/img:scale-105 transition-transform duration-500"
                             />
                             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center text-white font-mono text-xs">
                               Click to view full photo
@@ -170,14 +169,14 @@ export const TimelineTree: React.FC = () => {
 
                         {/* Title & Organization */}
                         <div>
-                          <h4 className="text-[#1A1817] font-serif text-xl sm:text-2xl font-normal leading-snug group-hover:text-[#B88E28] transition-colors">
+                          <h4 className="text-[#1A1817] font-serif text-lg sm:text-2xl font-normal leading-snug group-hover:text-[#B88E28] transition-colors">
                             {item.title}
                           </h4>
-                          <div className="flex items-center space-x-2 text-[#68645E] text-xs mt-2 font-mono">
+                          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[#68645E] text-xs mt-2 font-mono">
                             <span className="font-semibold text-[#1A1817]">{item.organization}</span>
-                            <span>•</span>
+                            <span className="hidden sm:inline">•</span>
                             <span className="flex items-center text-[#888888]">
-                              <MapPin className="w-3 h-3 mr-1 text-[#B88E28]" />
+                              <MapPin className="w-3 h-3 mr-1 text-[#B88E28] shrink-0" />
                               {item.location}
                             </span>
                           </div>

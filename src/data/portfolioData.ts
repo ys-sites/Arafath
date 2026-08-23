@@ -233,7 +233,8 @@ export const CAREER_MILESTONES: Milestone[] = [
     location: "Dubai, UAE",
     description: "Heading 'The Farmhouse' culinary vision & operations. Achieved HACCP Certification via AGA Certifications and retained Dubai Municipality Gold Rating across canteen, kitchen & café.",
     category: "experience",
-    highlightBadge: "Current Leadership Role"
+    highlightBadge: "Current Leadership Role",
+    image: "/image.png"
   },
   {
     year: "2026",
