@@ -12,17 +12,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenPortfolioSubPage
   return (
     <section className="relative min-h-[90vh] sm:min-h-screen w-full flex items-center overflow-hidden bg-[#FAF9F6] text-[#1A1817] border-b border-[#E8E4DC]">
       
-      {/* Background Image: hero.png fills the WHOLE hero section cleanly */}
+      {/* Background Image: responsive hero asset (arafath.png for mobile portrait screens, hero.png for tablet & desktop) */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none">
-        <img
-          src="/hero.png"
-          alt="Chef Yaseer Arafath Precision Micro-Plating"
-          referrerPolicy="no-referrer"
-          className="w-full h-full object-cover object-[70%_center] sm:object-right-center"
-        />
+        <picture>
+          <source media="(max-width: 639px)" srcSet="/arafath.png" />
+          <img
+            src="/hero.png"
+            alt="Chef Yaseer Arafath Precision Micro-Plating"
+            referrerPolicy="no-referrer"
+            className="w-full h-full object-cover object-center sm:object-right-center"
+          />
+        </picture>
         
-        {/* Scrim gradient ONLY on far-left behind text so hero photo is 100% crisp, clear, & vivid */}
-        <div className="absolute top-0 bottom-0 left-0 w-full sm:w-8/12 lg:w-6/12 bg-gradient-to-r from-[#FAF9F6] via-[#FAF9F6]/85 to-transparent z-10 pointer-events-none" />
+        {/* Scrim gradient: subtle bottom/top scrim on mobile, left scrim on desktop */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#FAF9F6] via-[#FAF9F6]/60 to-transparent sm:hidden z-10 pointer-events-none" />
+        <div className="hidden sm:block absolute top-0 bottom-0 left-0 w-8/12 lg:w-6/12 bg-gradient-to-r from-[#FAF9F6] via-[#FAF9F6]/85 to-transparent z-10 pointer-events-none" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-20 pt-24 sm:pt-36 pb-12 sm:pb-24">
