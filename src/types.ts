@@ -20,6 +20,8 @@ export interface Milestone {
   category: 'award' | 'experience' | 'education' | 'press';
   highlightBadge?: string;
   image?: string;
+  secondaryImage?: string;
+  secondaryImageLabel?: string;
 }
 
 export interface PressItem {

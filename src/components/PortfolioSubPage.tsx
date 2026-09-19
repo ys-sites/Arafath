@@ -69,7 +69,9 @@ Instagram: https://www.instagram.com/yaseer.s.arafath/
 
 HONORS & ACCOLADES
 -------------------
+• 2nd Prize Winner — Cook with Madhampatty 2026 (Chef Madhampatty Rangaraj, ATK2 Jewel of the Creek, Aug 2026)
 • 1st Prize Winner — UAE Superchef 2024 (Xpatzhub Competition at Firki, Royal Ascot Hotel, June 2024)
+• 5th Place Winner — Date-A-Cheese 2026 Competition (Dubai, UAE)
 • Silver Medalist — Emirates Culinary Guild (Wathba Dates Festival, Dec 2023)
 • Medalist — ExpoCulinaire Salon Culinaire UAE (Worldchefs Certified)
 
@@ -627,6 +629,17 @@ Sous-vide precision braising, Binchotan charcoal grilling, cryogenic nitrogen ga
                     )}
                   </div>
 
+                  {item.image && (
+                    <div className="relative aspect-[16/9] w-full overflow-hidden border border-[#E8E4DC] bg-[#111111]">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        style={{ objectPosition: item.image === '/image 1.png' ? 'center 15%' : 'center' }}
+                      />
+                    </div>
+                  )}
+
                   <div>
                     <h4 className="text-[#1A1817] font-serif text-xl font-normal group-hover:text-[#B88E28] transition-colors leading-snug">
                       {item.title}
@@ -703,7 +716,7 @@ Sous-vide precision braising, Binchotan charcoal grilling, cryogenic nitrogen ga
           </div>
 
           {/* Press Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {PRESS_ITEMS.map(press => (
               <a
                 key={press.id}

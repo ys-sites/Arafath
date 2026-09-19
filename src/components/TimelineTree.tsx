@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Trophy, Award, GraduationCap, Building2, CheckCircle2, Calendar, MapPin, Sparkles } from 'lucide-react';
+import { Trophy, Award, GraduationCap, Building2, CheckCircle2, Calendar, MapPin, Sparkles, ZoomIn, FileText, Image as ImageIcon } from 'lucide-react';
 import { CAREER_MILESTONES } from '../data/portfolioData';
 import { Milestone } from '../types';
 
 export const TimelineTree: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'all' | 'award' | 'experience' | 'education'>('all');
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
-  const [selectedMilestoneImage, setSelectedMilestoneImage] = useState<string | null>(null);
+  const [selectedMilestoneImage, setSelectedMilestoneImage] = useState<{
+    images: { src: string; label: string }[];
+    activeIdx: number;
+    title: string;
+    organization: string;
+    year: string;
+  } | null>(null);
+  const [activeCardImage, setActiveCardImage] = useState<Record<string, string>>({});
 
   const filteredMilestones = CAREER_MILESTONES.filter(
     m => activeTab === 'all' || m.category === activeTab
@@ -152,19 +159,82 @@ export const TimelineTree: React.FC = () => {
 
                         {/* Milestone Image Preview with Widescreen 16:9 Aspect Ratio */}
                         {item.image && (
-                          <div
-                            onClick={() => setSelectedMilestoneImage(item.image!)}
-                            className="relative aspect-[16/9] w-full overflow-hidden border border-[#E8E4DC] cursor-pointer group/img bg-[#111111] max-h-[280px]"
-                          >
-                            <img
-                              src={item.image}
-                              alt={item.title}
-                              className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500"
-                              style={{ objectPosition: item.image === '/image 1.png' ? 'center 15%' : 'center' }}
-                            />
-                            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center text-white font-mono text-xs">
-                              Click to view full photo
+                          <div className="space-y-2">
+                            <div
+                              onClick={() => {
+                                const imgs = [
+                                  { src: item.image!, label: 'Stage Ceremony with Judges' },
+                                  ...(item.secondaryImage ? [{ src: item.secondaryImage, label: item.secondaryImageLabel || 'Official Award Certificate' }] : [])
+                                ];
+                                const curSrc = activeCardImage[item.title + item.year] || item.image!;
+                                const curIdx = imgs.findIndex(i => i.src === curSrc);
+                                setSelectedMilestoneImage({
+                                  images: imgs,
+                                  activeIdx: curIdx >= 0 ? curIdx : 0,
+                                  title: item.title,
+                                  organization: item.organization,
+                                  year: item.year
+                                });
+                              }}
+                              className="relative aspect-[16/9] w-full overflow-hidden border border-[#E8E4DC] cursor-pointer group/img bg-[#111111] max-h-[280px]"
+                            >
+                              <img
+                                src={activeCardImage[item.title + item.year] || item.image}
+                                alt={item.title}
+                                className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500"
+                                style={{
+                                  objectPosition: (activeCardImage[item.title + item.year] || item.image) === '/image 1.png'
+                                    ? 'center 15%'
+                                    : 'center'
+                                }}
+                              />
+                              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center text-white font-mono text-xs space-x-2">
+                                <ZoomIn className="w-4 h-4 text-[#B88E28]" />
+                                <span>Click to inspect full high-res photo</span>
+                              </div>
+                              {item.secondaryImage && (
+                                <div className="absolute bottom-2 left-2 bg-[#1A1817]/85 backdrop-blur-xs text-white text-[10px] font-mono px-2.5 py-1 border border-[#B88E28]/40 flex items-center space-x-1.5">
+                                  <ImageIcon className="w-3 h-3 text-[#B88E28]" />
+                                  <span>2 Photos Available</span>
+                                </div>
+                              )}
                             </div>
+
+                            {/* Multi-Photo Switcher Bar */}
+                            {item.secondaryImage && (
+                              <div className="flex flex-wrap items-center gap-2 pt-0.5">
+                                <button
+                                  type="button"
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    setActiveCardImage(prev => ({ ...prev, [item.title + item.year]: item.image! }));
+                                  }}
+                                  className={`px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider border transition-colors cursor-pointer flex items-center space-x-1.5 ${
+                                    (activeCardImage[item.title + item.year] || item.image) === item.image
+                                      ? 'bg-[#1A1817] text-white border-[#1A1817] font-semibold'
+                                      : 'bg-[#FAF9F6] text-[#68645E] border-[#E8E4DC] hover:text-[#1A1817]'
+                                  }`}
+                                >
+                                  <ImageIcon className="w-3 h-3 text-[#B88E28]" />
+                                  <span>Judges & Stage</span>
+                                </button>
+                                <button
+                                  type="button"
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    setActiveCardImage(prev => ({ ...prev, [item.title + item.year]: item.secondaryImage! }));
+                                  }}
+                                  className={`px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider border transition-colors cursor-pointer flex items-center space-x-1.5 ${
+                                    activeCardImage[item.title + item.year] === item.secondaryImage
+                                      ? 'bg-[#1A1817] text-white border-[#1A1817] font-semibold'
+                                      : 'bg-[#FAF9F6] text-[#68645E] border-[#E8E4DC] hover:text-[#1A1817]'
+                                  }`}
+                                >
+                                  <FileText className="w-3 h-3 text-[#B88E28]" />
+                                  <span>{item.secondaryImageLabel || 'Award Certificate'}</span>
+                                </button>
+                              </div>
+                            )}
                           </div>
                         )}
 
@@ -209,25 +279,59 @@ export const TimelineTree: React.FC = () => {
       {selectedMilestoneImage && (
         <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
           <div className="bg-white border border-[#E8E4DC] max-w-4xl w-full p-6 sm:p-7 relative space-y-4 text-left shadow-2xl overflow-hidden max-h-[92vh] flex flex-col">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-mono text-[#B88E28] uppercase tracking-widest bg-[#FAF9F6] px-3.5 py-1 border border-[#E8E4DC]">
-                Milestone Record Photo (Full Dimensions)
-              </span>
+            <div className="flex items-center justify-between gap-4">
+              <div className="space-y-1">
+                <div className="flex items-center space-x-2">
+                  <span className="text-xs font-mono text-[#B88E28] uppercase tracking-widest bg-[#FAF9F6] px-3 py-0.5 border border-[#E8E4DC] font-bold">
+                    {selectedMilestoneImage.year}
+                  </span>
+                  <span className="text-xs font-mono text-[#68645E] uppercase tracking-wider">
+                    {selectedMilestoneImage.images[selectedMilestoneImage.activeIdx]?.label}
+                  </span>
+                </div>
+                <h4 className="text-base sm:text-xl font-serif text-[#1A1817] font-normal">
+                  {selectedMilestoneImage.title}
+                </h4>
+              </div>
               <button
                 onClick={() => setSelectedMilestoneImage(null)}
-                className="text-[#68645E] hover:text-[#1A1817] text-xs bg-[#FAF9F6] border border-[#E8E4DC] px-3.5 py-1.5 cursor-pointer font-mono font-semibold"
+                className="text-[#68645E] hover:text-[#1A1817] text-xs bg-[#FAF9F6] border border-[#E8E4DC] px-3.5 py-1.5 cursor-pointer font-mono font-semibold shrink-0"
               >
                 ✕ Close
               </button>
             </div>
 
-            <div className="relative flex-1 min-h-[60vh] max-h-[78vh] overflow-hidden bg-[#111111] border border-[#E8E4DC] flex items-center justify-center">
+            <div className="relative flex-1 min-h-[55vh] max-h-[72vh] overflow-hidden bg-[#111111] border border-[#E8E4DC] flex items-center justify-center">
               <img
-                src={selectedMilestoneImage}
-                alt="Milestone Record"
-                className="w-full h-full max-h-[75vh] object-contain mx-auto"
+                src={selectedMilestoneImage.images[selectedMilestoneImage.activeIdx].src}
+                alt={selectedMilestoneImage.title}
+                className="w-full h-full max-h-[70vh] object-contain mx-auto"
               />
             </div>
+
+            {selectedMilestoneImage.images.length > 1 && (
+              <div className="flex flex-col sm:flex-row items-center justify-between pt-2 border-t border-[#E8E4DC] gap-3">
+                <div className="flex gap-2">
+                  {selectedMilestoneImage.images.map((img, idx) => (
+                    <button
+                      key={img.src}
+                      onClick={() => setSelectedMilestoneImage(prev => prev ? { ...prev, activeIdx: idx } : null)}
+                      className={`px-3 py-1.5 text-xs font-mono border transition-colors cursor-pointer flex items-center space-x-1.5 ${
+                        selectedMilestoneImage.activeIdx === idx
+                          ? 'bg-[#1A1817] text-white border-[#1A1817] font-semibold'
+                          : 'bg-[#FAF9F6] text-[#68645E] border-[#E8E4DC] hover:text-[#1A1817]'
+                      }`}
+                    >
+                      {idx === 0 ? <ImageIcon className="w-3.5 h-3.5 text-[#B88E28]" /> : <FileText className="w-3.5 h-3.5 text-[#B88E28]" />}
+                      <span>{img.label}</span>
+                    </button>
+                  ))}
+                </div>
+                <span className="text-[11px] font-mono text-[#888888]">
+                  Viewing {selectedMilestoneImage.activeIdx + 1} of {selectedMilestoneImage.images.length}
+                </span>
+              </div>
+            )}
           </div>
         </div>
       )}

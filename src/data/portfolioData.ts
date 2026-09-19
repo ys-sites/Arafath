@@ -10,10 +10,10 @@ export const CHEF_PROFILE = {
   instagramUrl: "https://www.instagram.com/yaseer.s.arafath/",
   location: "Dubai, United Arab Emirates",
   yearsExperience: "15+",
-  topTitle: "Executive Chef @ Arbor • UAE Superchef 2024 Winner & Date-A-Cheese 2026 Finalist",
+  topTitle: "Executive Chef @ Arbor • UAE Superchef '24 Winner • Cook with Madhampatty '26 2nd Place",
   bio: `Chef Yaseer Arafath is an Executive Chef based in Dubai, UAE, currently heading culinary operations & "The Farmhouse" at The Arbor School Dubai. With over 15 years of high-end gastronomy, production management, and central kitchen leadership across the UAE, Chef Yaseer achieved HACCP Certification (AGA Certifications) for kitchen operations and retained the Dubai Municipality Gold Rating across canteen, kitchen, and café.
 
-Currently leading executive culinary directorship at Arbor, Chef Yaseer crafts sustainable farm-to-table cuisine, live cookery lunches, and high-volume nutritional gastronomy. Previously Head Chef & Production Manager at Slices Catering Dubai for nearly 6 years (2,083 days), his achievements include placing 1st in the UAE Superchef 2024 Competition, 5th in the Date-A-Cheese 2026 Competition among hundreds of chefs, earning an Emirates Culinary Guild Silver Medal, and holding a Bachelor's Degree in Culinary & Catering Management (Grade A) from Bharathiar University.`,
+Currently leading executive culinary directorship at Arbor, Chef Yaseer crafts sustainable farm-to-table cuisine, live cookery lunches, and high-volume nutritional gastronomy. Previously Head Chef & Production Manager at Slices Catering Dubai for nearly 6 years (2,083 days), his achievements include placing 1st in the UAE Superchef 2024 Competition, securing 2nd Place in the Cook with Madhampatty 2026 Competition under celebrity chef Madhampatty Rangaraj, placing 5th in the Date-A-Cheese 2026 Competition among hundreds of chefs, earning an Emirates Culinary Guild Silver Medal, and holding a Bachelor's Degree in Culinary & Catering Management (Grade A) from Bharathiar University.`,
   quote: "Culinary artistry is the seamless bridge between deep heritage techniques, uncompromising food safety, and modern sensory expression.",
   contactEmail: "yaseer.s.arafath@gmail.com",
   phoneDisplay: "+971 50 302 3056",
@@ -26,6 +26,7 @@ Currently leading executive culinary directorship at Arbor, Chef Yaseer crafts s
 export const CHEF_STATS = [
   { label: "Years of Executive Culinary Mastery", value: "15+" },
   { label: "UAE Superchef 2024 Winner", value: "1st Place" },
+  { label: "Cook with Madhampatty 2026", value: "2nd Place" },
   { label: "Date-A-Cheese 2026 Competition", value: "5th Place" },
   { label: "Food Safety & Audit Standard", value: "HACCP & Gold" },
 ];
@@ -237,6 +238,18 @@ export const CAREER_MILESTONES: Milestone[] = [
     image: "/image.png"
   },
   {
+    year: "Aug 2026",
+    title: "2nd Prize Winner — Cook with Madhampatty",
+    organization: "Cook with Chef Madhampatty Rangaraj • ATK2 Jewel of the Creek",
+    location: "Dubai, UAE",
+    description: "Secured Second Place in the premier live culinary competition 'Cook with Madhampatty' hosted by acclaimed celebrity chef Madhampatty Rangaraj at ATK2 Restaurant, Jewel of the Creek. Presented on stage by Chef Madhampatty Rangaraj and an esteemed judging panel in recognition of culinary artistry, technique, teamwork, and commitment to excellence.",
+    category: "award",
+    highlightBadge: "2nd Place Silver Award",
+    image: "/certification (2).jpeg",
+    secondaryImage: "/certification (1).jpeg",
+    secondaryImageLabel: "Official Award Certificate"
+  },
+  {
     year: "2026",
     title: "5th Place Winner — Date-A-Cheese 2026 Competition",
     organization: "Date-A-Cheese Culinary Competition",
@@ -311,6 +324,17 @@ export const CAREER_MILESTONES: Milestone[] = [
 ];
 
 export const PRESS_ITEMS: PressItem[] = [
+  {
+    id: "press-madhampatty",
+    source: "Cook with Madhampatty & ATK2",
+    title: "Chef Yaseer Arafath Conferred 2nd Prize at 'Cook with Madhampatty' Competition",
+    date: "August 2026",
+    excerpt: "Conferred Second Prize by celebrity chef Madhampatty Rangaraj and an esteemed judging panel at ATK2 Restaurant, Jewel of the Creek Dubai, recognizing culinary artistry, teamwork, and gastronomic precision.",
+    linkText: "View Ceremony Photo & Certificate",
+    url: "/cook-with-madhampatty-award.jpeg",
+    image: "/cook-with-madhampatty-award.jpeg",
+    verifiedWinner: true
+  },
   {
     id: "press-1",
     source: "Khaleej Times & Xpatzhub",

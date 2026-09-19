@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Trophy, Award, Newspaper, ExternalLink, CheckCircle2, ZoomIn } from 'lucide-react';
+import { Trophy, Award, Newspaper, ExternalLink, CheckCircle2, ZoomIn, FileText, Image as ImageIcon, Calendar, Sparkles } from 'lucide-react';
 import { PRESS_ITEMS } from '../data/portfolioData';
 import { ShinyText } from './ShinyText';
 import { BlurText } from './BlurText';
@@ -7,6 +7,9 @@ import { BlurText } from './BlurText';
 export const AwardsSection: React.FC = () => {
   const [selectedPress, setSelectedPress] = useState<typeof PRESS_ITEMS[0] | null>(null);
   const [isPhotoModalOpen, setIsPhotoModalOpen] = useState(false);
+  const [madhampattyModalOpen, setMadhampattyModalOpen] = useState(false);
+  const [madhampattyActivePhoto, setMadhampattyActivePhoto] = useState<'stage' | 'certificate'>('stage');
+  const [bannerActivePhoto, setBannerActivePhoto] = useState<'stage' | 'certificate'>('stage');
 
   return (
     <section id="awards" className="py-24 bg-[#FFFFFF] border-b border-[#E8E4DC] text-[#1A1817] relative">
@@ -35,8 +38,115 @@ export const AwardsSection: React.FC = () => {
           />
         </div>
 
+        {/* 2026 Cook with Madhampatty Premier Award Spotlight Banner */}
+        <div className="mt-14 bg-[#FAF9F6] border border-[#B88E28]/40 hover:border-[#B88E28] transition-colors p-6 sm:p-8 shadow-minimal">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center text-left">
+            <div className="lg:col-span-5 space-y-3">
+              <div
+                className="relative group cursor-pointer overflow-hidden border border-[#E8E4DC] bg-[#111111] h-80 sm:h-[400px]"
+                onClick={() => {
+                  setMadhampattyActivePhoto(bannerActivePhoto);
+                  setMadhampattyModalOpen(true);
+                }}
+              >
+                <img
+                  src={bannerActivePhoto === 'stage' ? '/cook-with-madhampatty-award.jpeg' : '/cook-with-madhampatty-certificate.jpeg'}
+                  alt="Chef Yaseer Arafath with Chef Madhampatty Rangaraj and Judges"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute top-3 left-3 bg-[#1A1817] text-[#B88E28] border border-[#B88E28]/50 text-[10px] font-mono uppercase tracking-wider px-3 py-1 font-bold flex items-center space-x-1.5 shadow-md">
+                  <Trophy className="w-3.5 h-3.5 text-[#B88E28]" />
+                  <span>2026 • 2ND PRIZE WINNER</span>
+                </div>
+                <div className="absolute bottom-3 right-3 bg-white/90 p-2 text-[#1A1817] border border-[#E8E4DC] opacity-90 group-hover:opacity-100 transition-opacity shadow-sm">
+                  <ZoomIn className="w-4 h-4 text-[#B88E28]" />
+                </div>
+                <div className="absolute bottom-3 left-3 text-white font-mono text-[11px] drop-shadow-md flex items-center space-x-1.5">
+                  <Sparkles className="w-3 h-3 text-[#B88E28]" />
+                  <span>
+                    {bannerActivePhoto === 'stage' ? 'Click to inspect stage photo with judges' : 'Click to inspect official certificate'}
+                  </span>
+                </div>
+              </div>
+
+              {/* Toggle Photo Preview Pills */}
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => setBannerActivePhoto('stage')}
+                  className={`flex-1 py-1.5 px-3 text-[11px] font-mono uppercase tracking-wider border transition-colors cursor-pointer flex items-center justify-center space-x-1.5 ${
+                    bannerActivePhoto === 'stage'
+                      ? 'bg-[#1A1817] text-white border-[#1A1817] font-semibold'
+                      : 'bg-white text-[#68645E] border-[#E8E4DC] hover:text-[#1A1817]'
+                  }`}
+                >
+                  <ImageIcon className="w-3.5 h-3.5 text-[#B88E28]" />
+                  <span>Stage Ceremony</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setBannerActivePhoto('certificate')}
+                  className={`flex-1 py-1.5 px-3 text-[11px] font-mono uppercase tracking-wider border transition-colors cursor-pointer flex items-center justify-center space-x-1.5 ${
+                    bannerActivePhoto === 'certificate'
+                      ? 'bg-[#1A1817] text-white border-[#1A1817] font-semibold'
+                      : 'bg-white text-[#68645E] border-[#E8E4DC] hover:text-[#1A1817]'
+                  }`}
+                >
+                  <FileText className="w-3.5 h-3.5 text-[#B88E28]" />
+                  <span>Official Certificate</span>
+                </button>
+              </div>
+            </div>
+
+            <div className="lg:col-span-7 space-y-4">
+              <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
+                <span className="inline-flex items-center space-x-1 text-[#B88E28] font-bold uppercase tracking-wider bg-white px-3 py-1 border border-[#E8E4DC]">
+                  <Award className="w-4 h-4" />
+                  <span>Cook with Madhampatty 2026</span>
+                </span>
+                <span className="inline-flex items-center space-x-1 text-[#68645E] bg-white px-3 py-1 border border-[#E8E4DC]">
+                  <Calendar className="w-3.5 h-3.5 text-[#B88E28]" />
+                  <span>August 23, 2026</span>
+                </span>
+              </div>
+
+              <h3 className="text-2xl sm:text-4xl font-serif text-[#1A1817] font-normal leading-snug">
+                Secured Second Place: Cook with Madhampatty
+              </h3>
+
+              <p className="text-[#B88E28] font-mono text-xs font-semibold">
+                Celebrity Chef Madhampatty Rangaraj • ATK2 Restaurant, Jewel of the Creek, Dubai
+              </p>
+
+              <p className="text-[#44403C] text-sm leading-relaxed font-light">
+                Chef Yaseer Arafath secured the prestigious <strong>Second Place</strong> in the high-profile cooking competition <em>“Cook with Madhampatty”</em>, organized by acclaimed celebrity chef, restaurateur, and actor <strong>Madhampatty Rangaraj</strong> at ATK2 Restaurant, Jewel of the Creek Dubai.
+              </p>
+
+              <p className="text-[#68645E] text-xs sm:text-sm leading-relaxed font-light">
+                Presented live on stage by Chef Madhampatty Rangaraj and an esteemed panel of culinary judges, the award honors Chef Yaseer's exceptional gastronomic artistry, technical mastery under competition pressure, teamwork, and uncompromising commitment to culinary excellence.
+              </p>
+
+              <div className="pt-2 flex flex-wrap items-center gap-3 text-xs font-mono text-[#68645E]">
+                <span className="flex items-center space-x-1.5 bg-white px-3 py-1.5 border border-[#E8E4DC]">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#B88E28]" />
+                  <span>Verified Stage Ceremony with Judges</span>
+                </span>
+                <span className="flex items-center space-x-1.5 bg-white px-3 py-1.5 border border-[#E8E4DC]">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#B88E28]" />
+                  <span>Official Certificate of Participation & Prize</span>
+                </span>
+                <span className="flex items-center space-x-1.5 bg-white px-3 py-1.5 border border-[#E8E4DC]">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#B88E28]" />
+                  <span>ATK2 Jewel of the Creek Dubai</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* 2021 Gold Award Featured Ceremony Spotlight Banner */}
-        <div className="mt-14 bg-[#FAF9F6] border border-[#B88E28]/30 hover:border-[#B88E28] transition-colors p-6 sm:p-8 shadow-minimal">
+        <div className="mt-10 bg-[#FAF9F6] border border-[#B88E28]/30 hover:border-[#B88E28] transition-colors p-6 sm:p-8 shadow-minimal">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center text-left">
             <div className="lg:col-span-5 relative group cursor-pointer overflow-hidden border border-[#E8E4DC] bg-[#111111] h-80 sm:h-[400px]" onClick={() => setIsPhotoModalOpen(true)}>
               <img
@@ -215,6 +325,72 @@ export const AwardsSection: React.FC = () => {
         </div>
 
       </div>
+
+      {/* Cook with Madhampatty 2026 Photo Zoom Modal */}
+      {madhampattyModalOpen && (
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-white border border-[#E8E4DC] max-w-3xl w-full p-6 relative space-y-4 text-left shadow-2xl overflow-hidden max-h-[92vh] flex flex-col">
+            <div className="flex items-center justify-between gap-4">
+              <div className="space-y-0.5">
+                <span className="text-xs font-mono text-[#B88E28] uppercase tracking-widest bg-[#FAF9F6] px-3.5 py-1 border border-[#E8E4DC] inline-block font-bold">
+                  Cook with Madhampatty 2026 • 2nd Prize Winner
+                </span>
+                <h4 className="text-base sm:text-lg font-serif text-[#1A1817] font-semibold mt-1">
+                  {madhampattyActivePhoto === 'stage'
+                    ? 'Stage Presentation with Celebrity Chef Madhampatty Rangaraj & Judges'
+                    : 'Official Certificate of Participation & Prize Winner Card'}
+                </h4>
+              </div>
+              <button
+                onClick={() => setMadhampattyModalOpen(false)}
+                className="text-[#68645E] hover:text-[#1A1817] text-xs bg-[#FAF9F6] border border-[#E8E4DC] px-3.5 py-1.5 cursor-pointer font-mono shrink-0"
+              >
+                ✕ Close
+              </button>
+            </div>
+
+            <div className="relative flex-1 min-h-[55vh] max-h-[70vh] overflow-hidden bg-[#111111] border border-[#E8E4DC] flex items-center justify-center">
+              <img
+                src={madhampattyActivePhoto === 'stage' ? '/cook-with-madhampatty-award.jpeg' : '/cook-with-madhampatty-certificate.jpeg'}
+                alt="Cook with Madhampatty 2026 Award Presentation"
+                className="w-full h-full max-h-[68vh] object-contain mx-auto"
+              />
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center justify-between pt-2 border-t border-[#E8E4DC] gap-3">
+              <div className="flex gap-2">
+                <button
+                  type="button"
+                  onClick={() => setMadhampattyActivePhoto('stage')}
+                  className={`px-3 py-1.5 text-xs font-mono border transition-colors cursor-pointer flex items-center space-x-1.5 ${
+                    madhampattyActivePhoto === 'stage'
+                      ? 'bg-[#1A1817] text-white border-[#1A1817] font-semibold'
+                      : 'bg-[#FAF9F6] text-[#68645E] border-[#E8E4DC] hover:text-[#1A1817]'
+                  }`}
+                >
+                  <ImageIcon className="w-3.5 h-3.5 text-[#B88E28]" />
+                  <span>Stage Ceremony Photo</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setMadhampattyActivePhoto('certificate')}
+                  className={`px-3 py-1.5 text-xs font-mono border transition-colors cursor-pointer flex items-center space-x-1.5 ${
+                    madhampattyActivePhoto === 'certificate'
+                      ? 'bg-[#1A1817] text-white border-[#1A1817] font-semibold'
+                      : 'bg-[#FAF9F6] text-[#68645E] border-[#E8E4DC] hover:text-[#1A1817]'
+                  }`}
+                >
+                  <FileText className="w-3.5 h-3.5 text-[#B88E28]" />
+                  <span>Official Certificate & Prize</span>
+                </button>
+              </div>
+              <p className="text-[11px] font-mono text-[#888888]">
+                Event Date: 23/08/2026 • ATK2 Jewel of the Creek, Dubai
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* 2021 Gold Award Photo Zoom Modal */}
       {isPhotoModalOpen && (
