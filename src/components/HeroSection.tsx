@@ -78,16 +78,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenPortfolioSubPage
             {/* Metric Highlights: Hidden on mobile ratio */}
             <div className="hidden sm:grid grid-cols-3 gap-4 pt-2 border-t border-b border-[#E8E4DC] py-4 text-xs font-mono">
               <div>
-                <span className="text-[#1A1817] font-bold block text-sm sm:text-base">12+ Years</span>
+                <span className="text-[#1A1817] font-bold block text-sm sm:text-base">15+ Years</span>
                 <span className="text-[#888888] text-[10px] block mt-0.5 uppercase tracking-wider">Culinary Mastery</span>
+              </div>
+              <div>
+                <span className="text-[#1A1817] font-bold block text-sm sm:text-base">2nd Prize</span>
+                <span className="text-[#B88E28] text-[10px] block mt-0.5 uppercase tracking-wider font-semibold">Madhampatty '26</span>
               </div>
               <div>
                 <span className="text-[#1A1817] font-bold block text-sm sm:text-base">1st Prize</span>
                 <span className="text-[#B88E28] text-[10px] block mt-0.5 uppercase tracking-wider font-semibold">UAE Superchef '24</span>
-              </div>
-              <div>
-                <span className="text-[#1A1817] font-bold block text-sm sm:text-base">1,200+</span>
-                <span className="text-[#888888] text-[10px] block mt-0.5 uppercase tracking-wider">Events Curated</span>
               </div>
             </div>
 

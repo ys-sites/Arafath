@@ -10,10 +10,10 @@ export const CHEF_PROFILE = {
   instagramUrl: "https://www.instagram.com/yaseer.s.arafath/",
   location: "Dubai, United Arab Emirates",
   yearsExperience: "15+",
-  topTitle: "Executive Chef @ Arbor • UAE Superchef '24 Winner • Cook with Madhampatty '26 2nd Place",
+  topTitle: "Executive Chef @ Arbor • Cook with Madhampatty '26 2nd Place • UAE Superchef '24 Winner",
   bio: `Chef Yaseer Arafath is an Executive Chef based in Dubai, UAE, currently heading culinary operations & "The Farmhouse" at The Arbor School Dubai. With over 15 years of high-end gastronomy, production management, and central kitchen leadership across the UAE, Chef Yaseer achieved HACCP Certification (AGA Certifications) for kitchen operations and retained the Dubai Municipality Gold Rating across canteen, kitchen, and café.
 
-Currently leading executive culinary directorship at Arbor, Chef Yaseer crafts sustainable farm-to-table cuisine, live cookery lunches, and high-volume nutritional gastronomy. Previously Head Chef & Production Manager at Slices Catering Dubai for nearly 6 years (2,083 days), his achievements include placing 1st in the UAE Superchef 2024 Competition, securing 2nd Place in the Cook with Madhampatty 2026 Competition under celebrity chef Madhampatty Rangaraj, placing 5th in the Date-A-Cheese 2026 Competition among hundreds of chefs, earning an Emirates Culinary Guild Silver Medal, and holding a Bachelor's Degree in Culinary & Catering Management (Grade A) from Bharathiar University.`,
+Currently leading executive culinary directorship at Arbor, Chef Yaseer crafts sustainable farm-to-table cuisine, live cookery lunches, and high-volume nutritional gastronomy. Previously Head Chef & Production Manager at Slices Catering Dubai for nearly 6 years (2,083 days), his achievements include securing 2nd Place in the Cook with Madhampatty 2026 Competition under celebrity chef Madhampatty Rangaraj, placing 5th in the Date-A-Cheese 2026 Competition among hundreds of chefs, placing 1st in the UAE Superchef 2024 Competition, earning an Emirates Culinary Guild Silver Medal (2023), receiving the Hozpitality Excellence Gold Award for Sous Chef of the Year (2021), and holding a Bachelor's Degree in Culinary & Catering Management (Grade A) from Bharathiar University.`,
   quote: "Culinary artistry is the seamless bridge between deep heritage techniques, uncompromising food safety, and modern sensory expression.",
   contactEmail: "yaseer.s.arafath@gmail.com",
   phoneDisplay: "+971 50 302 3056",
@@ -25,9 +25,9 @@ Currently leading executive culinary directorship at Arbor, Chef Yaseer crafts s
 
 export const CHEF_STATS = [
   { label: "Years of Executive Culinary Mastery", value: "15+" },
-  { label: "UAE Superchef 2024 Winner", value: "1st Place" },
   { label: "Cook with Madhampatty 2026", value: "2nd Place" },
   { label: "Date-A-Cheese 2026 Competition", value: "5th Place" },
+  { label: "UAE Superchef 2024 Winner", value: "1st Place" },
   { label: "Food Safety & Audit Standard", value: "HACCP & Gold" },
 ];
 
@@ -259,7 +259,15 @@ export const CAREER_MILESTONES: Milestone[] = [
     highlightBadge: "Top 5 UAE Finalist"
   },
   {
-    year: "2024",
+    year: "Aug 2022 – Aug 2025",
+    title: "Head Chef",
+    organization: "Slices Catering",
+    location: "Dubai, UAE",
+    description: "Directing large-scale gourmet culinary operations, menu development, luxury banquets, and daily high-volume gourmet offerings for 3+ years as Head Chef.",
+    category: "experience"
+  },
+  {
+    year: "Jun 2024",
     title: "1st Prize Winner — UAE Superchef 2024",
     organization: "Xpatzhub Live Cooking Competition at Firki, Royal Ascot Hotel",
     location: "Dubai, UAE",
@@ -268,22 +276,13 @@ export const CAREER_MILESTONES: Milestone[] = [
     highlightBadge: "First Place Trophy"
   },
   {
-    year: "2021",
-    title: "Gold Award Winner — Hozpitality Excellence Awards",
-    organization: "4th Middle East Chef Excellence Awards",
-    location: "Dubai, UAE",
-    description: "Awarded Gold Award for Sous Chef of the Year at Slices Catering Services Dubai, presented on stage at the Hozpitality Excellence Awards ceremony.",
+    year: "Dec 2023",
+    title: "Silver Medal Winner — Emirates Culinary Guild",
+    organization: "Wathba Dates Festival & Auction",
+    location: "Abu Dhabi / Dubai, UAE",
+    description: "Awarded Silver Medal by the association of the Emirates Culinary Guild for Arabian/Levant Cuisine Main Course, evaluated by international master chefs.",
     category: "award",
-    highlightBadge: "Sous Chef of the Year Gold Award",
-    image: "/gold_award_2021_enhanced.png"
-  },
-  {
-    year: "Aug 2022 – Aug 2025",
-    title: "Head Chef",
-    organization: "Slices Catering",
-    location: "Dubai, UAE",
-    description: "Directing large-scale gourmet culinary operations, menu development, luxury banquets, and daily high-volume gourmet offerings for 3+ years as Head Chef.",
-    category: "experience"
+    highlightBadge: "ECG Silver Medal"
   },
   {
     year: "Oct 2019 – Jul 2022",
@@ -296,13 +295,14 @@ export const CAREER_MILESTONES: Milestone[] = [
     image: "/image 1.png"
   },
   {
-    year: "2023",
-    title: "Silver Medal Winner — Emirates Culinary Guild",
-    organization: "Wathba Dates Festival & Auction",
-    location: "Abu Dhabi / Dubai, UAE",
-    description: "Awarded Silver Medal by the association of the Emirates Culinary Guild for Arabian/Levant Cuisine Main Course, evaluated by international master chefs.",
+    year: "2021",
+    title: "Gold Award Winner — Hozpitality Excellence Awards",
+    organization: "4th Middle East Chef Excellence Awards",
+    location: "Dubai, UAE",
+    description: "Awarded Gold Award for Sous Chef of the Year at Slices Catering Services Dubai, presented on stage at the Hozpitality Excellence Awards ceremony.",
     category: "award",
-    highlightBadge: "ECG Silver Medal"
+    highlightBadge: "Sous Chef of the Year Gold Award",
+    image: "/gold_award_2021_enhanced.png"
   },
   {
     year: "Dec 2018 – Dec 2019",

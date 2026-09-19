@@ -120,24 +120,43 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
 
         </div>
 
-        {/* Academic & Certified Food Safety Documents Section */}
+        {/* Academic & Certified Food Safety Documents Section (Newest to Oldest) */}
         <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
           
-          {/* Degree Card */}
+          {/* TSI Food Safety Level 5 PDF Card */}
           <div className="bg-white border border-[#E8E4DC] p-7 shadow-minimal space-y-4 hover:border-[#1A1817] transition-colors flex flex-col justify-between">
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-[#1A1817]">
-                <GraduationCap className="w-5 h-5 text-[#B88E28]" />
-                <span className="text-[10px] font-mono uppercase text-[#B88E28] tracking-wider font-semibold">Academic Degree</span>
+                <Award className="w-5 h-5 text-[#B88E28]" />
+                <span className="text-[10px] font-mono uppercase text-[#B88E28] tracking-wider font-semibold">Level 5 Audit</span>
               </div>
-              <h4 className="text-[#1A1817] font-serif text-lg font-normal">B.Sc. Catering Science & Hotel Management</h4>
-              <p className="text-[#888888] text-xs font-mono">Bharathiar University (April 2010 / First Class Honors)</p>
+              <h4 className="text-[#1A1817] font-serif text-lg font-normal">Level 5 Food Safety & Operational Audit</h4>
+              <p className="text-[#888888] text-xs font-mono">TSI Quality Services L.L.C. S.O.C.</p>
               <p className="text-[#555555] text-xs leading-relaxed font-light">
-                Formal 3-year degree in classical food chemistry, large-scale kitchen operations, menu engineering, sanitation, and catering logistics.
+                Central kitchen operational audit directorship, quality assurance protocols, and municipal compliance standards.
               </p>
             </div>
-            <div className="pt-3 border-t border-[#E8E4DC] text-xs font-mono text-[#B88E28] font-semibold">
-              Reg. No: 071CH094
+
+            <div className="pt-3 border-t border-[#E8E4DC] flex items-center justify-between font-mono text-xs">
+              <button
+                onClick={() => setSelectedPdf({
+                  title: 'Level 5 Award in Food Safety & Operational Audit Management',
+                  url: '/Yaseer-Arafath-.pdf'
+                })}
+                className="flex items-center space-x-1.5 text-[#1A1817] hover:text-[#B88E28] font-semibold cursor-pointer"
+              >
+                <Eye className="w-3.5 h-3.5 text-[#B88E28]" />
+                <span>View PDF Document</span>
+              </button>
+              <a
+                href="/Yaseer-Arafath-.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#888888] hover:text-[#1A1817] flex items-center space-x-1"
+                title="Open in new window"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
             </div>
           </div>
 
@@ -178,40 +197,21 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
             </div>
           </div>
 
-          {/* TSI Food Safety Level 5 PDF Card */}
+          {/* Degree Card */}
           <div className="bg-white border border-[#E8E4DC] p-7 shadow-minimal space-y-4 hover:border-[#1A1817] transition-colors flex flex-col justify-between">
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-[#1A1817]">
-                <Award className="w-5 h-5 text-[#B88E28]" />
-                <span className="text-[10px] font-mono uppercase text-[#B88E28] tracking-wider font-semibold">Level 5 Audit</span>
+                <GraduationCap className="w-5 h-5 text-[#B88E28]" />
+                <span className="text-[10px] font-mono uppercase text-[#B88E28] tracking-wider font-semibold">Academic Foundation</span>
               </div>
-              <h4 className="text-[#1A1817] font-serif text-lg font-normal">Level 5 Food Safety & Operational Audit</h4>
-              <p className="text-[#888888] text-xs font-mono">TSI Quality Services L.L.C. S.O.C.</p>
+              <h4 className="text-[#1A1817] font-serif text-lg font-normal">B.Sc. Catering Science & Hotel Management</h4>
+              <p className="text-[#888888] text-xs font-mono">Bharathiar University (April 2010 / First Class Honors)</p>
               <p className="text-[#555555] text-xs leading-relaxed font-light">
-                Central kitchen operational audit directorship, quality assurance protocols, and municipal compliance standards.
+                Formal 3-year degree in classical food chemistry, large-scale kitchen operations, menu engineering, sanitation, and catering logistics.
               </p>
             </div>
-
-            <div className="pt-3 border-t border-[#E8E4DC] flex items-center justify-between font-mono text-xs">
-              <button
-                onClick={() => setSelectedPdf({
-                  title: 'Level 5 Award in Food Safety & Operational Audit Management',
-                  url: '/Yaseer-Arafath-.pdf'
-                })}
-                className="flex items-center space-x-1.5 text-[#1A1817] hover:text-[#B88E28] font-semibold cursor-pointer"
-              >
-                <Eye className="w-3.5 h-3.5 text-[#B88E28]" />
-                <span>View PDF Document</span>
-              </button>
-              <a
-                href="/Yaseer-Arafath-.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#888888] hover:text-[#1A1817] flex items-center space-x-1"
-                title="Open in new window"
-              >
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
+            <div className="pt-3 border-t border-[#E8E4DC] text-xs font-mono text-[#B88E28] font-semibold">
+              Reg. No: 071CH094
             </div>
           </div>
 

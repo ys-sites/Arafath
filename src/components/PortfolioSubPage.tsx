@@ -62,17 +62,18 @@ export const PortfolioSubPage: React.FC<PortfolioSubPageProps> = ({
     const dossierText = `
 CHEF YASEER ARAFATH — EXECUTIVE CULINARY DOSSIER
 ==================================================
-Current Title: Head Chef at Slices Catering (Dubai, UAE)
+Current Title: Executive Chef at The Arbor School Dubai
 Location: Dubai & Abu Dhabi, United Arab Emirates
 Direct Contact: ${CHEF_PROFILE.contactEmail}
 Instagram: https://www.instagram.com/yaseer.s.arafath/
 
-HONORS & ACCOLADES
--------------------
+HONORS & ACCOLADES (NEWEST TO OLDEST)
+--------------------------------------
 • 2nd Prize Winner — Cook with Madhampatty 2026 (Chef Madhampatty Rangaraj, ATK2 Jewel of the Creek, Aug 2026)
+• 5th Place Winner — Date-A-Cheese 2026 Competition (Dubai, UAE, 2026)
 • 1st Prize Winner — UAE Superchef 2024 (Xpatzhub Competition at Firki, Royal Ascot Hotel, June 2024)
-• 5th Place Winner — Date-A-Cheese 2026 Competition (Dubai, UAE)
 • Silver Medalist — Emirates Culinary Guild (Wathba Dates Festival, Dec 2023)
+• Gold Award Winner — Hozpitality Excellence Awards (Sous Chef of the Year, 2021)
 • Medalist — ExpoCulinaire Salon Culinaire UAE (Worldchefs Certified)
 
 ACADEMIC CREDENTIALS
@@ -80,11 +81,12 @@ ACADEMIC CREDENTIALS
 • Bachelor's Degree in Restaurant, Culinary & Catering Management
   Bharathiar University (2007 – 2010)
 
-EXECUTIVE CAREER HIGHLIGHTS
-----------------------------
-• 2021 – Present: Head Chef @ Slices Catering Dubai (Banquets up to 2,000+ guests)
-• 2018 – 2021: Senior Culinary Lead @ The Arbor School Dubai
-• 2015 – 2018: Sous Chef @ Queen Elizabeth 2 (QE2 Floating Hotel & Liner, Dubai)
+EXECUTIVE CAREER HIGHLIGHTS (CURRENT TO OLDEST)
+------------------------------------------------
+• Aug 2025 – Present: Executive Chef @ The Arbor School Dubai
+• Aug 2022 – Aug 2025: Head Chef @ Slices Catering Dubai (Banquets up to 2,000+ guests)
+• Oct 2019 – Jul 2022: Production Manager & Head Chef Leadership @ Slices Catering
+• Dec 2018 – Dec 2019: Chef De Partie @ Queen Elizabeth 2 (QE2 Floating Hotel & Liner, Dubai)
 
 CULINARY METHODOLOGY
 ---------------------
@@ -162,8 +164,12 @@ Sous-vide precision braising, Binchotan charcoal grilling, cryogenic nitrogen ga
                 className="text-base sm:text-lg font-serif text-[#5B564E] font-light italic leading-relaxed max-w-2xl"
               />
 
-              {/* Scaffolding Badges */}
+              {/* Scaffolding Badges (Newest to Oldest) */}
               <div className="flex flex-wrap gap-2 pt-2 text-xs font-mono">
+                <span className="bg-[#FAF9F6] text-[#1A1817] border border-[#E8E4DC] px-3.5 py-1.5 flex items-center space-x-2">
+                  <Trophy className="w-3.5 h-3.5 text-[#B88E28]" />
+                  <span>Cook with Madhampatty 2026 2nd Prize</span>
+                </span>
                 <span className="bg-[#FAF9F6] text-[#1A1817] border border-[#E8E4DC] px-3.5 py-1.5 flex items-center space-x-2">
                   <Trophy className="w-3.5 h-3.5 text-[#B88E28]" />
                   <span>UAE Superchef 2024 1st Prize</span>
@@ -174,7 +180,7 @@ Sous-vide precision braising, Binchotan charcoal grilling, cryogenic nitrogen ga
                 </span>
                 <span className="bg-[#FAF9F6] text-[#1A1817] border border-[#E8E4DC] px-3.5 py-1.5 flex items-center space-x-2">
                   <Building2 className="w-3.5 h-3.5 text-[#B88E28]" />
-                  <span>Head Chef @ Slices Catering Dubai</span>
+                  <span>Executive Chef @ The Arbor School Dubai</span>
                 </span>
                 <span className="bg-[#FAF9F6] text-[#1A1817] border border-[#E8E4DC] px-3.5 py-1.5 flex items-center space-x-2">
                   <GraduationCap className="w-3.5 h-3.5 text-[#B88E28]" />
@@ -197,16 +203,20 @@ Sous-vide precision braising, Binchotan charcoal grilling, cryogenic nitrogen ga
 
               <div className="space-y-2 text-xs font-mono">
                 <div className="flex justify-between py-1 border-b border-[#E8E4DC]/60">
-                  <span className="text-[#888888]">Current Employer:</span>
-                  <span className="text-[#1A1817] font-semibold">Slices Catering</span>
+                  <span className="text-[#888888]">Current Role:</span>
+                  <span className="text-[#1A1817] font-semibold">Executive Chef @ Arbor</span>
+                </div>
+                <div className="flex justify-between py-1 border-b border-[#E8E4DC]/60">
+                  <span className="text-[#888888]">Madhampatty '26:</span>
+                  <span className="text-[#B88E28] font-semibold">2nd Prize Winner</span>
+                </div>
+                <div className="flex justify-between py-1 border-b border-[#E8E4DC]/60">
+                  <span className="text-[#888888]">Superchef '24:</span>
+                  <span className="text-[#B88E28] font-semibold">1st Prize Winner</span>
                 </div>
                 <div className="flex justify-between py-1 border-b border-[#E8E4DC]/60">
                   <span className="text-[#888888]">Catering Capacity:</span>
                   <span className="text-[#1A1817] font-semibold">10 to 2,000+ Guests</span>
-                </div>
-                <div className="flex justify-between py-1 border-b border-[#E8E4DC]/60">
-                  <span className="text-[#888888]">Superchef Title:</span>
-                  <span className="text-[#B88E28] font-semibold">1st Prize Winner (2024)</span>
                 </div>
                 <div className="flex justify-between py-1">
                   <span className="text-[#888888]">Academic Degree:</span>
@@ -339,83 +349,100 @@ Sous-vide precision braising, Binchotan charcoal grilling, cryogenic nitrogen ga
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               
-              {/* 1. Bharathiar University B.Sc. Degree */}
-              <div className="bg-white border border-[#E8E4DC] hover:border-[#1A1817] p-7 transition-all shadow-minimal flex flex-col justify-between space-y-5 group">
+              {/* 1. Dubai Municipality Gold Rating & HACCP Operations */}
+              <div className="bg-white border border-[#E8E4DC] hover:border-[#1A1817] p-7 transition-all shadow-minimal flex flex-col justify-between space-y-5 group md:col-span-2 lg:col-span-2">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <span className="bg-[#1A1817] text-white font-mono text-[10px] uppercase tracking-wider px-2.5 py-0.5 font-bold">
-                      ACADEMIC DEGREE
+                      GOVERNMENT RATING
                     </span>
-                    <span className="text-[11px] font-mono text-[#B88E28] font-semibold">Apr 2010 / 2011</span>
+                    <span className="text-[11px] font-mono text-[#B88E28] font-semibold">Dubai Municipality</span>
                   </div>
 
                   <h4 className="text-xl font-serif text-[#1A1817] font-normal group-hover:text-[#B88E28] transition-colors leading-snug">
-                    B.Sc. Catering Science & Hotel Management
+                    Dubai Municipality Gold Rating & HACCP Kitchen Certification
                   </h4>
 
                   <p className="text-xs font-mono text-[#68645E]">
-                    Bharathiar University (Faculty of Science) • Rathnavel Subramaniam College of Arts & Science (Autonomous)
+                    The Arbor School Dubai & Slices Catering Central Operations
                   </p>
 
                   <p className="text-xs text-[#44403C] leading-relaxed font-light">
-                    3-year formal Bachelor of Science degree in food chemistry, menu engineering, sanitation, and hotel management.
+                    Retained Dubai Municipality Gold Rating across Kitchen, Canteen, and Café. Conferred HACCP Certification via AGA Certifications (Aligned Global Assurance ME) for zero-fault food safety, temperature tracking, and hygiene governance.
                   </p>
 
-                  <div className="p-3 bg-[#FAF9F6] border border-[#E8E4DC] space-y-1 font-mono text-[11px] text-[#555555]">
-                    <div className="flex justify-between">
-                      <span>Honors Classification:</span>
-                      <span className="text-[#1A1817] font-semibold">First Class (Part III)</span>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3 bg-[#FAF9F6] border border-[#E8E4DC] font-mono text-[11px] text-[#555555]">
+                    <div>
+                      <span className="text-[#888888] block">Rating Level:</span>
+                      <span className="text-[#B88E28] font-bold">Dubai Municipality Gold Rating</span>
                     </div>
-                    <div className="flex justify-between">
-                      <span>Reg / Cert No:</span>
-                      <span className="text-[#888888]">071CH094 / 287888</span>
+                    <div>
+                      <span className="text-[#888888] block">HACCP Assessor Body:</span>
+                      <span className="text-[#1A1817] font-semibold">AGA Certifications (ME)</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="pt-3 border-t border-[#E8E4DC] flex items-center justify-between font-mono text-[11px] text-[#68645E]">
-                  <span>Status: Grade A Graduate</span>
+                  <span>Status: Retained Gold Standard Compliance</span>
                   <CheckCircle2 className="w-4 h-4 text-[#B88E28]" />
                 </div>
               </div>
 
-              {/* 2. Highfield Level 3 International HACCP */}
+              {/* 2. TSI Quality Services Level 5 Food Safety */}
               <div className="bg-white border border-[#E8E4DC] hover:border-[#1A1817] p-7 transition-all shadow-minimal flex flex-col justify-between space-y-5 group">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <span className="bg-[#B88E28] text-white font-mono text-[10px] uppercase tracking-wider px-2.5 py-0.5 font-bold">
-                      HIGHFIELD CERTIFIED
+                      TSI LEVEL 5 AUDIT
                     </span>
-                    <span className="text-[11px] font-mono text-[#B88E28] font-semibold">10 Jan 2022</span>
+                    <span className="text-[11px] font-mono text-[#B88E28] font-semibold">Quality SOC</span>
                   </div>
 
                   <h4 className="text-xl font-serif text-[#1A1817] font-normal group-hover:text-[#B88E28] transition-colors leading-snug">
-                    Level 3 International Award in HACCP for Catering
+                    Level 5 Award in Food Safety & Operational Audit
                   </h4>
 
                   <p className="text-xs font-mono text-[#68645E]">
-                    Highfield Qualifications (UK & Global Leader) • Splendid Quality Consultants
+                    TSI Quality Services L.L.C. S.O.C.
                   </p>
 
                   <p className="text-xs text-[#44403C] leading-relaxed font-light">
-                    Hazard Analysis Critical Control Point system design, thermal control, allergen management, and critical limits verification.
+                    Advanced operational audit directorship, quality assurance protocol execution, and central kitchen compliance across Dubai facilities.
                   </p>
 
                   <div className="p-3 bg-[#FAF9F6] border border-[#E8E4DC] space-y-1 font-mono text-[11px] text-[#555555]">
                     <div className="flex justify-between">
-                      <span>Certificate Number:</span>
-                      <span className="text-[#1A1817] font-semibold">HAC3911003</span>
+                      <span>Certification Body:</span>
+                      <span className="text-[#1A1817] font-semibold">TSI Quality Services</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Awarding Body:</span>
-                      <span className="text-[#888888]">Highfield Qualifications</span>
+                      <span>Scope:</span>
+                      <span className="text-[#888888]">Central Production Audits</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-[#E8E4DC] flex items-center justify-between font-mono text-[11px] text-[#68645E]">
-                  <span>Status: Certified Master</span>
-                  <CheckCircle2 className="w-4 h-4 text-[#B88E28]" />
+                <div className="pt-3 border-t border-[#E8E4DC] flex items-center justify-between font-mono text-xs">
+                  <button
+                    onClick={() => setSelectedPdf({
+                      title: 'Level 5 Award in Food Safety & Operational Audit Management',
+                      url: '/Yaseer-Arafath-.pdf'
+                    })}
+                    className="flex items-center space-x-1.5 text-[#1A1817] hover:text-[#B88E28] font-semibold cursor-pointer"
+                  >
+                    <Eye className="w-3.5 h-3.5 text-[#B88E28]" />
+                    <span>View PDF Document</span>
+                  </button>
+                  <a
+                    href="/Yaseer-Arafath-.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#888888] hover:text-[#1A1817] flex items-center space-x-1"
+                    title="Open in new window"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
                 </div>
               </div>
 
@@ -476,99 +503,82 @@ Sous-vide precision braising, Binchotan charcoal grilling, cryogenic nitrogen ga
                 </div>
               </div>
 
-              {/* 4. TSI Quality Services Level 5 Food Safety */}
+              {/* 4. Highfield Level 3 International HACCP */}
               <div className="bg-white border border-[#E8E4DC] hover:border-[#1A1817] p-7 transition-all shadow-minimal flex flex-col justify-between space-y-5 group">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <span className="bg-[#B88E28] text-white font-mono text-[10px] uppercase tracking-wider px-2.5 py-0.5 font-bold">
-                      TSI LEVEL 5 AUDIT
+                      HIGHFIELD CERTIFIED
                     </span>
-                    <span className="text-[11px] font-mono text-[#B88E28] font-semibold">Quality SOC</span>
+                    <span className="text-[11px] font-mono text-[#B88E28] font-semibold">10 Jan 2022</span>
                   </div>
 
                   <h4 className="text-xl font-serif text-[#1A1817] font-normal group-hover:text-[#B88E28] transition-colors leading-snug">
-                    Level 5 Award in Food Safety & Operational Audit
+                    Level 3 International Award in HACCP for Catering
                   </h4>
 
                   <p className="text-xs font-mono text-[#68645E]">
-                    TSI Quality Services L.L.C. S.O.C.
+                    Highfield Qualifications (UK & Global Leader) • Splendid Quality Consultants
                   </p>
 
                   <p className="text-xs text-[#44403C] leading-relaxed font-light">
-                    Advanced operational audit directorship, quality assurance protocol execution, and central kitchen compliance across Dubai facilities.
+                    Hazard Analysis Critical Control Point system design, thermal control, allergen management, and critical limits verification.
                   </p>
 
                   <div className="p-3 bg-[#FAF9F6] border border-[#E8E4DC] space-y-1 font-mono text-[11px] text-[#555555]">
                     <div className="flex justify-between">
-                      <span>Certification Body:</span>
-                      <span className="text-[#1A1817] font-semibold">TSI Quality Services</span>
+                      <span>Certificate Number:</span>
+                      <span className="text-[#1A1817] font-semibold">HAC3911003</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Scope:</span>
-                      <span className="text-[#888888]">Central Production Audits</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="pt-3 border-t border-[#E8E4DC] flex items-center justify-between font-mono text-xs">
-                  <button
-                    onClick={() => setSelectedPdf({
-                      title: 'Level 5 Award in Food Safety & Operational Audit Management',
-                      url: '/Yaseer-Arafath-.pdf'
-                    })}
-                    className="flex items-center space-x-1.5 text-[#1A1817] hover:text-[#B88E28] font-semibold cursor-pointer"
-                  >
-                    <Eye className="w-3.5 h-3.5 text-[#B88E28]" />
-                    <span>View PDF Document</span>
-                  </button>
-                  <a
-                    href="/Yaseer-Arafath-.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#888888] hover:text-[#1A1817] flex items-center space-x-1"
-                    title="Open in new window"
-                  >
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
-                </div>
-              </div>
-
-              {/* 5. Dubai Municipality Gold Rating & HACCP Operations */}
-              <div className="bg-white border border-[#E8E4DC] hover:border-[#1A1817] p-7 transition-all shadow-minimal flex flex-col justify-between space-y-5 group md:col-span-2 lg:col-span-2">
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="bg-[#1A1817] text-white font-mono text-[10px] uppercase tracking-wider px-2.5 py-0.5 font-bold">
-                      GOVERNMENT RATING
-                    </span>
-                    <span className="text-[11px] font-mono text-[#B88E28] font-semibold">Dubai Municipality</span>
-                  </div>
-
-                  <h4 className="text-xl font-serif text-[#1A1817] font-normal group-hover:text-[#B88E28] transition-colors leading-snug">
-                    Dubai Municipality Gold Rating & HACCP Kitchen Certification
-                  </h4>
-
-                  <p className="text-xs font-mono text-[#68645E]">
-                    The Arbor School Dubai & Slices Catering Central Operations
-                  </p>
-
-                  <p className="text-xs text-[#44403C] leading-relaxed font-light">
-                    Retained Dubai Municipality Gold Rating across Kitchen, Canteen, and Café. Conferred HACCP Certification via AGA Certifications (Aligned Global Assurance ME) for zero-fault food safety, temperature tracking, and hygiene governance.
-                  </p>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3 bg-[#FAF9F6] border border-[#E8E4DC] font-mono text-[11px] text-[#555555]">
-                    <div>
-                      <span className="text-[#888888] block">Rating Level:</span>
-                      <span className="text-[#B88E28] font-bold">Dubai Municipality Gold Rating</span>
-                    </div>
-                    <div>
-                      <span className="text-[#888888] block">HACCP Assessor Body:</span>
-                      <span className="text-[#1A1817] font-semibold">AGA Certifications (ME)</span>
+                      <span>Awarding Body:</span>
+                      <span className="text-[#888888]">Highfield Qualifications</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="pt-3 border-t border-[#E8E4DC] flex items-center justify-between font-mono text-[11px] text-[#68645E]">
-                  <span>Status: Retained Gold Standard Compliance</span>
+                  <span>Status: Certified Master</span>
+                  <CheckCircle2 className="w-4 h-4 text-[#B88E28]" />
+                </div>
+              </div>
+
+              {/* 5. Bharathiar University B.Sc. Degree */}
+              <div className="bg-white border border-[#E8E4DC] hover:border-[#1A1817] p-7 transition-all shadow-minimal flex flex-col justify-between space-y-5 group">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="bg-[#1A1817] text-white font-mono text-[10px] uppercase tracking-wider px-2.5 py-0.5 font-bold">
+                      ACADEMIC DEGREE
+                    </span>
+                    <span className="text-[11px] font-mono text-[#B88E28] font-semibold">Apr 2010 / 2011</span>
+                  </div>
+
+                  <h4 className="text-xl font-serif text-[#1A1817] font-normal group-hover:text-[#B88E28] transition-colors leading-snug">
+                    B.Sc. Catering Science & Hotel Management
+                  </h4>
+
+                  <p className="text-xs font-mono text-[#68645E]">
+                    Bharathiar University (Faculty of Science) • Rathnavel Subramaniam College of Arts & Science (Autonomous)
+                  </p>
+
+                  <p className="text-xs text-[#44403C] leading-relaxed font-light">
+                    3-year formal Bachelor of Science degree in food chemistry, menu engineering, sanitation, and hotel management.
+                  </p>
+
+                  <div className="p-3 bg-[#FAF9F6] border border-[#E8E4DC] space-y-1 font-mono text-[11px] text-[#555555]">
+                    <div className="flex justify-between">
+                      <span>Honors Classification:</span>
+                      <span className="text-[#1A1817] font-semibold">First Class (Part III)</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Reg / Cert No:</span>
+                      <span className="text-[#888888]">071CH094 / 287888</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-3 border-t border-[#E8E4DC] flex items-center justify-between font-mono text-[11px] text-[#68645E]">
+                  <span>Status: Grade A Graduate</span>
                   <CheckCircle2 className="w-4 h-4 text-[#B88E28]" />
                 </div>
               </div>
@@ -681,14 +691,47 @@ Sous-vide precision braising, Binchotan charcoal grilling, cryogenic nitrogen ga
             </p>
           </div>
 
-          {/* Featured Trophy Highlight */}
+          {/* Featured Trophy Highlight: 2026 Cook with Madhampatty & 2024 UAE Superchef (Newest to Oldest) */}
+          <div className="bg-white border border-[#E8E4DC] p-8 sm:p-12 shadow-minimal mb-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-8 space-y-4">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="bg-[#1A1817] text-white font-mono text-[11px] uppercase tracking-wider px-3.5 py-1 font-bold">
+                  2ND PRIZE WINNER
+                </span>
+                <span className="text-[#B88E28] font-mono text-xs font-semibold">ATK2 Jewel of the Creek • August 2026</span>
+              </div>
+
+              <h3 className="text-3xl sm:text-5xl font-serif text-[#1A1817] font-normal leading-tight">
+                Cook with Madhampatty 2026
+              </h3>
+              
+              <p className="text-[#B88E28] text-xs font-mono">
+                Celebrity Chef Madhampatty Rangaraj Live Showdown • Dubai, UAE
+              </p>
+
+              <p className="text-[#44403C] text-sm sm:text-base leading-relaxed font-light max-w-2xl">
+                Secured Second Place in the high-profile live cooking competition presented on stage by celebrity chef Madhampatty Rangaraj and an esteemed judging panel, recognized for gastronomic innovation, speed, and flavor balance.
+              </p>
+            </div>
+
+            <div className="lg:col-span-4 bg-[#FAF9F6] border border-[#E8E4DC] p-6 space-y-3">
+              <div className="flex items-center space-x-2 text-xs font-mono text-[#B88E28] font-semibold">
+                <Trophy className="w-4 h-4 text-[#B88E28]" />
+                <span>Premier 2026 Distinction</span>
+              </div>
+              <blockquote className="text-[#1A1817] font-serif italic text-base">
+                “Conferred live on stage before master chefs in recognition of exemplary culinary craft and teamwork.”
+              </blockquote>
+            </div>
+          </div>
+
           <div className="bg-white border border-[#E8E4DC] p-8 sm:p-12 shadow-minimal mb-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-4">
               <div className="flex items-center space-x-3">
                 <span className="bg-[#1A1817] text-white font-mono text-[11px] uppercase tracking-wider px-3.5 py-1">
                   1ST PRIZE WINNER
                 </span>
-                <span className="text-[#B88E28] font-mono text-xs font-semibold">Royal Ascot Hotel • Dubai</span>
+                <span className="text-[#B88E28] font-mono text-xs font-semibold">Royal Ascot Hotel • Dubai (June 2024)</span>
               </div>
 
               <h3 className="text-3xl sm:text-5xl font-serif text-[#1A1817] font-normal leading-tight">

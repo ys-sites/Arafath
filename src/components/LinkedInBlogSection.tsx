@@ -22,6 +22,26 @@ export interface BlogPost {
 
 const BLOG_POSTS: BlogPost[] = [
   {
+    id: "post-madhampatty",
+    title: "Conferred 2nd Prize at 'Cook with Madhampatty' Live Culinary Competition",
+    category: "Competitions & Masterclass",
+    date: "August 2026",
+    author: "YASEER Arafath",
+    authorRole: "Executive Chef at The Arbor School Dubai",
+    excerpt: "Honored to secure Second Place in the premier live competition 'Cook with Madhampatty' hosted by celebrity chef Madhampatty Rangaraj at ATK2 Restaurant, Jewel of the Creek Dubai.",
+    content: `Thrilled and honored to be awarded Second Place in the premier live culinary competition “Cook with Madhampatty”, organized by celebrated actor, chef, and restaurateur Madhampatty Rangaraj at ATK2 Restaurant, Jewel of the Creek Dubai.
+
+This high-intensity live showdown tested gastronomic precision, speed, flavor layering, and technical composure before an esteemed jury of master chefs.
+
+Heartfelt thanks to Chef Madhampatty Rangaraj, the jury, my competition teammate, and the vibrant culinary community in Dubai. Passion and discipline always shine through on the plate!`,
+    image: "/cook-with-madhampatty-award.jpeg",
+    likes: 185,
+    comments: 42,
+    shares: 28,
+    linkedInUrl: "https://www.linkedin.com/in/yaseer-arafath-75b67017b/",
+    badge: "2nd Prize Trophy Winner"
+  },
+  {
     id: "post-haccp",
     title: "Achieving HACCP Certification & Retaining Gold Rating at The Arbor School Dubai",
     category: "Executive Leadership & Food Safety",

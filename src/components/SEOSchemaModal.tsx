@@ -33,9 +33,11 @@ export const SEOSchemaModal: React.FC<SEOSchemaModalProps> = ({ isOpen, onClose 
       "department": "Department of Restaurant, Culinary & Catering Management"
     },
     "award": [
+      "2nd Prize Winner - Cook with Madhampatty 2026 (Chef Madhampatty Rangaraj)",
       "5th Place - Date-A-Cheese 2026 Competition",
       "1st Prize Winner - UAE Superchef 2024",
-      "Silver Medalist - Emirates Culinary Guild (Wathba Dates Festival 2023)"
+      "Silver Medalist - Emirates Culinary Guild (Wathba Dates Festival 2023)",
+      "Gold Award Winner - Hozpitality Excellence Awards (Sous Chef of the Year 2021)"
     ],
     "knowsAbout": [
       "Levant Gastronomy",

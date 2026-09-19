@@ -103,7 +103,11 @@ export const AwardsSection: React.FC = () => {
               <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
                 <span className="inline-flex items-center space-x-1 text-[#B88E28] font-bold uppercase tracking-wider bg-white px-3 py-1 border border-[#E8E4DC]">
                   <Award className="w-4 h-4" />
-                  <span>Cook with Madhampatty 2026</span>
+                  <span>Cook with Madhampatty 2026 • 2nd Prize</span>
+                </span>
+                <span className="inline-flex items-center space-x-1 text-[#1A1817] font-semibold bg-white px-3 py-1 border border-[#E8E4DC]">
+                  <Trophy className="w-3.5 h-3.5 text-[#B88E28]" />
+                  <span>Date-A-Cheese 2026 • 5th Place Finalist</span>
                 </span>
                 <span className="inline-flex items-center space-x-1 text-[#68645E] bg-white px-3 py-1 border border-[#E8E4DC]">
                   <Calendar className="w-3.5 h-3.5 text-[#B88E28]" />
@@ -145,8 +149,94 @@ export const AwardsSection: React.FC = () => {
           </div>
         </div>
 
+        {/* 2024 & 2023 Feature Spotlight Grid */}
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch text-left">
+          
+          {/* Main Trophy Card: Superchef 2024 */}
+          <div className="lg:col-span-7 bg-white border border-[#E8E4DC] p-8 sm:p-10 shadow-minimal relative flex flex-col justify-between hover:border-[#1A1817] transition-colors">
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="inline-flex items-center space-x-2 bg-[#1A1817] text-white font-mono text-[11px] uppercase tracking-wider px-3.5 py-1">
+                  <Trophy className="w-3.5 h-3.5 text-[#B88E28]" />
+                  <span>1ST PRIZE WINNER</span>
+                </span>
+                <span className="text-[#B88E28] font-mono text-xs font-semibold">Royal Ascot Hotel • Dubai</span>
+              </div>
+
+              <h3 className="text-3xl sm:text-5xl font-serif text-[#1A1817] font-normal leading-tight">
+                UAE's Superchef 2024 Winner
+              </h3>
+              
+              <p className="text-[#B88E28] text-xs font-mono">
+                Xpatzhub Live Culinary Competition at Firki, Royal Ascot Hotel (June 2024)
+              </p>
+
+              <p className="text-[#44403C] text-sm sm:text-base leading-relaxed font-light">
+                Chef Yaseer Arafath claimed first prize in the high-stakes live culinary showdown against top professional chefs across the United Arab Emirates. His winning entry demonstrated speed, delicate Levant seasoning balance, and exquisite molecular plating.
+              </p>
+
+              {/* Press headline snippet */}
+              <div className="mt-6 p-5 bg-[#FAF9F6] border border-[#E8E4DC] space-y-2">
+                <div className="flex items-center space-x-2 text-xs font-mono text-[#B88E28] font-semibold">
+                  <Newspaper className="w-4 h-4" />
+                  <span>Khaleej Times Official Article Feature</span>
+                </div>
+                <blockquote className="text-[#1A1817] font-serif italic text-base sm:text-lg">
+                  “UAE's Superchef 2024 is a resounding success — Mr. Yaser Arafath, Head Chef at Slices Catering, takes first prize.”
+                </blockquote>
+              </div>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-[#E8E4DC] flex items-center justify-between text-xs text-[#888888] font-mono">
+              <span className="flex items-center space-x-2">
+                <CheckCircle2 className="w-4 h-4 text-[#B88E28]" />
+                <span>Verified First Prize Trophy</span>
+              </span>
+              <span className="text-[#1A1817] font-semibold">Slices Catering Directorship</span>
+            </div>
+          </div>
+
+          {/* Emirates Culinary Guild Silver Medal (Dec 2023) */}
+          <div className="lg:col-span-5 bg-white border border-[#E8E4DC] p-8 sm:p-10 shadow-minimal flex flex-col justify-between space-y-6 hover:border-[#1A1817] transition-colors">
+            <div className="space-y-4">
+              <div className="flex items-center space-x-2 text-[#B88E28]">
+                <Award className="w-5 h-5" />
+                <span className="text-xs font-mono uppercase tracking-wider font-bold">Guild Recognition</span>
+              </div>
+
+              <h3 className="text-2xl sm:text-3xl font-serif text-[#1A1817] font-normal">
+                Emirates Culinary Guild Silver Medal
+              </h3>
+
+              <p className="text-[#888888] text-xs font-mono">
+                Wathba Dates Festival & Auction (Dec 2023)
+              </p>
+
+              <div className="p-5 bg-[#FAF9F6] border border-[#E8E4DC] space-y-2">
+                <p className="text-xs font-mono font-semibold text-[#B88E28]">Award Category:</p>
+                <p className="text-base font-serif text-[#1A1817] font-normal">Arabian / Levant Cuisine Main Course</p>
+                <p className="text-xs text-[#555555] leading-relaxed font-light">
+                  Silver Medal certificate conferred by the President and Executive Board of the Emirates Culinary Guild, evaluated by international master chefs for depth of flavor and date reduction glaze.
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-3 pt-5 border-t border-[#E8E4DC] font-mono text-xs">
+              <div className="flex items-center justify-between text-[#888888]">
+                <span>Awarding Body:</span>
+                <span className="text-[#1A1817] font-semibold">Emirates Culinary Guild (ECG)</span>
+              </div>
+              <div className="flex items-center justify-between text-[#888888]">
+                <span>Judging Panel:</span>
+                <span className="text-[#B88E28] font-semibold">Worldchefs Certified Judges</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
         {/* 2021 Gold Award Featured Ceremony Spotlight Banner */}
-        <div className="mt-10 bg-[#FAF9F6] border border-[#B88E28]/30 hover:border-[#B88E28] transition-colors p-6 sm:p-8 shadow-minimal">
+        <div className="mt-12 bg-[#FAF9F6] border border-[#B88E28]/30 hover:border-[#B88E28] transition-colors p-6 sm:p-8 shadow-minimal">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center text-left">
             <div className="lg:col-span-5 relative group cursor-pointer overflow-hidden border border-[#E8E4DC] bg-[#111111] h-80 sm:h-[400px]" onClick={() => setIsPhotoModalOpen(true)}>
               <img
@@ -197,92 +287,6 @@ export const AwardsSection: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Feature Spotlight Grid */}
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch text-left">
-          
-          {/* Main Trophy Card: Superchef 2024 */}
-          <div className="lg:col-span-7 bg-white border border-[#E8E4DC] p-8 sm:p-10 shadow-minimal relative flex flex-col justify-between hover:border-[#1A1817] transition-colors">
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="inline-flex items-center space-x-2 bg-[#1A1817] text-white font-mono text-[11px] uppercase tracking-wider px-3.5 py-1">
-                  <Trophy className="w-3.5 h-3.5 text-[#B88E28]" />
-                  <span>1ST PRIZE WINNER</span>
-                </span>
-                <span className="text-[#B88E28] font-mono text-xs font-semibold">Royal Ascot Hotel • Dubai</span>
-              </div>
-
-              <h3 className="text-3xl sm:text-5xl font-serif text-[#1A1817] font-normal leading-tight">
-                UAE's Superchef 2024 Winner
-              </h3>
-              
-              <p className="text-[#B88E28] text-xs font-mono">
-                Xpatzhub Live Culinary Competition at Firki, Royal Ascot Hotel (June 2024)
-              </p>
-
-              <p className="text-[#44403C] text-sm sm:text-base leading-relaxed font-light">
-                Chef Yaseer Arafath claimed first prize in the high-stakes live culinary showdown against top professional chefs across the United Arab Emirates. His winning entry demonstrated speed, delicate Levant seasoning balance, and exquisite molecular plating.
-              </p>
-
-              {/* Press headline snippet */}
-              <div className="mt-6 p-5 bg-[#FAF9F6] border border-[#E8E4DC] space-y-2">
-                <div className="flex items-center space-x-2 text-xs font-mono text-[#B88E28] font-semibold">
-                  <Newspaper className="w-4 h-4" />
-                  <span>Khaleej Times Official Article Feature</span>
-                </div>
-                <blockquote className="text-[#1A1817] font-serif italic text-base sm:text-lg">
-                  “UAE's Superchef 2024 is a resounding success — Mr. Yaser Arafath, Head Chef at Slices Catering, takes first prize.”
-                </blockquote>
-              </div>
-            </div>
-
-            <div className="mt-8 pt-6 border-t border-[#E8E4DC] flex items-center justify-between text-xs text-[#888888] font-mono">
-              <span className="flex items-center space-x-2">
-                <CheckCircle2 className="w-4 h-4 text-[#B88E28]" />
-                <span>Verified First Prize Trophy</span>
-              </span>
-              <span className="text-[#1A1817] font-semibold">Slices Catering Directorship</span>
-            </div>
-          </div>
-
-          {/* Emirates Culinary Guild Silver Medal */}
-          <div className="lg:col-span-5 bg-white border border-[#E8E4DC] p-8 sm:p-10 shadow-minimal flex flex-col justify-between space-y-6 hover:border-[#1A1817] transition-colors">
-            <div className="space-y-4">
-              <div className="flex items-center space-x-2 text-[#B88E28]">
-                <Award className="w-5 h-5" />
-                <span className="text-xs font-mono uppercase tracking-wider font-bold">Guild Recognition</span>
-              </div>
-
-              <h3 className="text-2xl sm:text-3xl font-serif text-[#1A1817] font-normal">
-                Emirates Culinary Guild Silver Medal
-              </h3>
-
-              <p className="text-[#888888] text-xs font-mono">
-                Wathba Dates Festival & Auction (Dec 2023)
-              </p>
-
-              <div className="p-5 bg-[#FAF9F6] border border-[#E8E4DC] space-y-2">
-                <p className="text-xs font-mono font-semibold text-[#B88E28]">Award Category:</p>
-                <p className="text-base font-serif text-[#1A1817] font-normal">Arabian / Levant Cuisine Main Course</p>
-                <p className="text-xs text-[#555555] leading-relaxed font-light">
-                  Silver Medal certificate conferred by the President and Executive Board of the Emirates Culinary Guild, evaluated by international master chefs for depth of flavor and date reduction glaze.
-                </p>
-              </div>
-            </div>
-
-            <div className="space-y-3 pt-5 border-t border-[#E8E4DC] font-mono text-xs">
-              <div className="flex items-center justify-between text-[#888888]">
-                <span>Awarding Body:</span>
-                <span className="text-[#1A1817] font-semibold">Emirates Culinary Guild (ECG)</span>
-              </div>
-              <div className="flex items-center justify-between text-[#888888]">
-                <span>Judging Panel:</span>
-                <span className="text-[#B88E28] font-semibold">Worldchefs Certified Judges</span>
-              </div>
-            </div>
-          </div>
-
         </div>
 
         {/* Press Coverage Cards */}
